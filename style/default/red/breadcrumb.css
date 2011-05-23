@@ -1,0 +1,15 @@
+/*		< Breadcrumb > 
+*****************************
+******************************/
+	
+#breadcrumb {
+	line-height: 55px;
+	font-size: 15px;}
+	
+	#breadcrumb a{
+		margin-right: 5px;
+		color: #fff;}
+	
+/*		</ Breadcrumb > 
+*****************************
+******************************/

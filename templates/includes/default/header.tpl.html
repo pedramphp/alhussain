@@ -1,0 +1,38 @@
+	<header role='banner' id='main-header' class='center-container clearfix'>
+		<hgroup itemref='content-info' itemscope itemtype='http://microformats.org/profile/hcard'>
+			<h1 itemprop='fn org'>
+				<a itemprop='url' href='http://alhussaintv.tv' id='logo' class='invisible' >
+					<figure>
+						<img itemprop='logo' alt='Alhussain TV' src='<!--{$imagePath}-->layout/al-hussain-logo.png' />
+						<figcaption class='ir'>Anwar Al-Hussain TV - Official Logo</figcaption>
+					</figure>
+					<figure id='logoText'>
+						<figcaption class='ir'>Anwar Al-Hussain TV - Guidance for revival</figcaption>
+					</figure>
+				</a>
+			</h1>
+		</hgroup>
+		<ul class='horizontal' id='header-social'>
+			<li id='header-rss'><a href='javascript:void(0)'>RSS<small>subscribe</small></a></li>
+			<li id='header-twitter'><a href='javascript:void(0)'>Follow us<small>on Twitter</small></a></li>
+			<li id='header-facebook'><a href='javascript:void(0)'>Join us<small>on Facebook</small></a></li>
+			<li id='header-youtube' class='last'><a href='javascript:void(0)'>Watch us<small>on YouTube</small></a></li>
+		</ul>
+		<div id='header-sponser'>
+			<h1 class='floatLeft'><small>our</small>Sponsers</h1>
+			<span class='floatLeft blockBox'>Imam Hussain Community in Washington DC</span>
+		</div>
+		<nav id='main-nav' class='horizontal'>
+			<ul class='clearfix'>
+				<li id='nav-home' class='clearfix'><a href='<!--{$applicationPath}-->/homepage'><span>Home</span><i class='corner'></i></a><i class='splitter'></i></li>
+				<li id='nav-news' class='clearfix'><a href='javascript:void(0)'><span>News</span><i class='corner'></i></a><i class='splitter'></i></li>
+				<li id='nav-image' class='clearfix'><a href='javascript:void(0)'><span>Image Gallery</span><i class='corner'></i></a><i class='splitter'></i></li>
+				<li id='nav-video' class='clearfix'><a href='javascript:void(0)'><span>Video Gallery</span><i class='corner'></i></a><i class='splitter'></i></li>
+				<li id='nav-events' class='clearfix'><a href='<!--{$applicationPath}-->/events'><span>Events</span><i class='corner'></i></a><i class='splitter'></i></li>
+				<li id='nav-about' class='clearfix'><a href='javascript:void(0)'><span>About us</span><i class='corner'></i></a><i class='splitter'></i></li>
+				<li id='nav-blog' class='clearfix'><a href='javascript:void(0)'><span>Blog</span><i class='corner'></i></a><i class='splitter'></i></li>
+				<li id='nav-contact' class='last clearfix'><a href='javascript:void(0)'><span>Contact us</span><i class='corner'></i></a></li>			
+			</ul>
+		</nav>
+		<!--{include file = $includeTemplate|cat:$action|cat:"Header.tpl.html"}-->
+	</header>
