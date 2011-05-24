@@ -1,0 +1,24 @@
+<!--{foreach from=$SiteData.imageList.images key=k item=images name=imagelist}-->
+	<!--{if $smarty.foreach.imagelist.first}-->
+	<ul class='image-gallery horizontal clearfix'>
+	<!--{else if $smarty.foreach.imagelist.iteration % 4 eq 1}-->
+	<ul class='image-gallery horizontal clearfix'>
+	<!--{/if}-->
+	<li>
+		<a href='<!--{$images.original}-->' class='largeImage' rel="myImage">
+			<figure>
+				<img src='<!--{$images.thumb}-->' width='190' height='125'/>
+				<figcaption class='ir'></figcaption>
+			</figure>
+		</a>
+		<div class='details'>
+			<span class='ir rating'></span>
+			<span class='date'>May 19th, 2011</span>
+		</div>
+	</li>
+	<!--{if $smarty.foreach.imagelist.last}-->
+	</ul>
+	<!--{else if $smarty.foreach.imagelist.iteration % 4 eq 0}-->
+	</ul>
+	<!--{/if}-->	
+<!--{/foreach}-->

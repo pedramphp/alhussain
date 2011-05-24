@@ -72,6 +72,7 @@ class Site extends SiteHelper{
 			}		
 			
 			$this->setObjectsForTemplate(); 
+			//echo("<pre>".print_r(LiteFrame::$yAction['SiteData']	,true)."</pre>");
 		
 	}/* </ process > */
 	

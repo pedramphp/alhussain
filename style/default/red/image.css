@@ -1,0 +1,32 @@
+		
+.image-gallery {
+	margin-bottom: 30px;}
+
+.image-gallery li {
+	margin: 0 20px 0 30px}
+
+	.image-gallery a {
+		display: block;}
+
+		.image-gallery figure {
+			position: relative;
+			width: 190px; height: 125px;
+			margin-bottom: 15px;
+			border: 1px solid #333;}
+			
+			.image-gallery figcaption {
+				position: absolute; left: 15px; top: 124px;
+				width: 165px; height: 13px;
+				background-image: url("images/layout/sprite.png"); background-repeat: no-repeat; background-position: left -233px;}
+
+	.details {
+		width: 100%;}
+		
+	.details .rating {
+		float: left;}
+		
+	.details .date {
+		float: right;
+		font-size: 12px; line-height: 13px;
+		padding-left: 16px;
+		background: url("images/layout/sprite.png") no-repeat -130px -215px transparent; color: #888;}

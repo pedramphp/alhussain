@@ -1,0 +1,14 @@
+#video-page {
+	width: 885px;
+	margin: 0 auto;}
+
+h2 {font-size: 24px}
+
+
+#video-player-frame {
+	width: 883px; height: 455px;
+	margin: 20px auto;
+	background: url('images/video/bg_video_player.png') no-repeat transparent;}
+	
+	#video-player-frame div {
+		padding: 18px 0 0 18px}

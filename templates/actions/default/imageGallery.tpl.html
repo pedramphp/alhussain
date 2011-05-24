@@ -1,0 +1,24 @@
+<!--{foreach from=$SiteData.imageGallery key=k item=gallery}-->
+	<!--{if $k % 2 eq 0}-->
+	<ul  class='image-category horizontal clearfix'>
+	<!--{/if}-->
+	<li>
+		<a href='<!--{$applicationPath}-->?action=image&catId=<!--{$gallery.catId}-->'>					
+			<hgroup>
+				<h4><!--{$gallery.categoryName}--></h4>
+				<h6><!--{$gallery.size}--> Images</h6>
+				<time>May 19<sup>th</sup>, 2011</time>
+			</hgroup>
+			</section>
+			<ul>
+				<!--{foreach from=$gallery.images item=imageSrc}-->
+					<li><span></span><img src='<!--{$imageSrc}-->' width='112' height='80' /></li>
+				<!--{/foreach}-->
+			</ul>
+			<footer></footer>
+		</a>
+	</li>	
+	<!--{if $k % 2 neq 0}-->
+	</ul>
+	<!--{/if}-->
+<!--{/foreach}-->

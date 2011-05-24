@@ -51,7 +51,19 @@ class SiteSettings {
 	
 	public function setCoreJavascript(){
 		
-		LiteFrame::IncludeLibraryJavascript('plugins/rotate.js','plugins/borderRadius.js','plugins/plugins.js');
+		LiteFrame::IncludeLibraryJavascript(array('plugins/rotate.js',
+																							'plugins/borderRadius.js',
+																							'plugins/gotop.js',
+																							'plugins/jquery.ba-bbq.min.js',
+																							'plugins/plugins.js'));
+		
+		if( LiteFrame::GetAction() == "image"){
+				
+			LiteFrame::IncludeLibraryJavascript('plugins/colorbox/jquery.colorbox-min.js');			
+			LiteFrame::IncludeLibraryStyle('plugins/colorbox/colorbox.css');			
+			
+		}
+		
 		LiteFrame::IncludeJavascript('default.js');
 		LiteFrame::IncludeJavascript('homepage.js');
 		

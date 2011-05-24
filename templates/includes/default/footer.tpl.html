@@ -1,6 +1,6 @@
 	<footer role='contentinfo' id='main-footer'>
 		<div class='center-container relative'>
-			<a href='javascript:void(0)' id='gotop' class='ir'>go top</a>
+			<a href='javascript:void(0)' id='gotop' class='ir gotop'>go top</a>
 			
 			<section id='links-footer'  class='main-footer-section clearfix'>
 				<section id='pages-footer'>
@@ -131,12 +131,12 @@
 							<span>Subscribe now to recieving newsletters</span>
 						</li>
 						<li id='footer-newsletter' class='clearfix'>
-							<input type='text' class='text floatLeft blockBox' autocomplete='on'  />
+							<input type='text' class='txt floatLeft blockBox' autocomplete='on'  />
 							<button class='floatRight blockBox'>Submit</button>
 						</li>
 					</ul>
 					<section id='footer-twitter' data-borderRadius='5'>
-						<a href='javascript:void(0)' id='footer-twitter-link' class='al-rotate' >Latest tweets</a>
+						<a href='javascript:void(0)' id='footer-twitter-link' >Latest tweets</a>
 						<a href='javascript:void(0)' id='footer-twitter-icon' class='ir'>Alhussain Tweets</a>
 						<a href='javascript:void(0)' id='footer-twitter-next' class='ir'>Next tweet</a>
 						<a href='javascript:void(0)' id='footer-twitter-prev' class='ir'>Previous tweet</a>
@@ -146,7 +146,12 @@
 					<p>Donate to Al-Hussain TV Now and support the muslim community.</p>
 					<figure id='footer-donate-paypal'></figure>
 					<figure id='footer-donate-creditcard'></figure>
-					<button id='footer-donate-button'>Donate Now</button>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="WSEBNYA436Z4E">
+						<button id='footer-donate-button' alt="PayPal - The safer, easier way to pay online!" class='donate-button'>Donate Now</button>
+						<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>
 				</section> <!-- </social-footer> -->
 				<aside id='contact-footer'>
 					<header>
@@ -154,12 +159,10 @@
 					</header>
 					<form  class='clearfix'>
 						<label for='footer-fullname' >Full name</label>
-						<input type='text' class='text' id='footer-fullname' autocomplete='on' />
-						
+						<input type='text' class='txt' id='footer-fullname' name='footerFullname' autocomplete='on' />
 						<label for='footer-fullname' >Email</label>
-						<input type='text' class='text' id='footer-email' autocomplete='on'  />
-						
-						<textarea></textarea>
+						<input type='text' class='txt' id='footer-email'  name='footerEmail' autocomplete='on'  />
+						<textarea  name='footerMessage'></textarea>
 						<button>Send</button>
 					</form>
 					<ul id='footer-contact-detail' class='clearfix'>
@@ -179,8 +182,11 @@
 				<div class='carousel-big carousel clearfix'>
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous sponser</figure></a>
 					<nav>
-						<ul>
-							<li></li>
+						<ul class='horizontal clearfix'>
+							<li><h2>Imam Shirazi World Foundation</h2></li>
+							<li><h2>Imam Ali (A.S) Center Springfield VA</h2></li>
+							<li><h2>Prestige Productionz DC</h2></li>
+							<li><h2>Kabob Factory Lorton VA</h2></li>
 						</ul>
 					</nav>	
 					<a href='javascript:void(0)' class='next links' ><figure class='ir'>next sponser</figure></a>

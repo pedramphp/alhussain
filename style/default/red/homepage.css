@@ -122,7 +122,7 @@
 	*****************************
 	******************************/
 	#welcome-note{
-		margin:50px 0 40px;
+		margin-bottom: 40px;
 		border: 1px solid #d0d0d0; 
 		background: #f5f5f5;
 		-moz-border-radius: 5px; 
@@ -209,7 +209,7 @@
 		#homepage-videos .carousel figcaption{ 
 			position: absolute; top: 113px;
 	    height: 13px; 
-	    background-position: left -242px;}
+	    background-position: left -245px;}
 		
 		/*	 </ VIDEOS > 
 		*---------------------------*/	 	
@@ -261,7 +261,7 @@
 		#homepage-images .carousel figcaption{ 
 			 position: absolute; top: 109px; left: 6px;
 			 height: 13px;
-			 background-position: left -230px; }
+			 background-position: left -233px; }
 	    
 		/*	 </ IMAGES > 
 		*---------------------------*/	 	
@@ -298,6 +298,26 @@
 		*****************************
 		******************************/
 		#donation-sidebar .homepage-box-header figure{ background-position: -459px -83px; text-indent: 23px}
+		
+		#donation-sidebar div{  margin: 20px auto; width: 226px;}
+		
+		#sidebar-donate-button{	padding: 5px 12px; margin-left: 10px;	}
+		
+		#sidebar-donate-paypal,
+		#sidebar-donate-creditcard{
+			display: block; float:left;
+			background: url("images/layout/sprite.png") no-repeat left -420px; }
+		
+		#sidebar-donate-paypal{
+			margin: 13px 10px 0 0;
+	    height: 38px; width: 85px;
+		 	background-position: -270px -444px; }
+		
+		#sidebar-donate-creditcard{
+			 margin: 20px 0 0;
+			 height: 19px; width: 131px;
+			 background-position: -269px -420px; }
+		
 		/*	 </ DONATION > 
 		*---------------------------*/	 	
 	  
@@ -315,7 +335,33 @@
 		 ******************************/
 
 		#tweet-sidebar .homepage-box-header figure{ background-position: -459px -27px }
+		
+		#tweet-sidebar-box{ margin:17px 5px 10px; }
+		
+		#tweet-sidebar-box section{
+			position: relative;
+			padding: 10px; margin-bottom: 10px;
+			width: 226px; 
+			border: 1px solid #ababab;
+			-moz-border-radius: 5px; 
+			-webkit-border-radius: 5px; 
+			border-radius: 5px; 
+			background: #f6f6f6;
+			word-wrap: break-word; }
+			
+		#tweet-sidebar-box section i {
+			position: absolute; top: -13px; left: 22px;
+			display: block; width: 25px; height: 13px;
+			background: url("images/layout/sprite.png") no-repeat  -12px -182px; }
+			
+		#tweet-sidebar-icon{
+			display: block;
+    	width: 134px;  height: 16px; line-height: 16px;
+    	color: #333;
+    	text-indent: 20px;
+     	background: url("images/layout/sprite.png") no-repeat left -163px; }	
 	
+		#tweet-sidebar-icon:hover{ color: #666; }
 		/*	 </ TWETT > 
 		*---------------------------*/		  	  
 	

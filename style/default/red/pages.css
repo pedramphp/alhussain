@@ -1,4 +1,102 @@
-	/*		< Inner Page Titles > 
+	/*		< Forms > 
+	*****************************
+	******************************/	
+
+	.error label { color: #990000;}
+	
+	.error input.txt, .error textarea {
+		color: #cc9999;
+		background-color: #fbe2e2;
+		border-color: #cc9999}
+		
+	.error input.txt:focus, .error textarea:focus {
+		color: #990000;
+		border-color: #cc6666;
+		-moz-box-shadow: 0 0 5px #990000;
+		-webkit-box-shadow: 0 0 5px #990000;
+		box-shadow: 0 0 5px #990000;}
+	
+	.ie6 input.txt .focus, .ie6 textarea .focus {
+		background-color: #f7f7f7;
+		border: 1px solid #bbb;}
+	
+.form label {
+	cursor: text;
+	line-height: 25px;
+	padding-right: 30px;}
+
+.form span {
+	font-size: 12px;
+	color: #888;}
+	
+.form input, .form textarea, .form select {
+	margin-bottom: 15px;
+	background-repeat: no-repeat;}
+	
+#fullName input{
+	background-image: url('images/layout/sprite_contact.png');
+	background-position: right 0; }
+	
+	#fullName input:focus{ 
+		background-position: right -30px;}
+		
+	#fullName.error input{ 
+		background-position: right -60px;}
+		
+#email input{
+	background-image: url('images/layout/sprite_contact.png');
+	background-position: right -90px; }
+	
+	#email input:focus {
+		background-position: right -120px;}
+		
+	#email.error input{ 
+		background-position: right -150px;}
+	
+#phoneNumber input{
+	background-image: url('images/layout/sprite_contact.png');
+	background-position: right -180px; }
+
+	#phoneNumber input:focus {
+		background-position: right -210px;}
+		
+	#phoneNumber.error input{ 
+		background-position: right -240px;}	
+
+#website input{
+	background-image: url('images/layout/sprite_contact.png');
+	background-position: right -270px;}
+		
+	#website input:focus {
+		background-position: right -300px;}
+	
+	#website.error input{ 
+		background-position: right -330px;}	
+
+#question input{
+	background-image: url('images/layout/sprite_contact.png');
+	background-position: right -360px;}
+	
+	#question input:focus {
+		background-position: right -390px;}
+		
+	#question.error input{ 
+		background-position: right -420px;}	
+		
+#address input{
+	background-image: url('images/layout/sprite_contact.png');
+	background-position: right -450px;}
+	
+	#address input:focus {
+		background-position: right -480px;}
+		
+	#address.error input{ 
+		background-position: right -510px;}
+		
+	/*		</ Forms > 
+	*****************************
+
+/*		< Inner Page Titles > 
 	*****************************
 	******************************/
 	
@@ -94,7 +192,7 @@
 			background-position: right -730px;}
 		
 		#contact-banner-figure {
-			height: 198px;
+			height: 194px;
 			background-position: right -1215px;}
 		
 		#news-banner-figure {

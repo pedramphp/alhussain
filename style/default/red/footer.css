@@ -1,0 +1,352 @@
+		 	
+/*		< FOOTER > 
+*****************************
+******************************/
+
+#main-footer{ 
+	position:relative; padding-top: 27px;
+	background: url("images/layout/bg_footer.png") repeat-x left top #e7e7e7;
+	border-top: 6px solid #000; }	
+	
+	.main-footer-section { margin-bottom: 25px;}
+	
+	.main-footer-section header{
+		margin-bottom: 20px; padding-bottom: 5px; 
+		border-bottom:1px solid #a6a6a6	; }
+	
+	.main-footer-section header figure{
+		height: 25px; line-height: 25px;  width: 226px;
+		background: url("images/layout/sprite.png") no-repeat transfparent;
+		text-indent: 30px; font-size: 17px; font-weight: bold; }
+
+	#main-footer a{ color: #333; }	
+	
+	/*		< LINKS > 
+	*****************************
+	******************************/
+	
+	#links-footer header{ 
+		margin-bottom: 9px }
+	
+	#links-footer nav{ margin-left: 4px; }
+	
+	#links-footer li, #links-footer a{ height: 22px; } 
+	
+	#links-footer li{ margin-bottom: 2px; }
+	
+	#links-footer a{ 
+		position: relative; display: block; 
+		padding:3px; 
+		line-height: 22px; 
+		-webkit-transition: all 0.2s ease;
+		-moz-transition: all 0.2s ease;
+		-o-transition: all 0.2s ease; }
+	
+	#links-footer a:hover{ 
+		background: #333; color: #fff; text-indent: 14px; }
+	
+	#links-footer a:hover i{
+		position: absolute; left: 6px; top: 11px;
+		height: 7px; width: 6px;
+		background: url('images/layout/sprite.png') no-repeat -23px -200px transparent; }
+	
+	#pages-footer,
+	#latest-posts-footer,
+	#events-footer,
+	#favorite-footer{ float:left; width: 230px; margin-right: 20px; }		
+	
+	#favorite-footer{ margin-right: 0; }
+	
+	#pages-footer header figure{
+		background-position: -730px top;}
+
+	#latest-posts-footer header figure{
+		background-position: -730px -58px}
+
+	#events-footer header figure{
+		background-position: -730px -29px;}
+
+	#favorite-footer header figure{
+		background-position: -730px -87px}
+		
+	/*	 	</ LINKS > 
+	*---------------------------*/	
+
+
+	/*		< BOOKS > 
+	*****************************
+	******************************/
+	
+	#books-footer{ font-size: 11px; }
+	
+	#books-footer header figure{
+		background-position: -730px -115px; width: 236px; text-indent: 25px; }
+	 
+	#books-footer nav{ margin: 0 14px;  height: 120px; width: 900px; } 
+	
+	#books-footer li{ margin-right: 20px; width: 210px; position: relative; }
+	
+	#books-footer .last{ margin-right:0 }
+	
+	#books-footer .links{ height: 120px;}
+	
+	#books-footer dl { height: 100%; margin-left: 109px; width: 96px;  }
+		
+	#books-footer li figure{ 
+		position: absolute;  top: 0; left: 0;
+		border: 1px solid #aaa; 
+		height: 100%; width: 100px;
+		box-shadow: 0 2px 6px rgba(68, 68, 68, 0.6); 
+		-webkit-box-shadow: 0 2px 6px rgba(68, 68, 68, 0.6);
+	  -moz-box-shadow: 0 2px 6px rgba(68, 68, 68, 0.6); 
+	  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=2,MakeShadow=true,ShadowOpacity=0.30);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=2,MakeShadow=true,ShadowOpacity=0.30)"; }
+	
+	#books-footer .title a{ color: #678cb2; }
+	
+	#books-footer .title a:hover{ color: #3560B5;}
+	
+	#books-footer .author{ color: #a9a9a9; font-style: italic; }
+	
+
+	
+	/*	 	</ BOOKS > 
+	*---------------------------*/	
+	
+	/*		< SOCIAL, CONTACT > 
+	*****************************
+	******************************/	
+		#social-footer,
+		#contact-footer{ float:left; }		
+	
+	
+		/*		< SOCIAL> 
+		*****************************
+		******************************/	
+		#social-footer{ width: 670px; margin-right: 29px }
+	
+		#social-footer  header figure{
+			 background-position: -730px -144px; }	
+			 
+			#footer-fb-rss{
+				float:left;
+				margin-right: 20px;
+    		width: 265px;}
+					 
+			#footer-donate-creditcard,
+			#footer-donate-paypal,
+			#footer-twitter-link,
+			#footer-twitter-icon,
+			#footer-twitter-next,
+			#footer-twitter-prev{
+				background: url("images/layout/sprite.png") no-repeat transparent; }	 
+			
+			#footer-donate-creditcard{
+		   	float: left;  margin: 17px 0 0 13px; 
+		   	height: 32px;  width: 215px; 
+		    background-position: -424px -420px; }
+
+			#footer-donate-paypal{
+		    margin:13px  10px 0 0;
+		    float: left;
+		    height: 38px; width: 85px;
+		    background-position: -270px -444px; }
+			
+			#social-footer #footer-donate-button{
+			  margin:17px 0 0 24px; }
+		 		
+
+			
+				/*		< TWITTER> 
+				*****************************
+				******************************/	
+				#footer-twitter{
+					position: relative; float: left;
+					margin: 21px 0 40px 0;
+					width: 380px; height: 114px;
+					border: 1px solid #ababab;
+					background: #F5F5F5; }
+				
+					#footer-twitter-link,
+					#footer-twitter-icon,
+					#footer-twitter-next,
+					#footer-twitter-prev{
+						position: absolute; }
+				
+					#footer-twitter-link{
+				    display: block; top: -22px; left: 269px;
+				    height: 16px; line-height: 16px; width: 134px; 
+				    background-position: left -163px;
+				    text-indent: 20px; }
+					
+					#footer-twitter-icon{
+						left: -1px; top: -30px; 
+				    height: 30px; width: 93px;
+				    background-position: -265px -510px; }
+					
+					#footer-twitter-next,
+					#footer-twitter-prev{
+						top: 92px; height: 15px;  width: 9px;  }
+						
+					#footer-twitter-next{
+				  	background-position: left -179px;
+				    left: 360px;	}
+					
+					#footer-twitter-prev{
+				  	left: 340px;
+				  	background-position: left -213px; }
+
+					
+					#footer-twitter p{ padding: 10px;}
+	
+				/*	 	</ TWITTER > 
+				*---------------------------*/	
+			
+				/*		< FB RSS> 
+				*****************************
+				******************************/	
+				
+				#footer-rss-icon{ position:relative; }
+				
+				#footer-rss-icon figure {
+				    position: absolute; left: 0; 
+				    height: 32px; width: 35px;
+				    background: url('images/layout/sprite.png') -968px -37px no-repeat; }
+				    
+				#footer-rss-icon span{ display: block; padding-left:40px; }
+				
+				#footer-newsletter{ margin-top: 10px; }
+		
+				#footer-newsletter .txt{ width: 170px; }
+				
+				#footer-newsletter button{ padding: 5px 12px; }
+				
+				/*	 	</ FB RSS > 
+				*---------------------------*/	
+			
+		/*		< CONTACT > 
+		*****************************
+		******************************/	
+		#contact-footer{ width: 280px;}
+		
+		#contact-footer header figure {
+			 background-position: -730px -171px; }	
+		
+		#contact-footer label{ 
+			clear: both; float: right;  margin-bottom: 8px;
+    	line-height: 24px; width: 70px;
+    	text-align: left; }
+    	
+
+		
+		#contact-footer .txt{
+		 float:left;
+		 margin-bottom: 8px;  width: 190px; height: 21px; }
+     
+		#contact-footer textarea {
+			clear: left; height: 70px; width: 267px;
+			padding: 5px; margin-bottom: 6px; }
+			
+		#contact-footer button{ float:right; margin-bottom: 16px;}	
+		
+		#footer-contact-detail a{
+	    display: block;
+	    float: left;
+	    height: 26px;		
+	    line-height: 26px;
+		}
+		
+		#footer-contact-detail a:hover{ color:#666; }
+		#footer-contact-detail li { margin-bottom: 5px;}
+		#footer-info{
+	 		background: url("images/layout/sprite.png") no-repeat scroll -968px -69px transparent;
+			text-indent: 27px; padding-right:5px;
+	  }
+	  
+	  #footer-tel{
+	  	float: left; margin-right: 33px;
+	 		background: url("images/layout/sprite.png") no-repeat scroll -968px -94px transparent;
+			text-indent: 27px;
+			height: 29px; line-height: 29px; }
+	  
+	  #footer-fax{
+	 		float: left;
+	 		background: url("images/layout/sprite.png") no-repeat scroll -968px -120px transparent;
+			text-indent: 27px;
+			height: 29px; line-height: 29px; }
+		
+		/*	 	</ CONTACT > 
+		*---------------------------*/		
+		
+	/*		< SPONSER > 
+	*****************************
+	******************************/	
+  #sponsers-footer header figure{
+    background-position: -730px -200px; }
+  
+	#sponsers-footer ul{ width: 908px; margin-left: 20px; margin-top: 16px;}
+   
+  #sponsers-footer ul h2{ font-size: 14px }
+  
+   #sponsers-footer ul li{
+  	margin: 0 15px;
+    width: 191px; }
+    
+	#sponsers-footer .links{ height: 75px;}
+	
+
+ 
+	/*		< GOT TOP > 
+	*****************************
+	******************************/	
+	#gotop{ 
+    position: absolute; bottom: 0; left: 873px;
+    background: url("images/layout/sprite.png") no-repeat -362px -449px transparent;
+  	height: 29px; width: 57px; }
+	
+	#gotop:hover{
+		background-position:-362px -480px;
+		height: 37px;}
+
+
+
+	/*		< COPYRIGHT > 
+	*****************************
+	******************************/	
+	#copyright{
+		position: absolute; bottom: -70px;
+		height: 70px; width: 100%;
+		background: #000; color: #999;  }
+		
+		#copyright-inner{ height: 70px; }
+		
+		#copyright-inner-left{	position: relative; width: 508px; line-height: 19px; padding-top: 16px; }
+		
+		#copyright-inner-left a{ padding: 0 3px; color: #6699cc; }		
+		
+		#copyright-inner-left a:hover{ 
+			color: #3F7EBD; border-bottom: 1px dashed #3F7EBD; 
+			padding-bottom:2px; }
+		
+		#copyright-inner-left figure,
+		#copyright-inner-right figure{ background: url('images/layout/sprite.png') no-repeat; }
+		
+		#copyright-inner-left figure{ 
+			position: absolute; left: -52px; 
+			height: 41px; width:50px;
+			background-position: -266px -544px; }
+			
+		#copyright-inner-right{  position: relative; float: right; width:208px; margin-top: 23px; }	
+		
+		#developed{ padding-left: 60px; }
+		
+		#copyright-inner-right figure{
+		   position: absolute; top: -3px; left: 139px;
+		   height: 21px; width: 70px; 
+		   background-position: -266px -487px; }
+		   
+		/*  </ COPYRIGHT >
+		*********************/	   
+	
+/*  < /FOOTER >
+*********************/		   
