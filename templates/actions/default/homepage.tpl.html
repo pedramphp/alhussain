@@ -7,13 +7,13 @@
 					We seek to accomplish this by presenting Islam from the two divinely protected sources, the Holy Quran and the Pure Ahlul Bayte of Prophet Mohammed (s).
 				</p>
 				<p>
-					Our aim is to also bring guidance to young Muslims on how to live Islam in the West and who to integrate into Western society without compromising our Islamic morals and values.
+					Our aim is to also bring guidance to young Muslims on how to live Islamically in the West and how to integrate into Western society without compromising our Islamic morals and values.
 				</p>				
 			</h1>
 		</header>
 		<section id='homepage-left'>
 			<section id='homepage-videos' class='relative'>
-				<a href='javscript:void' class='more'><figure>See all Videos<figcaption></figcaption></figure><i></i></a>
+				<a href='<!--{$applicationPath}-->video' class='more'><figure>See all Videos<figcaption></figcaption></figure><i></i></a>
 				<header class='homepage-box-header'>
 					<figure>Latest Videos</figure>
 					<i></i>
@@ -37,8 +37,8 @@
 										<figcaption class='ir'></figcaption>
 									</figure>
 								</a>
-							</li>										
-							<li class='last'>
+							</li>		
+							<li>
 								<a href='javascript:void(0)'>
 									<figure>
 										<img src='' />
@@ -52,7 +52,7 @@
 				</div>
 				<footer class='homepage-box-footer'><figure></figure></footer>
 			</section> <!-- </homepage-videos> -->
-			
+			<!--
 			<section  id='homepage-posts' class='relative'>
 				<a href='javscript:void' class='more'><figure>More Posts<figcaption></figcaption></figure><i></i></a>
 				<header class='homepage-box-header'>
@@ -95,10 +95,12 @@
 					</li>										
 				</ul>
 				<footer class='homepage-box-footer'><figure></figure></footer>
-			</section> <!-- </homepage-posts> -->
-			
+			</section> 
+			  -->
 			<section id='homepage-images' class='relative'>
-				<a href='javscript:void' class='more'><figure>See all images<figcaption></figcaption></figure><i></i></a>
+				<a href='<!--{$applicationPath}-->imageGallery' class='more'>
+					<figure>See all images<figcaption></figcaption></figure><i></i>
+				</a>
 				<header class='homepage-box-header'>
 					<figure>Latest Images</figure>
 					<i></i>
@@ -106,31 +108,17 @@
 				<div class='carousel-small carousel clearfix'>
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous image</figure></a>
 					<nav>
-						<ul class='horizontal'>
-							<li>
-								<a href='javascript:void(0)'>
+						<ul class='horizontal clearfix'>
+							<!--{foreach from=$SiteData.homepage.imageThumbs item=image}-->
+							<li <!--{if $smarty.foreach.imagelist.first}-->class=='last'<!--{/if}-->>
+								<a href='<!--{$image.original}-->' class='largeImage' rel="myImage">
 									<figure>
-										<img src='' />
+										<img src='<!--{$image.thumb}-->' width='176' height='110' />
 										<figcaption class='ir'></figcaption>
 									</figure>
 								</a>
 							</li>
-							<li>
-								<a href='javascript:void(0)'>
-									<figure>
-										<img src='' />
-										<figcaption class='ir'></figcaption>
-									</figure>
-								</a>
-							</li>										
-							<li class='last'>
-								<a href='javascript:void(0)'>
-									<figure>
-										<img src='' />
-										<figcaption class='ir'></figcaption>
-									</figure>
-								</a>
-							</li>
+							<!--{/foreach}-->
 						</ul>
 					</nav>
 					<a href='javascript:void(0)' class='next links' ><figure class='ir'>next image</figure></a>
@@ -163,7 +151,7 @@
 				</div>
 				<footer class='homepage-box-footer'><figure></figure></footer>
 			</section><!-- </donation-sidebar> -->
-			
+			<!-- 
 			<section id='vote-sidebar'>
 				<header class='homepage-box-header'>
 					<figure>Voting</figure>
@@ -173,8 +161,8 @@
 				
 				</div>
 				<footer class='homepage-box-footer'><figure></figure></footer>
-			</section><!-- </vote-sidebar> -->
-			
+			</section>
+			 -->
 			<section id='tweet-sidebar'>
 				<header class='homepage-box-header'>
 					<figure>Latest tweets</figure>
@@ -188,7 +176,7 @@
 							<a href='javascript:void(0)'>http://bit.ly./asad</a>
 						</p>
 					</section>
-					<a href='javascript:void(0)' id='tweet-sidebar-icon'>Follow us on twitter</a>
+					<a href='<!--{$SiteData.socialLinks.twitter.url}-->' title='<!--{$SiteData.socialLinks.twitter.title}-->' id='tweet-sidebar-icon'>Follow us on twitter</a>
 				</div>
 				<footer class='homepage-box-footer'><figure></figure></footer>
 			</section><!-- </tweet-sidebar> -->
@@ -198,9 +186,9 @@
 					<figure>Find us on facebook</figure>
 					<i></i>
 				</header>
-				<div>
-				
-				</div>
+				<div id='fb-container'>
+				<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FAnwar-Al-Hussain-Guidance-for-Revival%2F160722923969793&amp;width=250&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=262" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:262px;" allowTransparency="true"></iframe>
+			 </div>
 				<footer class='homepage-box-footer'><figure></figure></footer>
 			</section><!-- </facebook-sidebar> -->
 		</aside> <!-- </ homepage-sidebar > -->

@@ -243,62 +243,7 @@ html>body { font-size: 12px }
 	/*		</ MAIN NAV > 
 	*---------------------------*/
 	
-	 /*		< SLIDESHOW > 
-	 *****************************
-	 ******************************/
- 	
- 		#homepage-slider { 
- 		  margin: 38px 0;
- 			width: 952px; height: 312px; }
-		
-		.ie6 #homepage-slider { margin-bottom: 12px; }
-		
-		.carousel-slideshow ul{ margin: 6px 0 0 6px;}
-		
-		.ie6 .carousel-slideshow ul{ margin: 6px 0 0 0px;}
-		
-		.carousel-slideshow nav{
-			height: 312px; width: 862px;
-			background: url('images/layout/shadow_slider_behind.png') no-repeat; } 
-			
-		.carousel-slideshow .links{  width: 45px; height: 312px;}
-		
-		.carousel-slideshow .links figure{ position: relative; }
-		
-		.carousel-slideshow .prev{	left: 6px; }
-		
-		.carousel-slideshow .next{	left: -6px; }
-		
-		.carousel-slideshow .next figure, 
-		.carousel-slideshow .prev figure {
-    	width: 45px; height: 115px;
-  	  background: url("images/layout/sprite.png") no-repeat 0 0 transparent; }		
-		
-		.carousel-slideshow .prev figure {
-   	 background-position: -298px -115px; }
 
-		.carousel-slideshow .prev:hover figure {
-   	 	background-position: -298px top; }
-			
-		.carousel-slideshow .next figure {
-    	background-position: -348px -115px; } 	
- 	
-		.carousel-slideshow .next:hover figure {
-    	background-position: -348px top; } 	
-    	
-    .carousel-slideshow li figure{ width: 850px; height:300px; }	
-    
-    .relative #homepage-slider-shadow{
-    	position: relative; left: 52px; top: -13px; 
-    	width: 845px; height: 39px;
-    	background: url("images/layout/shadow_main_slider.png") no-repeat  transparent;  }
- 		
- 		.ie6 .relative #homepage-slider-shadow{ top: 0; }
- 		
- 		.ie6  #homepage-slider-shadow{ margin-top: -21px; }
- 	
- 	/*		</ SLIDESHOW > 
-	*---------------------------*/
 			
 /*			</ HEADER > 
 *---------------------------*/
@@ -308,7 +253,7 @@ html>body { font-size: 12px }
  *****************************
  ******************************/
  
-#main-container{ margin: 50px auto 100px auto; }
+#main-container{ margin: 50px auto; }
 
 #homepage-left{ width: 685px; float: left; margin-right: 30px; }
 

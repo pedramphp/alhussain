@@ -9,14 +9,14 @@
 					</header>
 					<nav>
 						<ul>
-							<li><a href='javascript:void(0)'><i></i>Home</a></li>
-							<li><a href='javascript:void(0)'><i></i>News</a></li>
-							<li><a href='javascript:void(0)'><i></i>Image gallery</a></li>
-							<li><a href='javascript:void(0)'><i></i>Video gallrey</a></li>
-							<li><a href='javascript:void(0)'><i></i>Events</a></li>
-							<li><a href='javascript:void(0)'><i></i>About us</a></li>
-							<li><a href='javascript:void(0)'><i></i>Blog</a></li>
-							<li><a href='javascript:void(0)'><i></i>Contact us</a></li>
+							<li><a href='<!--{$applicationPath}-->homepage'><i></i>Home</a></li>
+							<li><a href='<!--{$applicationPath}-->news'><i></i>News</a></li>
+							<li><a href='<!--{$applicationPath}-->imageGallery'><i></i>Image gallery</a></li>
+							<li><a href='<!--{$applicationPath}-->video'><i></i>Video gallrey</a></li>
+							<li><a href='<!--{$applicationPath}-->events'><i></i>Events</a></li>
+							<li><a href='<!--{$applicationPath}-->about'><i></i>About us</a></li>
+							<li><a href='<!--{$applicationPath}-->blog'><i></i>Blog</a></li>
+							<li><a href='<!--{$applicationPath}-->contact'><i></i>Contact us</a></li>
 						</ul>
 					</nav>					
 				</section><!-- </pages-footer> -->
@@ -26,14 +26,7 @@
 					</header>
 					<nav>
 						<ul>
-							<li><a href='javascript:void(0)'><i></i>home</a></li>
-							<li><a href='javascript:void(0)'><i></i>news</a></li>
-							<li><a href='javascript:void(0)'><i></i>image gallery</a></li>
-							<li><a href='javascript:void(0)'><i></i>video gallrey</a></li>
-							<li><a href='javascript:void(0)'><i></i>events</a></li>
-							<li><a href='javascript:void(0)'><i></i>about us</a></li>
-							<li><a href='javascript:void(0)'><i></i>blog</a></li>
-							<li><a href='javascript:void(0)'><i></i>contact us</a></li>
+							<li><a href='javascript:void(0)'><i></i>Nothing Found</a></li>
 						</ul>
 					</nav>					
 				</section><!-- </latest-posts-footer> -->
@@ -43,14 +36,7 @@
 					</header>
 					<nav>
 						<ul>
-							<li><a href='javascript:void(0)'><i></i>home</a></li>
-							<li><a href='javascript:void(0)'><i></i>news</a></li>
-							<li><a href='javascript:void(0)'><i></i>image gallery</a></li>
-							<li><a href='javascript:void(0)'><i></i>video gallrey</a></li>
-							<li><a href='javascript:void(0)'><i></i>events</a></li>
-							<li><a href='javascript:void(0)'><i></i>about us</a></li>
-							<li><a href='javascript:void(0)'><i></i>blog</a></li>
-							<li><a href='javascript:void(0)'><i></i>contact us</a></li>
+							<li><a href='<!--{$applicationPath}-->events'><i></i>UMAA Convention</a></li>
 						</ul>
 					</nav>					
 				</section><!-- </events-footer> -->
@@ -60,14 +46,7 @@
 					</header>
 					<nav>
 						<ul>
-							<li><a href='javascript:void(0)'><i></i>home</a></li>
-							<li><a href='javascript:void(0)'><i></i>news</a></li>
-							<li><a href='javascript:void(0)'><i></i>image gallery</a></li>
-							<li><a href='javascript:void(0)'><i></i>video gallrey</a></li>
-							<li><a href='javascript:void(0)'><i></i>events</a></li>
-							<li><a href='javascript:void(0)'><i></i>about us</a></li>
-							<li><a href='javascript:void(0)'><i></i>blog</a></li>
-							<li><a href='javascript:void(0)'><i></i>contact us</a></li>
+							<li><a href='javascript:void(0)'><i></i>Nothing Found</a></li>
 						</ul>
 					</nav>					
 				</section><!-- </favorite-footer> -->
@@ -81,38 +60,21 @@
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous books</figure></a>
 					<nav>
 						<ul class='horizontal'>
-							<li>
+							<!--{foreach from=$SiteData.books item=book name=imagelist}-->
+							<li <!--{if $smarty.foreach.imagelist.last}-->class='last'<!--{/if}-->>
+								<a href='<!--{$book.url}-->' target='_blank' class='books-shadow'>
+									<figure>
+										<img src='<!--{$book.image}-->' alt='<!--{$book.title}-->' />
+									</figure>
+								</a>
 								<dl>
-									<figure></figure>
-									<dt class='title'><a href='javascript:void(0)'>The Muslim Prayer Book</a></dt>
-									<dd class='author'>by Mohammad Ali</dd>
+
+									<dt class='title'><a href='javascript:void(0)'><!--{$book.title}--></a></dt>
+									<dd class='author'>by <!--{$book.author}--></dd>
 									<dd class='rating'></dd>
 								</dl>
 							</li>
-							<li>
-								<dl>
-									<figure></figure>
-									<dt class='title'><a href='javascript:void(0)'>The Muslim Prayer Book</a></dt>
-									<dd class='author'>by Mohammad Ali</dd>
-									<dd class='rating'></dd>
-								</dl>
-							</li>					
-							<li>
-								<dl>
-									<figure></figure>
-									<dt class='title'><a href='javascript:void(0)'>The Muslim Prayer Book</a></dt>
-									<dd class='author'>by Mohammad Ali</dd>
-									<dd class='rating'></dd>
-								</dl>
-							</li>							
-							<li class='last'>
-								<figure></figure>
-								<dl>
-									<dt class='title'><a href='javascript:void(0)'>The Muslim Prayer Book</a></dt>
-									<dd class='author'>by Mohammad Ali</dd>
-									<dd class='rating'></dd>
-								</dl>
-							</li>
+							<!--{/foreach}-->
 						</ul>
 					</nav>
 					<a href='javascript:void(0)' class='next links' ><figure class='ir'>next books</figure></a>
@@ -125,9 +87,14 @@
 						<figure>Social Networks</figure>
 					</header>			
 					<ul id='footer-fb-rss'>
+						<li id='footer-fb-icon' class='clearfix'>
+							<figure></figure>
+							<span>Join un on facebook</span>
+							<span>Share us with your friends</span>						
+						</li>
 						<li id='footer-rss-icon' class='clearfix'>
 							<figure></figure>
-							<span>Rss feed</span>
+							<span>RSS feed</span>
 							<span>Subscribe now to recieving newsletters</span>
 						</li>
 						<li id='footer-newsletter' class='clearfix'>
@@ -136,11 +103,11 @@
 						</li>
 					</ul>
 					<section id='footer-twitter' data-borderRadius='5'>
-						<a href='javascript:void(0)' id='footer-twitter-link' >Latest tweets</a>
+						<a href='<!--{$SiteData.socialLinks.twitter.url}-->' title='<!--{$SiteData.socialLinks.twitter.title}-->' id='footer-twitter-link' >Latest tweets</a>
 						<a href='javascript:void(0)' id='footer-twitter-icon' class='ir'>Alhussain Tweets</a>
 						<a href='javascript:void(0)' id='footer-twitter-next' class='ir'>Next tweet</a>
 						<a href='javascript:void(0)' id='footer-twitter-prev' class='ir'>Previous tweet</a>
-						<p>this is my fucking tweet</p>
+						<p>Twwet</p>
 					</section> <!-- </footer-twitter> -->
 					<p class='clearBoth'>You can donate to Al-Hussain TV in order to support  muslim community. Al-hussian TV mission is to make better socialize environment for all muslims by it's TV Channel and website.</p>
 					<p>Donate to Al-Hussain TV Now and support the muslim community.</p>
@@ -185,7 +152,7 @@
 						<ul class='horizontal clearfix'>
 							<li><h2>Imam Shirazi World Foundation</h2></li>
 							<li><h2>Imam Ali (A.S) Center Springfield VA</h2></li>
-							<li><h2>Prestige Productionz DC</h2></li>
+							<li><h2>Prestige. Productionz Washington DC</h2></li>
 							<li><h2>Kabob Factory Lorton VA</h2></li>
 						</ul>
 					</nav>	
@@ -200,9 +167,9 @@
 					<p itemscope>Copyright &copy; 2011 Anwar Al-Hussain TV All rights reserved. 
 						<a itemprop='url' href='javascript:void(0)'>Term of use</a>|
 						<a itemprop='url' href='javascript:void(0)'>Privacy policy</a>
-						<a itemprop='url' href='javascript:void(0)'>About Al-Hussain TV</a>|
-						<a itemprop='url' href='javascript:void(0)'>Rss Feed</a>|
-						<a itemprop='url' href='javascript:void(0)'>Contact us</a> 
+						<a itemprop='url' href='<!--{$applicationPath}-->about'>About Al-Hussain TV</a>|
+						<a itemprop='url' href='javascript:void(0)'>RSS Feed</a>|
+						<a itemprop='url' href='<!--{$applicationPath}-->contact'>Contact us</a> 
 					</p>
 				</li> 
 				<li id='copyright-inner-right'>

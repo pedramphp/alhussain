@@ -1,5 +1,7 @@
 #volunteer-intro {
 	margin-bottom: 50px;}
+
+#volunteer-intro h1{ font-size: 17px; line-height: 30px; width: 750px;}
 	
 .innerPageTitle {
 	width: 100%;
@@ -33,6 +35,11 @@
 	width: 480px;
 	margin: 0 15px 0 0;}
 	
+	#volunteer-content ul.list{
+		font-size: 17px;  }
+	
+	#volunteer-content ul.list li{ padding-left: 30px; margin-bottom: 10px }	
+		
 	#volunteer-form input.txt{
 		width: 260px;}
 		

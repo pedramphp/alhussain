@@ -16,7 +16,7 @@
 	
 	.main-footer-section header figure{
 		height: 25px; line-height: 25px;  width: 226px;
-		background: url("images/layout/sprite.png") no-repeat transfparent;
+		background: url("images/layout/sprite.png") no-repeat;
 		text-indent: 30px; font-size: 17px; font-weight: bold; }
 
 	#main-footer a{ color: #333; }	
@@ -82,7 +82,7 @@
 	#books-footer header figure{
 		background-position: -730px -115px; width: 236px; text-indent: 25px; }
 	 
-	#books-footer nav{ margin: 0 14px;  height: 120px; width: 900px; } 
+	#books-footer nav{ margin: 0 14px;  height: 125px; width: 900px; } 
 	
 	#books-footer li{ margin-right: 20px; width: 210px; position: relative; }
 	
@@ -92,17 +92,15 @@
 	
 	#books-footer dl { height: 100%; margin-left: 109px; width: 96px;  }
 		
-	#books-footer li figure{ 
-		position: absolute;  top: 0; left: 0;
+	#books-footer li a.books-shadow{ 
+		position: absolute;  top: 0; left: 0; display: block;
 		border: 1px solid #aaa; 
-		height: 100%; width: 100px;
+		height: 120px; width: 100px;
 		box-shadow: 0 2px 6px rgba(68, 68, 68, 0.6); 
 		-webkit-box-shadow: 0 2px 6px rgba(68, 68, 68, 0.6);
-	  -moz-box-shadow: 0 2px 6px rgba(68, 68, 68, 0.6); 
-	  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=2,MakeShadow=true,ShadowOpacity=0.30);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=2,MakeShadow=true,ShadowOpacity=0.30)"; }
+	  -moz-box-shadow: 0 2px 6px rgba(68, 68, 68, 0.6);  }
 	
-	#books-footer .title a{ color: #678cb2; }
+	#books-footer .title a{ color: #678cb2; font-size: 12px; }
 	
 	#books-footer .title a:hover{ color: #3560B5;}
 	
@@ -205,15 +203,24 @@
 				/*		< FB RSS> 
 				*****************************
 				******************************/	
+				#footer-fb-rss li{ margin-bottom: 17px;}
 				
-				#footer-rss-icon{ position:relative; }
+				#footer-fb-icon,#footer-rss-icon{ position:relative; }
 				
+				#footer-fb-icon figure,
 				#footer-rss-icon figure {
 				    position: absolute; left: 0; 
 				    height: 32px; width: 35px;
-				    background: url('images/layout/sprite.png') -968px -37px no-repeat; }
+				    background: url('images/layout/sprite.png') -968px top no-repeat; }
 				    
-				#footer-rss-icon span{ display: block; padding-left:40px; }
+				#footer-fb-icon span{ display: block; padding-left:40px; }
+			
+				#footer-rss-icon span,#footer-fb-icon span{ display: block; padding-left:40px; }
+				
+				#footer-rss-icon figure {
+				   background-position: -968px -37px; }
+				    
+				
 				
 				#footer-newsletter{ margin-top: 10px; }
 		

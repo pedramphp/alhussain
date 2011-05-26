@@ -79,6 +79,71 @@
 	    font-size: 17px; text-indent: 38px; }
 
 
+	 /*		< SLIDESHOW > 
+	 *****************************
+	 ******************************/
+ 	
+ 		#homepage-slider { 
+ 		  margin: 38px 0;
+ 			width: 952px; height: 312px; }
+		
+		.ie6 #homepage-slider { margin-bottom: 12px; }
+		
+		.carousel-slideshow ul{ margin: 6px 0 0 6px;}
+		
+		.ie6 .carousel-slideshow ul{ margin: 6px 0 0 0px;}
+		
+		.carousel-slideshow nav{
+			height: 312px; width: 862px; } 
+		
+		.carousel-slideshow #slider-shadow{
+ 			position: absolute; left: -4px; top: -4px; z-index: 400;
+	    height: 312px; width: 862px;
+	    background: url("images/layout/shadow_slider_behind.png") no-repeat transparent; }
+			
+		.carousel-slideshow .links{  width: 45px; height: 312px;}
+		
+		.carousel-slideshow .links figure{ position: relative; }
+		
+		.carousel-slideshow .prev{	left: 6px; }
+		
+		.carousel-slideshow .next{	left: -6px; }
+		
+		.carousel-slideshow .next figure, 
+		.carousel-slideshow .prev figure {
+    	width: 45px; height: 115px;
+  	  background: url("images/layout/sprite.png") no-repeat 0 0 transparent; }		
+		
+		.carousel-slideshow .prev figure {
+   	 background-position: -298px -115px; }
+
+		.carousel-slideshow .prev:hover figure {
+   	 	background-position: -298px top; }
+			
+		.carousel-slideshow .next figure {
+    	background-position: -348px -115px; } 	
+ 	
+		.carousel-slideshow .next:hover figure {
+    	background-position: -348px top; } 	
+    	
+    .carousel-slideshow li figure,.carousel-slideshow li, .carousel-slideshow li a{ 
+    		width: 850px; height:300px; display: block; cursor: pointer; }	
+    
+    .relative #homepage-slider-shadow{
+    	position: relative; left: 52px; top: -13px; 
+    	width: 845px; height: 39px;
+    	background: url("images/layout/shadow_main_slider.png") no-repeat  transparent;  }
+ 		
+ 		.ie6 .relative #homepage-slider-shadow{ top: 0; }
+ 		
+ 		.ie6  #homepage-slider-shadow{ margin-top: -21px; }
+ 		
+ 		
+
+ 	
+ 	/*		</ SLIDESHOW > 
+	*---------------------------*/
+
 	/*			< HADITH > 
 	*****************************
 	******************************/
@@ -139,14 +204,14 @@
 	
 	#welcome-note h1 b{ font-size: 18px; }
 	
-	#homepage-left section{ margin-bottom: 20px; }
+	#homepage-left section{ margin-bottom: 50px; }
 	
 	#homepage-left  .homepage-box-header,
 	#homepage-left  .homepage-box-footer{ width: 679px; }
 	
 	#homepage-left  .carousel{ margin: 21px 19px 32px; }
 	
-	#homepage-left .carousel nav{ margin: 0 14px;  height: 120px; width: 579px } 
+	#homepage-left .carousel nav{ margin-right: 14px;  height: 130px; width: 579px; display:block; } 
 	
 	#homepage-left .carousel li{ 
 		margin-right: 20px; }
@@ -155,7 +220,9 @@
 	
 	#homepage-left .carousel .links{ height: 120px;}
 	
-	#homepage-left .carousel a{ display:block; }
+	#homepage-left .carousel a{ display: block; }
+	
+	#homepage-left .carousel .prev{ margin-right: 14px; }
 	
 	#homepage-left .carousel figure{ position: relative; }
 	
@@ -210,6 +277,7 @@
 			position: absolute; top: 113px;
 	    height: 13px; 
 	    background-position: left -245px;}
+	    
 		
 		/*	 </ VIDEOS > 
 		*---------------------------*/	 	
@@ -276,7 +344,7 @@
 	
 	#homepage-sidebar{ width: 265px; float: left; }
 	
-	#homepage-sidebar section{ margin-bottom: 20px; }
+	#homepage-sidebar section{ margin-bottom: 50px; }
 	
 	#homepage-sidebar .homepage-box-header{ width: 259px;  }
 	
@@ -369,7 +437,9 @@
 		/*		< FACEBOOK > 
 		*****************************
 		******************************/
-		 
+		#facebook-sidebar #fb-container{ height: 271px;
+    margin-left: 8px;
+    margin-top: 15px;} 
 		#facebook-sidebar .homepage-box-header figure{ background-position: -459px  -53px; }
 	
 		/*	 </ FACEBOOK > 

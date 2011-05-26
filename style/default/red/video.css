@@ -2,8 +2,9 @@
 	width: 885px;
 	margin: 0 auto;}
 
-h2 {font-size: 24px}
+#video-page h2 {font-size: 24px; margin-top: 81px; }
 
+#video-page p{ font-size: 14px; width: 750px; line-height: 20px; }
 
 #video-player-frame {
 	width: 883px; height: 455px;

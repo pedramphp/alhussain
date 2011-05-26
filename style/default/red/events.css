@@ -50,11 +50,11 @@
 				font-size: 14px }
 				
 				#events-box address span {
-					float: right;
-					font-size: 18px}
+					float: right; padding-top: 11px;
+					font-size: 18px; }
 					
 				#events-box address nav {
-					float: left;}
+					float: left; margin-top: 11px; }
 					
 					#events-box address nav a {
 						float: left;
@@ -75,3 +75,9 @@
 		position: absolute; bottom: -8px;
 		width: 810px; height: 8px;
 		background: url('images/events/bg_events_box_bottom.png') no-repeat transparent }
+		
+	#events-box aside {float:left; width:350px }
+	
+	#events-box aside h1{font-size:17px; margin-bottom: 10px }
+	
+	#events-box aside li{margin-bottom: 10px; font-size: 12px; }

@@ -68,7 +68,7 @@ a:link { -webkit-tap-highlight-color: #A80C6A; }
 /*   VISIBILITY
 =================*/
 
-.hide { display: none !important;}
+.hide { display: none;}
 
 .show { display: block !important; }
 .showInline { display: inline !important; }
@@ -348,6 +348,7 @@ a:link { -webkit-tap-highlight-color: #A80C6A; }
 	  *****************************
 	  ******************************/  	   
 		/*.carousel{ width: 100%; }*/
+		.carousel nav{ position:relative;  overflow:hidden; }
 		
 		.carousel nav, .carousel .links{ float:left; }
 		
@@ -359,7 +360,7 @@ a:link { -webkit-tap-highlight-color: #A80C6A; }
 		.carousel .prev figure{ 
 			background: url('images/layout/sprite.png') no-repeat transparent; }
 		
-		.carousel ul{ height: 100%; width: 100%;  }
+		.carousel ul{ height: 100%; width: 100%; position: relative; overflow:hidden;  }
 		
 		.carousel li{ height: 100%; }
 		

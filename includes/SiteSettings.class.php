@@ -55,17 +55,20 @@ class SiteSettings {
 																							'plugins/borderRadius.js',
 																							'plugins/gotop.js',
 																							'plugins/jquery.ba-bbq.min.js',
+																							'plugins/lazyload.js',
 																							'plugins/plugins.js'));
 		
-		if( LiteFrame::GetAction() == "image"){
+		if( LiteFrame::GetAction() == "image" || LiteFrame::GetAction() == "homepage"){
 				
 			LiteFrame::IncludeLibraryJavascript('plugins/colorbox/jquery.colorbox-min.js');			
 			LiteFrame::IncludeLibraryStyle('plugins/colorbox/colorbox.css');			
 			
 		}
 		
+		if( LiteFrame::GetAction() == "homepage"){
+			LiteFrame::IncludeLibraryJavascript('plugins/niceZoom.js','plugins/jquery.cycle.lite.min.js','plugins/jquery.carousel.js');
+		}
 		LiteFrame::IncludeJavascript('default.js');
-		LiteFrame::IncludeJavascript('homepage.js');
 		
 		/*LiteFrame::IncludeLibraryJavascript('plugins/jquery.gotop.js');
 		if( SiteHelper::GetAction() === 'tools' ){

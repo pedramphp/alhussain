@@ -26,7 +26,7 @@
 				"categoryName"	=> "Illumaination from the Qur'an",
 				"size" => 10,
 				"images" => array($imageUrl."IMG_1202.jpg",
-										$imageUrl."IMG_2748.jpg",
+										$imageUrl."IMG_1215.jpg",
 										$imageUrl."IMG_1230.jpg",
 										$imageUrl."IMG_1253.jpg")
 			);

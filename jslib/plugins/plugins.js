@@ -21,30 +21,3 @@ window.log = function(){
 		});
 	}
 })(jQuery);
-
-$(document).ready(function(){
-//we need to make sure that the image is loaded	
-	$('#logo').css('top','-125px').removeClass('invisible').animate({top:12},1000,function(){
-		$(this).animate({top:-12},300,function(){
-			$(this).animate({top:0},300);
-		});
-	});
-	
-	$('[data-borderradius]').css('borderRadius',function(){
-		return $(this).data("borderradius");
-	});
-	
-	$('#links-footer a').css('borderRadius',3);
-	
-	$('.al-rotate').hover(function(){
-		$(this).css('rotate','-3deg');
-	},function(){
-		$(this).css('rotate',0);
-	});
-	
-	
-	$('.prev figure,.next figure').valign();
-	
-	$('.text,textarea').val("")
-	
-});
