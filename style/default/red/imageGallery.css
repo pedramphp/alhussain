@@ -6,6 +6,7 @@
 		
 	.image-category li a {
 		float: left;
+		display: block;
 		position: relative;
 		padding: 15px 15px 0 15px;
 		width: 435px;
