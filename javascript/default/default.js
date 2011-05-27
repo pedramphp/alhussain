@@ -27,6 +27,13 @@ $(document).ready(function(){
 		$(this).parents('form').submit();
 	});
 	
+	$('#books-footer ul').carousel({
+		prev: '#books-footer .prev',
+		next: '#books-footer .next',
+		time: 800
+	});			
+	
+	
 	
 	//sponser header
 	var sponsers = "Imam Shirazi World Foundation, Imam Ali (A.S) Center Springfield VA,Prestige. Productionz Washington DC,Kabob Factory Lorton VA".split(",");

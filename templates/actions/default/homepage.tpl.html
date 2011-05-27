@@ -22,30 +22,16 @@
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous video</figure></a>
 					<nav>
 						<ul class='horizontal'>
+							<!--{foreach from=$SiteData.homepage.videoThumbs item=video name='videolist'}-->
 							<li>
-								<a href='javascript:void(0)'>
+								<a href='<!--{$video.original}-->'>
 									<figure>
-										<img src='' />
+										<img src='<!--{$video.thumb}-->' />
 										<figcaption class='ir'></figcaption>
 									</figure>
 								</a>
-							</li>
-							<li>
-								<a href='javascript:void(0)'>
-									<figure>
-										<img src='' />
-										<figcaption class='ir'></figcaption>
-									</figure>
-								</a>
-							</li>		
-							<li>
-								<a href='javascript:void(0)'>
-									<figure>
-										<img src='' />
-										<figcaption class='ir'></figcaption>
-									</figure>
-								</a>
-							</li>
+							</li>							
+							<!--{/foreach}-->
 						</ul>
 					</nav>
 					<a href='javascript:void(0)' class='next links' ><figure class='ir'>next video</figure></a>
@@ -109,7 +95,7 @@
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous image</figure></a>
 					<nav>
 						<ul class='horizontal clearfix'>
-							<!--{foreach from=$SiteData.homepage.imageThumbs item=image}-->
+							<!--{foreach from=$SiteData.homepage.imageThumbs item=image name='imagelist'}-->
 							<li <!--{if $smarty.foreach.imagelist.first}-->class=='last'<!--{/if}-->>
 								<a href='<!--{$image.original}-->' class='largeImage' rel="myImage">
 									<figure>

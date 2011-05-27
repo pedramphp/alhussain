@@ -1,0 +1,419 @@
+/* 
+  :: Css3designer.com Rules Stylesheet
+  :: Author:  Mahdi Pedram ( Osiris ) - http://www.mahdipedram.com
+  :: Twitter: @pedramphp
+  :: Version: 1.0 - May 2011
+
+
+  DIRECTORY
+  ==============  
+  - ADJUSTMENTS ( coloring, ::selection )
+  - CLEAR FIX
+  - VISIBILITY
+  - HELPER CLASSES
+    - IMAGE REPLACEMENT
+    - TRANSPARENCY
+    - ROUNDED CORNER
+    - HORIZONTAL UNORDER LIST
+    - BOX SHADOW
+    - OTHER
+    - ARROW
+*/
+
+
+/*   ADJUSTMENTS
+=================*/
+
+body, select, input, textarea { color:#444; }
+
+hr { border-top:1px solid #cccccc; }
+
+ins { background-color: #ff9; color: #000; }
+
+mark {
+  background-color: #ff9; color:#000; 
+  font-style: italic; font-weight:  bold; }
+
+strong, th { font-weight: bold; }
+
+/* These selection declarations have to be separate. */
+/* you can copy this to your default css file
+::-moz-selection{ background: #A80C6A; color:#FFF; text-shadow: none; }
+::selection {     background: #A80C6A;  color:#FFF; text-shadow: none; } 
+*/
+
+a:link { -webkit-tap-highlight-color: #A80C6A; }
+
+.js #jsnotice { display: none; }
+
+.no-js #jsnotice { display: block; }
+
+
+/*   CLEAR FIX
+===============*/
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.
+   j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+
+.clearfix:after { clear: both; }
+
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+	
+.relative{ position: relative; }
+
+
+/*   VISIBILITY
+=================*/
+
+.hide { display: none;}
+
+.show { display: block !important; }
+.showInline { display: inline !important; }
+
+/* Hide for both screenreaders and browsers */
+.hidden { display:none; visibility: hidden; } 
+
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+
+/* Hide only visually, but have it available for screenreaders */
+.visuallyhidden { 
+  position: absolute !important;    
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+.hideText { text-indent:-9999px; }
+
+
+/*  HELPER CLASSES			
+======================*/
+
+
+  /*  IMAGE REPLACEMENT			
+  -------------------------*/
+	
+  .ir { 
+    /* Layout */
+    display: block; overflow:hidden;   
+    
+    /* Text */
+    background-repeat: no-repeat;
+    direction: ltr;  
+    text-indent: -999em; text-align: left; }
+
+
+
+  /*  TRANSPARENCY
+  ----------------------*/
+	
+  .transparentFifty {
+    -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter:         alpha(opacity = 50);
+    -moz-opacity:   0.5;
+    -khtml-opacity: 0.5;
+    opacity:        0.5; }
+	
+  .transparentSeventy {
+    -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter:         alpha(opacity = 70);
+    -moz-opacity:   0.7;
+    -khtml-opacity: 0.7;
+    opacity:        0.7; }
+	
+  .transparentNinty {
+    -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter:         alpha(opacity = 90);
+    -moz-opacity:   0.9;
+    -khtml-opacity: 0.9;
+    opacity:        0.9; }
+
+
+
+  /*  ROUNDED CORNER   
+  -----------------------*/
+  
+  .roundedCorner {
+	  -moz-border-radius:    10px;
+	  border-radius:         10px;
+	  -webkit-border-radius: 10px; }
+
+  .miniRoundedCorner {
+	  -moz-border-radius:    5px;
+	  border-radius:         5px;
+	  -webkit-border-radius: 5px; }
+
+  .roundedCornerTop, .roundedCornerTop-ul a{
+      -moz-border-radius-topright:     10px;
+      -moz-border-radius-topleft:      10px;
+      border-top-left-radius:         10px;
+      border-top-right-radius:        10px;
+      -webkit-border-top-left-radius:  10px; 
+      -webkit-border-top-right-radius: 10px; }
+ 
+  .roundedCornerRight {
+      -moz-border-radius-topright:    10px;
+      -moz-border-radius-bottomright: 10px;
+      border-bottom-right-radius:     10px;
+      border-top-right-radius:        10px;
+      -webkit-border-bottom-right-radius: 10px; 
+      -webkit-border-top-right-radius:10px; }
+
+  .miniRoundedCornerLeft {
+      -moz-border-radius-topleft:    5px;
+      -moz-border-radius-bottomleft: 5px;
+      border-bottom-left-radius:     5px;
+      border-top-left-radius:        5px;
+      -webkit-border-bottom-left-radius:5px; 
+      -webkit-border-top-left-radius: 5px; }
+	
+  /*  HORIZONTAL UNORDER LIST   
+  ----------------------------*/
+	
+  ul.horizontal { display: block; }
+	
+  ul.horizontal li { display: block; float: left; }
+
+  nav.horizontal ul { display: block; }
+	
+  nav.horizontal li { display: block; float: left; }
+
+
+
+  /*  BOX SHADOW   
+  --------------------------*/
+
+  .boxShadowWhiteFifty {
+    -webkit-box-shadow: 0 0 50px #fff;
+    -moz-box-shadow:    0 0 50px #fff;
+    box-shadow:         0 0 50px #fff; }
+
+  .boxShadowWhiteTwenty {
+    -webkit-box-shadow: 0 0 20px #fff;
+    -moz-box-shadow:    0 0 20px #fff;
+    box-shadow:         0 0 20px #fff; }
+
+	  
+	  .boxShadowWhiteFive {
+    -webkit-box-shadow: 0 0 5px #fff;
+    -moz-box-shadow:    0 0 5px #fff;
+    box-shadow:         0 0 5px #fff; }  
+
+  /*  ARROW  ( Triangle )
+  --------------------------*/	  
+  .arrow-right{
+    /* 
+     * set border-left-color
+     * set border-left-width = border-top-width * 2
+     * set border-top-width, border-bottom-height equal
+     */
+    display: block;
+    width: 0; height: 0;
+  	border-width: 30px 0 30px 60px;
+		border-color: transparent transparent transparent #ccc;
+    border-style: solid; }
+	
+	
+  .arrow-left{
+    /* 
+     * set border-right-color
+     * set border-right-width = border-top-width * 2
+     * set border-top-width, border-bottom-height equal
+     */
+    display: block;
+		width: 0; height: 0;
+    border-width: 30px 60px 30px 0;
+		border-color: transparent #ccc transparent transparent;
+    border-style: solid; }
+  
+  
+  .arrow-up{
+    /* 
+     * set border-bottom-color
+     * set border-bottom-width = border-left-width * 2
+     * set border-left-width, border-left-height equal
+     */
+    display: block;
+		width: 0; height: 0;
+  	border-width: 0 30px 60px 30px ;	
+    border-color: transparent transparent #ccc transparent;
+    border-style: solid; }
+
+
+  .arrow-down{
+    /* 
+     * set border-top-color
+     * set border-top-width = border-left-width * 2
+     * set border-left-width, border-left-height equal
+     */
+    display: block;
+		width: 0; height: 0;
+		border-width: 60px 30px 0 30px ;
+    border-color: #ccc transparent transparent transparent;
+    border-style: solid; }
+	  
+
+
+
+  /*  OTHER			
+  -------------------------*/
+
+  .floatLeft { float: left; }
+  
+  .floatRight { float: right; }
+  
+  .alignLeft { text-align: left; }
+  
+  .alignRight { text-align: right; }
+  
+  .alignCenter { text-align: center; }
+  
+  .halfWidth { width: 50%; }
+  
+  .capitalize { text-transform: capitalize; }
+
+  .blockBox { display: block; }
+  
+  .clearBoth { clear: both; }
+    
+  /* bicubic resizing for non-native sized IMG: */
+  .ie7 img { -ms-interpolation-mode: bicubic; }
+  
+   /* used on radio buttons and checkboxes to stop being sized as 100px wide in my input styles */
+  .nosize { width: auto; border: 0; }
+  
+  
+  /*	< CUSTOM RULES > 
+  *****************************
+  ******************************/
+  input[type=text]{
+		 height: 24px ; line-height: 24px; }
+		 
+	input[type=text],
+	textarea{
+		 padding: 0 3px; border: 1px solid #ccc;
+		 -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;
+	   font-size: 12px; text-shadow: 1px 0 0 rgba(0, 0, 0, 0.3) }
+	   
+	input.txt, textarea {
+	    border: 1px solid #CCCCCC;
+	    color: #666666;
+	    font: 13px Arial;
+	    padding: 3px 5px; }
+
+	textarea { 
+		resize: vertical}
+	
+	input.txt:hover, textarea:hover {
+		border: 1px solid #999; }
+
+	input.txt:focus, textarea:focus {
+		background-color: #f7f7f7;
+		border: 1px solid #bbb;
+		-moz-box-shadow: 0 0 5px #ccc;
+		-webkit-box-shadow: 0 0 5px #ccc;
+		box-shadow: 0 0 5px #ccc;}
+		
+	
+	a.button, button, select {
+		display: inline-block;
+		padding: 4px 12px; 
+		border: 1px solid #b9b9b9;  -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;    
+		background: #eee; color: #666;
+		background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f5f5f5), to(#dddddd));
+		background: -moz-linear-gradient(#f5f5f5, #dddddd);
+		background: linear-gradient(#f5f5f5, #dddddd);
+		font-size: 14px;  line-height: 21px;
+		text-decoration: none;
+		cursor: pointer; }
+		
+	a.button:hover, button:hover{
+		background: -webkit-gradient(linear, 0 0, 0 bottom, from(#dddddd), to(#f5f5f5));
+		background: -moz-linear-gradient(#dddddd, #f5f5f5);
+		background: linear-gradient(#dddddd, #f5f5f5);
+		border-color: #bbb;
+		color: #222;}
+
+	a.button:active, button:active, select:active {
+		background: -webkit-gradient(linear, 0 0, 0 bottom, from(#dddddd), to(#f5f5f5));
+		background: -moz-linear-gradient(#ccc, #ebebeb);
+		background: linear-gradient(#dddddd, #f5f5f5);
+		border-color: #bbb;}   
+	   
+	  /*	< CAROUSEL > 
+	  *****************************
+	  ******************************/  	   
+		/*.carousel{ width: 100%; }*/
+		.carousel nav{ position:relative;  overflow:hidden; }
+		
+		.carousel nav, .carousel .links{ float:left; }
+		
+		.carousel .links{ display: block; }
+		
+		.carousel .links figure{ display: none; }
+			
+		.carousel .next figure,
+		.carousel .prev figure{ 
+			background: url('images/layout/sprite.png') no-repeat transparent; }
+		
+		.carousel ul{ height: 100%; width: 100%; position: relative; overflow:hidden;  }
+		
+		.carousel li{ height: 100%; }
+		
+			  /*	< CAROUSEL SMALL > 
+		  *****************************
+		  ******************************/  				
+			.carousel-small .links{ width: 17px; }
+			
+			.carousel-small .next figure,
+			.carousel-small .prev figure{ height: 34px; width: 17px; }
+			
+			.carousel-small .prev figure{
+				background-position: -398px -163px; }
+			
+			.carousel-small .next figure{
+				background-position: -420px -163px; }
+			
+			.carousel-small .prev:hover figure{
+				background-position: -398px -201px }
+			
+			.carousel-small .next:hover figure{
+				background-position: -420px -201px; }	
+				
+		  /*	 </ CAROUSEL SMALL > 
+		  *---------------------------*/	
+		
+		
+			/*	< CAROUSEL BIG > 
+		  *****************************
+		  ******************************/ 
+			.carousel-big .links{ width: 26px; }
+			
+			.carousel-big .next figure,
+			.carousel-big .prev figure{ height: 50px; width: 26px; }
+			
+			.carousel-big .prev figure{
+				background-position: -398px top; }
+			
+			.carousel-big .next figure{
+				background-position: -427px top; }
+			
+			.carousel-big .prev:hover figure{
+				background-position: -398px -54px; }
+			
+			.carousel-big .next:hover figure{
+				background-position: -427px -54px; }	  
+				 
+		  /*	 </ CAROUSEL BIG > 
+		  *---------------------------*/				
+			
+			
+	  /*	 </ CAROUSEL > 
+	  *---------------------------*/	   
+  
+  /*	 </ CUSTOM RULES > 
+  *---------------------------*/

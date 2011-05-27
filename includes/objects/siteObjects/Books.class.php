@@ -14,28 +14,34 @@
 			
 			$this->results = array(
 				array(
-					"title" 	=> "Fatemeh Shariati" ,
-					"author"	=> "Dr Ali Shariati",
-					"url"			=>	$booksPath . "Fatemeh-Shariati.pdf",
-					"image"		=>	$imagePath . "fatemeh-ali-shariati.jpg"
+					"title" 	=> "If Islam were to be established" ,
+					"author"	=> "Imam Muhammad Shirazi",
+					"url"			=>	$booksPath . "if islam were to be.pdf",
+					"image"		=>	$imagePath . "a.jpg"
 				),
 				array(
-					"title" 	=> "Ghadir Al Khom" ,
-					"author"	=> "Dr Ali Shariati",
-					"url"			=>	$booksPath . "ghadir khom.pdf",
-					"image"		=>	$imagePath . "khatebe-alghadir.jpg"
+					"title" 	=> "Islamic Law - Acts of Worship" ,
+					"author"	=> "Grand Ayatollah - Sayyid Sadiq Husayni Shirazi",
+					"url"			=>	$booksPath . "part-one.pdf",
+					"image"		=>	$imagePath . "b.jpg"
 				),
 				array(
-					"title" 	=> "Haji" ,
-					"author"	=> "Dr Ali Shariati",
-					"url"			=>	$booksPath . "HajjAliSariati.pdf",
-					"image"		=>	$imagePath . "hajj-ali-shariati.jpg"
+					"title" 	=> "The Prophet Muhammad A Mercy to the World" ,
+					"author"	=> "Imam Muhammad Shirazi",
+					"url"			=>	$booksPath . "mercy to the world.pdf",
+					"image"		=>	$imagePath . "c.jpg"
 				),
 				array(
-					"title" 	=> "Analysis of Haj" ,
-					"author"	=> "Dr Ali Shariati",
-					"url"			=>	$booksPath . "tahlili bar manasek haj.pdf",
-					"image"		=>	$imagePath . "tahlili-az-manasek-haj-m.bagher-ansari.jpg"
+					"title" 	=> "The Qur'an made simple" ,
+					"author"	=> "Imam Muhammad Shirazi",
+					"url"			=>	$booksPath . "Qms28-30.pdf",
+					"image"		=>	$imagePath . "d.jpg"
+				),
+				array(
+					"title" 	=> "The Shi'a and their Beliefs" ,
+					"author"	=> "Imam Muhammad Shirazi",
+					"url"			=>	$booksPath . "shiism and the shia.pdf",
+					"image"		=>	$imagePath . "e.jpg"
 				)
 			);
 			

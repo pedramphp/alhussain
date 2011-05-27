@@ -1,0 +1,449 @@
+/* 
+  :: Css3designer.com Main Stylesheet
+  :: style.css Cascading Style Sheet
+  :: ------------------------------------------------------------------
+  :: Author:  Mexo.co - http://www.mexo.co
+  :: Twitter: @mexo_team
+  :: Email:   coder@mexo.co 
+  :: Version: 1.0 - DEC 2011
+  :: Copyright: 2011 http://AlHussainTV.com - All rights reserved.
+  :: ------------------------------------------------------------------
+  :: We personally found this type of styling the Most Human Readeable one
+  :: No Doubt 
+
+
+  HACK DIRECTORY
+  ==============	
+  % box model hack
+  $ targets safari
+  & clearfix hack
+  ? targets IE
+  ! temporary
+	
+		
+	em values -    Formula : 0.625 * pixel = em 
+  =============================================    
+    10px - 1 em
+	
+	
+  COLORS HERLPER
+  ==============
+  #eee    - lighter gray
+  #ccc    - soft gray
+  #666    - medium gray
+  #333    - dark gray
+  #8B8B8B - light gray
+  #FAAF5E - Orange
+  #6396E7 - Blue
+  #1C69E4 - Blue
+  #2F72F9 - Blue
+  #b00b00 - Red
+  #de1e7e - Purple
+  #e1e100 - yellow
+  #BADA55 - light green
+  #F0FEAF - light yellow
+  #ac1d1c - blur red
+  #facade - light pink 
+  
+*/  	
+	.homepage-box-header,
+	.homepage-box-footer{  
+			position:relative; 
+			background: url('images/layout/sprite.png') }
+			
+	.homepage-box-header{		
+			height: 42px;
+			background-position: left -348px; }
+			
+	.homepage-box-footer{
+			height: 25px;
+			background-position: left -395px; }		
+	
+	.homepage-box-header i,
+	.homepage-box-footer figure{
+	  	position: absolute;  right: -6px; top: 0;
+		  width: 6px;
+		  background: url("images/layout/horizontal_sprite.png") no-repeat transparent; }
+		  
+	.homepage-box-header i{ 
+			height: 42px;  background-position: right -106px; }
+	    
+	    
+	.homepage-box-footer figure{ height: 25px; background-position: right -153px; }
+	
+	/* this is header icon - don't get confused */
+	.homepage-box-header figure{
+			position: absolute; left: 12px;  top: 9px;
+			width: 196px; height: 25px;
+			color: #fff; background-position: right -106px;
+	    font-size: 17px; text-indent: 38px; }
+
+
+	 /*		< SLIDESHOW > 
+	 *****************************
+	 ******************************/
+ 	
+ 		#homepage-slider { 
+ 		  margin: 38px 0;
+ 			width: 952px; height: 312px; }
+		
+		.ie6 #homepage-slider { margin-bottom: 12px; }
+		
+		.carousel-slideshow ul{ margin: 6px 0 0 6px;}
+		
+		.ie6 .carousel-slideshow ul{ margin: 6px 0 0 0px;}
+		
+		.carousel-slideshow nav{
+			height: 312px; width: 862px; } 
+		
+		.carousel-slideshow #slider-shadow{
+ 			position: absolute; left: -4px; top: -4px; z-index: 400;
+	    height: 312px; width: 862px;
+	    background: url("images/layout/shadow_slider_behind.png") no-repeat transparent; }
+			
+		.carousel-slideshow .links{  width: 45px; height: 312px;}
+		
+		.carousel-slideshow .links figure{ position: relative; }
+		
+		.carousel-slideshow .prev{	left: 6px; }
+		
+		.carousel-slideshow .next{	left: -6px; }
+		
+		.carousel-slideshow .next figure, 
+		.carousel-slideshow .prev figure {
+    	width: 45px; height: 115px;
+  	  background: url("images/layout/sprite.png") no-repeat 0 0 transparent; }		
+		
+		.carousel-slideshow .prev figure {
+   	 background-position: -298px -115px; }
+
+		.carousel-slideshow .prev:hover figure {
+   	 	background-position: -298px top; }
+			
+		.carousel-slideshow .next figure {
+    	background-position: -348px -115px; } 	
+ 	
+		.carousel-slideshow .next:hover figure {
+    	background-position: -348px top; } 	
+    	
+    .carousel-slideshow li figure,.carousel-slideshow li, .carousel-slideshow li a{ 
+    		width: 850px; height:300px; display: block; cursor: pointer; }	
+    
+    .relative #homepage-slider-shadow{
+    	position: relative; left: 52px; top: -13px; 
+    	width: 845px; height: 39px;
+    	background: url("images/layout/shadow_main_slider.png") no-repeat  transparent;  }
+ 		
+ 		.ie6 .relative #homepage-slider-shadow{ top: 0; }
+ 		
+ 		.ie6  #homepage-slider-shadow{ margin-top: -21px; }
+ 		
+ 		
+
+ 	
+ 	/*		</ SLIDESHOW > 
+	*---------------------------*/
+
+	/*			< HADITH > 
+	*****************************
+	******************************/
+	#homepage-hadith{	height: 110px; }
+	
+	#homepage-hadith figure,
+	#homepage-hadith blockquote,
+	#homepage-hadith i.left,
+	#homepage-hadith i.right{
+		display: block; float:left;}
+		
+	#homepage-hadith figure,
+	#homepage-hadith i.left,
+	#homepage-hadith i.right {
+		background: url("images/layout/sprite.png") no-repeat transparent; }
+		
+	#homepage-hadith i.left,
+	#homepage-hadith i.right{
+		margin-top: 11px; 
+		height: 45px; width: 53px;} 	
+	
+	#homepage-hadith blockquote{
+		margin: 14px; color: #A2A2A2;
+		width: 600px;
+    font-size: 17px; word-wrap: break-word; }
+	
+	#homepage-hadith figure{ 
+		margin-top: 29px; 
+		height: 45px; width: 135px;
+		background-position: -424px -451px; }
+
+	#homepage-hadith i.left{ background-position: -424px -502px; }
+	
+	#homepage-hadith i.right{ background-position: -474px -496px; margin-top: 49px; }
+	
+	
+	/*			</ HADITH > 
+	*---------------------------*/		
+
+	/*		< HOMEPAGE LEFT > 
+	*****************************
+	******************************/
+	#welcome-note{
+		margin-bottom: 40px;
+		border: 1px solid #d0d0d0; 
+		background: #f5f5f5;
+		-moz-border-radius: 5px; 
+		-webkit-border-radius: 5px; 
+		border-radius: 5px; 
+		-moz-box-shadow: 0 0 3px #888; 
+		-webkit-box-shadow: 0 0 3px #888; 
+		box-shadow: 0 0 3px #888;}
+	
+	#welcome-note h1{
+		padding:20px;   
+    font-size: 13px; line-height: 25px; 
+		word-wrap: break-word; }
+	
+	#welcome-note h1 b{ font-size: 18px; }
+	
+	#homepage-left section{ margin-bottom: 50px; }
+	
+	#homepage-left  .homepage-box-header,
+	#homepage-left  .homepage-box-footer{ width: 679px; }
+	
+	#homepage-left  .carousel{ margin: 21px 19px 32px; }
+	
+	#homepage-left .carousel nav{ margin-right: 14px;  height: 130px; width: 579px; display:block; } 
+	
+	#homepage-left .carousel li{ 
+		margin-right: 20px; }
+		
+	#homepage-left .carousel .last{ margin-right:0 }
+	
+	#homepage-left .carousel .links{ height: 120px;}
+	
+	#homepage-left .carousel a{ display: block; }
+	
+	#homepage-left .carousel .prev{ margin-right: 14px; }
+	
+	#homepage-left .carousel figure{ position: relative; }
+	
+	#homepage-left .carousel figcaption{ 
+		position: absolute; left: 0; 
+		width: 165px; 
+    background: url("images/layout/sprite.png") no-repeat;}
+    
+    	
+	#homepage-left .more,
+	#homepage-left .more i,
+	#homepage-left .more figcaption{ position: absolute;  }
+	
+	#homepage-left .more,
+	#homepage-left .more i{ height: 25px;  }
+	
+	#homepage-left .more, 
+	#homepage-left .more figcaption{
+	  background: url("images/layout/sprite.png") no-repeat; }
+	 
+	#homepage-left .more{ 
+		bottom: 15px; right: 17px; z-index: 2;
+		display: block;  padding: 0 28px 0 5px;
+		line-height: 25px;
+		color: #000; background-position: left  -288px; }   
+
+	#homepage-left .more i{ 
+   	right: -6px; top: 0; 
+   	width:6px;
+   	background: url("images/layout/horizontal_sprite.png") no-repeat right -46px; }
+	
+	#homepage-left .more figcaption { 
+	 		top: 5px; right: 1px;
+	 		background-position: left -179px;
+	 		height: 15px;  width: 9px; }
+
+	
+	#homepage-left .more:hover{ color:#fff; background-position: left -318px; }
+	#homepage-left .more:hover i{ background-position: right -76px; }    
+	
+	
+		/*		< VIDEOS > 
+		*****************************
+		******************************/
+		#homepage-videos .homepage-box-header figure{ background-position: -459px -113px; }
+		
+		#homepage-videos .carousel li{ 
+			height: 110px; width: 169px; 
+			border: 5px solid #363636; }
+		
+		#homepage-videos .carousel figcaption{ 
+			position: absolute; top: 113px;
+	    height: 13px; 
+	    background-position: left -245px;}
+	    
+		
+		/*	 </ VIDEOS > 
+		*---------------------------*/	 	
+		
+		/*		< POSTS > 
+		*****************************
+		******************************/
+		
+		#homepage-posts .homepage-box-header figure{ background-position: -459px -141px; }
+		
+		#homepage-posts ul{ margin: 19px 5px;  }
+		
+		#homepage-posts li{ 
+			margin-bottom: 13px; padding-bottom:10px;
+			height: 104px; 
+			border-bottom:1px solid #989898;  }
+		
+		#homepage-posts li.last{ border:none; }
+		
+		#homepage-posts ul figure{
+			height: 100px; width:100px;
+			border: 2px solid #363636; }	
+		
+		#homepage-posts header,#homepage-posts article{ position: relative; }
+		#homepage-posts h2{
+			position: absolute; 
+			text-indent:115px; font-size:14px; }
+		
+		#homepage-posts a{ color: #406397;	}
+		
+		#homepage-posts p{ 
+			position:absolute; left:114px; top:20px;
+			display: block; width:555px;
+			word-wrap:break-word; }
+		
+		/*	 </ POSTS > 
+		*---------------------------*/	 	
+		
+		
+		/*		< IMAGES > 
+		*****************************
+		******************************/
+		#homepage-images .homepage-box-header figure{ background-position: -459px -170px }
+		
+		#homepage-images .carousel li{ 
+			height: 110px; width: 176px; 
+			border: 2px solid #363636; border-right-width: 1px; border-bottom-width: 1px; }
+			
+		#homepage-images .carousel figcaption{ 
+			 position: absolute; top: 109px; left: 6px;
+			 height: 13px;
+			 background-position: left -233px; }
+	    
+		/*	 </ IMAGES > 
+		*---------------------------*/	 	
+	
+	/*	 	</ HOMEPAGE LEFT > 
+	*---------------------------*/		
+ 
+ 
+	/*		< SIDEBAR > 
+	*****************************
+	******************************/
+	
+	#homepage-sidebar{ width: 265px; float: left; }
+	
+	#homepage-sidebar section{ margin-bottom: 50px; }
+	
+	#homepage-sidebar .homepage-box-header{ width: 259px;  }
+	
+	#homepage-sidebar .homepage-box-header figure{ text-indent: 32px;  }
+	
+	#homepage-sidebar .homepage-box-footer{ width: 259px; }
+		
+		#volunteer-sidebar{ display: block; margin-bottom: 19px; }
+		
+		a#volunteer-sidebar figure{ 
+			width: 265px; height: 80px; 
+			background: url("images/layout/sprite.png") no-repeat left -420px; }
+		
+		#volunteer-sidebar:hover figure{
+			background-position: left -505px; }
+			
+	
+		/*		< DONATION > 
+		*****************************
+		******************************/
+		#donation-sidebar .homepage-box-header figure{ background-position: -459px -83px; text-indent: 23px}
+		
+		#donation-sidebar div{  margin: 20px auto; width: 226px;}
+		
+		#sidebar-donate-button{	padding: 5px 12px; margin-left: 10px;	}
+		
+		#sidebar-donate-paypal,
+		#sidebar-donate-creditcard{
+			display: block; float:left;
+			background: url("images/layout/sprite.png") no-repeat left -420px; }
+		
+		#sidebar-donate-paypal{
+			margin: 13px 10px 0 0;
+	    height: 38px; width: 85px;
+		 	background-position: -270px -444px; }
+		
+		#sidebar-donate-creditcard{
+			 margin: 20px 0 0;
+			 height: 19px; width: 131px;
+			 background-position: -269px -420px; }
+		
+		/*	 </ DONATION > 
+		*---------------------------*/	 	
+	  
+		/*		< VOTE > 
+		*****************************
+		******************************/
+    #vote-sidebar .homepage-box-header figure{ background-position: -459px 0px;  }
+
+	
+		/*	 </ VOTE > 
+		*---------------------------*/	
+
+		 /*		< TWEET > 
+		 *****************************
+		 ******************************/
+
+		#tweet-sidebar .homepage-box-header figure{ background-position: -459px -27px }
+		
+		#tweet-sidebar-box{ margin:17px 5px 10px; }
+		
+		#tweet-sidebar-box section{
+			position: relative;
+			padding: 10px; margin-bottom: 10px;
+			width: 226px; 
+			border: 1px solid #ababab;
+			-moz-border-radius: 5px; 
+			-webkit-border-radius: 5px; 
+			border-radius: 5px; 
+			background: #f6f6f6;
+			word-wrap: break-word; }
+			
+		#tweet-sidebar-box section i {
+			position: absolute; top: -13px; left: 22px;
+			display: block; width: 25px; height: 13px;
+			background: url("images/layout/sprite.png") no-repeat  -12px -182px; }
+			
+		#tweet-sidebar-icon{
+			display: block;
+    	width: 134px;  height: 16px; line-height: 16px;
+    	color: #333;
+    	text-indent: 20px;
+     	background: url("images/layout/sprite.png") no-repeat left -163px; }	
+	
+		#tweet-sidebar-icon:hover{ color: #666; }
+		/*	 </ TWETT > 
+		*---------------------------*/		  	  
+	
+
+		/*		< FACEBOOK > 
+		*****************************
+		******************************/
+		#facebook-sidebar #fb-container{ height: 271px;
+    margin-left: 8px;
+    margin-top: 15px;} 
+		#facebook-sidebar .homepage-box-header figure{ background-position: -459px  -53px; }
+	
+		/*	 </ FACEBOOK > 
+		*---------------------------*/		
+
+	/*	 	</ SIDE BAR > 
+	*---------------------------*/		

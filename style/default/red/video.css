@@ -7,7 +7,7 @@
 #video-page p{ font-size: 14px; width: 750px; line-height: 20px; }
 
 #video-player-frame {
-	width: 883px; height: 455px;
+	width: 883px;  height:460px;
 	margin: 20px auto;
 	background: url('images/video/bg_video_player.png') no-repeat transparent;}
 	

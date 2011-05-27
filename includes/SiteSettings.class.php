@@ -52,11 +52,11 @@ class SiteSettings {
 	public function setCoreJavascript(){
 		
 		LiteFrame::IncludeLibraryJavascript(array('plugins/rotate.js',
-																							'plugins/borderRadius.js',
 																							'plugins/gotop.js',
 																							'plugins/jquery.ba-bbq.min.js',
 																							'plugins/lazyload.js',
-																							'plugins/plugins.js'));
+																							'plugins/plugins.js',
+																							'plugins/jquery.carousel.js'));
 		
 		if( LiteFrame::GetAction() == "image" || LiteFrame::GetAction() == "homepage"){
 				
@@ -66,7 +66,7 @@ class SiteSettings {
 		}
 		
 		if( LiteFrame::GetAction() == "homepage"){
-			LiteFrame::IncludeLibraryJavascript('plugins/niceZoom.js','plugins/jquery.cycle.lite.min.js','plugins/jquery.carousel.js');
+			LiteFrame::IncludeLibraryJavascript('plugins/niceZoom.js','plugins/jquery.cycle.lite.min.js');
 		}
 		LiteFrame::IncludeJavascript('default.js');
 		
