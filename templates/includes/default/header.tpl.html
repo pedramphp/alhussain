@@ -1,7 +1,7 @@
 	<header role='banner' id='main-header' class='center-container clearfix'>
 		<hgroup itemref='content-info' itemscope itemtype='http://microformats.org/profile/hcard'>
 			<h1 itemprop='fn org'>
-				<a itemprop='url' href='http://alhussaintv.tv' id='logo' class='invisible' >
+				<a itemprop='url' href='http://alhussaintv.tv' id='logo' <!--{if $action eq 'homepage'}-->class='invisible'<!--{/if}--> >
 					<figure>
 						<img itemprop='logo' alt='Alhussain TV' src='<!--{$imagePath}-->layout/al-hussain-logo.png' />
 						<figcaption class='ir'>Anwar Al-Hussain TV - Official Logo</figcaption>
@@ -19,7 +19,7 @@
 			<li id='header-youtube' class='last'><a href='<!--{$SiteData.socialLinks.youtube.url}-->' title='<!--{$SiteData.socialLinks.youtube.title}-->'>Watch us<small>on YouTube</small></a></li>
 		</ul>
 		<div id='header-sponser'>
-			<h1 class='floatLeft'><small>our</small>Sponsers</h1>
+			<h1 class='floatLeft'><small>Our</small>Sponsors</h1>
 			<span class='floatLeft blockBox'>Imam Shirazi World Foundation</span>
 		</div>
 		<div class='clearBoth'></div>

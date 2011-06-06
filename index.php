@@ -22,7 +22,7 @@
   $LiteFrame->SetStyleLibraryFolder("jslib");
   
   // if you want all your javascript on the bottom of the page 
-  $LiteFrame->JavascriptBottomPage();
+ // $LiteFrame->JavascriptBottomPage();
   
   // Grab all $yAction and make it to a json obj
   $LiteFrame->JavaScriptActionInfo();  

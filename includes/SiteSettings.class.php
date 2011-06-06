@@ -66,7 +66,8 @@ class SiteSettings {
 		}
 		
 		if( LiteFrame::GetAction() == "homepage"){
-			LiteFrame::IncludeLibraryJavascript('plugins/niceZoom.js','plugins/jquery.cycle.lite.min.js');
+			LiteFrame::IncludeLibraryJavascript('plugins/niceZoom.js','plugins/jquery.cycle.lite.min.js','plugins/queryLoader/js/queryLoader.js');
+			LiteFrame::IncludeLibraryStyle('plugins/queryLoader/css/queryLoader.css');
 		}
 		LiteFrame::IncludeJavascript('default.js');
 		

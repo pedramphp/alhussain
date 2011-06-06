@@ -13,7 +13,7 @@
 			$cats = array();
 			$cats[] = array(
 				"catId"	=> 1,	
-				"categoryName"	=> "How do i",
+				"categoryName"	=> "How do I",
 				"size" => 9,
 				"images" => array($imageUrl."IMG_2747.jpg",
 													$imageUrl."IMG_2748.jpg",
@@ -38,7 +38,7 @@
 										$imageUrl."A.H.-TV-030.jpg",
 										$imageUrl."A.H.-TV-033.jpg",
 										$imageUrl."A.H.-TV-107.jpg")
-			);
+			);/*
 			$cats[] = array(
 				"catId"		=> 4,
 				"categoryName"	=> "Journey of the Spirit",
@@ -47,7 +47,7 @@
 										$imageUrl."IMG_2575.jpg",
 										$imageUrl."IMG_2576.jpg",
 										$imageUrl."IMG_2577.jpg")
-			);
+			);*/
 			$cats[] = array(
 				"catId"	=> 5	,
 				"categoryName"	=> "Procession",

@@ -16,7 +16,7 @@
 					var slider = {
 
 						init: function(){
-
+							if(size <= options.limit){ $( options.next+","+options.prev ).remove(); return; }
 							$( options.next ).click($.proxy(this,"next"));
 							$( options.prev ).click( $.proxy(this,"prev"));
 							

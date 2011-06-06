@@ -40,14 +40,6 @@
 						"A.H.-TV-151.jpg",
 						"A.H.-TV-159.jpg",
 						"A.H.-TV-160.jpg",
-						"IMG_2566.jpg",
-						"IMG_2575.jpg",
-						"IMG_2576.jpg",
-						"IMG_2577.jpg",
-						"IMG_2579.jpg",
-						"IMG_2600.jpg",
-						"IMG_2609.jpg",
-						"IMG_2612.jpg",
 						"DSCN0055.jpg",
 						"DSCN0058.jpg",
 						"DSCN0059.jpg",
@@ -64,12 +56,13 @@
 						
 			$videoThumb = "style/default/red/images/videoGallery/";
 			$videos = 
-			array( array('thumb' => $videoThumb."video1.jpg",'original' => 'http://player.vimeo.com/video/24143863?title=0&amp;byline=0&amp;portrait=0'),
-						 array('thumb' => $videoThumb."video2.jpg",'original' => 'http://player.vimeo.com/video/24204753?title=0&amp;byline=0&amp;portrait=0'),
-						 array('thumb' => $videoThumb."video3.jpg",'original' => 'http://player.vimeo.com/video/24204753?title=0&amp;byline=0&amp;portrait=0'),
-						 array('thumb' => $videoThumb."video4.jpg",'original' => 'http://player.vimeo.com/video/24204187?title=0&amp;byline=0&amp;portrait=0'),
-						 array('thumb' => $videoThumb."video5.jpg",'original' => 'http://player.vimeo.com/video/24204130?title=0&amp;byline=0&amp;portrait=0'),
-						 array('thumb' => $videoThumb."video6.jpg",'original' => 'http://player.vimeo.com/video/24203816?title=0&amp;byline=0&amp;portrait=0')
+			array( array('thumb' => $videoThumb."video4.jpg",'original' => 'http://player.vimeo.com/video/24204187?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'),
+						 array('thumb' => $videoThumb."video6.jpg",'original' => 'http://player.vimeo.com/video/24203816?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'),
+						 array('thumb' => $videoThumb."video3.jpg",'original' => 'http://player.vimeo.com/video/24204283?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'),
+						 array('thumb' => $videoThumb."video1.jpg",'original' => 'http://player.vimeo.com/video/24143863?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'),
+						 array('thumb' => $videoThumb."video5.jpg",'original' => 'http://player.vimeo.com/video/24204130?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'),
+						 array('thumb' => $videoThumb."video2.jpg",'original' => 'http://player.vimeo.com/video/24204753?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1')
+						 
 			);
 			
 			foreach( $sources as $key => $value){

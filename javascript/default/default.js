@@ -1,76 +1,8 @@
 $(document).ready(function(){
-
+	$('html').removeClass('hide');
 	if ( $.browser.msie && $_LITE_.action != 'homepage') {
 		$('html').css('background','url("'+$_LITE_.imagePath+'layout/bg2.png") repeat-x transparent');
 	}
-	
-	// fixing the outline issue
-	$('a').live('mousedown', function() { 
-		$(this).blur(); 
-		return false; 
-	}).live('click', function() { 
-		$(this).blur(); 
-	}).live('focus', function() { 
-		if ( $.browser.msie ) { 
-			$(this).blur(); 
-		} 
-	});
-	
-	//go top
-	$('.gotop').click(function(){
-		$.gotop();		
-	});
-	
-	//donation
-	$('.donate-button').click(function(event){
-		event.preventDefault();
-		$(this).parents('form').submit();
-	});
-	
-	$('#books-footer ul').carousel({
-		prev: '#books-footer .prev',
-		next: '#books-footer .next',
-		time: 800
-	});			
-	
-	
-	
-	//sponser header
-	var sponsers = "Imam Shirazi World Foundation, Imam Ali (A.S) Center Springfield VA,Prestige. Productionz Washington DC,Kabob Factory Lorton VA".split(",");
-	var activeIndex = 1;
-	setInterval(function(){
-		$('#header-sponser span').fadeOut(500,function(){
-			$(this).text(sponsers[activeIndex]).fadeIn(500);
-			if(activeIndex != sponsers.length-1){ activeIndex++; }
-			else{ activeIndex = 0; }
-		});
-	},5000);
-	
-	footerContact.init();
-	
-	//we need to make sure that the image is loaded	
-	$('#logo').css('top','-125px').removeClass('invisible').animate({top:12},1000,function(){
-		$(this).animate({top:-12},300,function(){
-			$(this).animate({top:0},300);
-		});
-	});
-	
-	$('[data-borderradius]').css('borderRadius',function(){
-		return $(this).data("borderradius");
-	});
-	
-	$('#links-footer a').css('borderRadius',3);
-	
-	$('.al-rotate').hover(function(){
-		$(this).css('rotate','-3deg');
-	},function(){
-		$(this).css('rotate',0);
-	});
-	
-	
-	$('.prev figure,.next figure').valign();
-	
-	$('.text,textarea').val("");
 	
 	/*
 	$("#main-container img").lazyload({ 
@@ -79,84 +11,229 @@ $(document).ready(function(){
 	});
 	*/
 	
+	$('[data-borderradius]').css('borderRadius',function(){
+		return $(this).data("borderradius");
+	});
+	
+	footerContact.init();
+	core.tweets()
+		.books()
+		.donation()
+		.gotop()
+		.fixOutline()
+		.resetForm()
+		.alignCarouselArrows()
+		.sponsers()
+		.rotateLogo()
+	
 });
 
 
 var footerContact = {
+	
+	enable: true,
+	loadingMsg: $("<span class='loadingMsg'>Sending message please wait</span>"),
+	successMsg: $("<span class='successMsg'>Your message has been sent</span>"),
+	errorMsg: $("<span class='errorMsg'>Please try Again</span>"),
+	$button: $("#contact-footer button"),
+	init: function(){
+		this.events();
+	},
+	
+	events: function(){
+		this.$button = $("#contact-footer button");
+		this.$button.live('click', $.proxy(this,"submit") );
+	},
+	
+	submit: function(event){
+		event.preventDefault();
+		if( !this.enable ){ return }
+		var buttonTd = $(event.currentTarget).parent(),
+			$form = $(event.currentTarget).parents("form");
 		
-		enable: true,
-		loadingMsg: $("<span class='loadingMsg'>Sending message please wait</span>"),
-		successMsg: $("<span class='successMsg'>Your message has been sent</span>"),
-		errorMsg: $("<span class='errorMsg'>Please try Again</span>"),
-		$button: $("#contact-footer button"),
-		init: function(){
-			this.events();
-		},
-		
-		events: function(){
-			this.$button.click( $.proxy(this,"submit") );
-		},
-		
-		submit: function(event){
-			event.preventDefault();
-			if( !this.enable ){ return }
-			var buttonTd = $(event.currentTarget).parent(),
-				$form = $(event.currentTarget).parents("form");
+		$_LITE_.jsonRPC({
+			scope: this, 
+			api: 'Contact',
+			method: 'footerContact',
+			data: { params: $.deparam.querystring($form.serialize()) },
+			success: function( data, textStatus, jqXH ){
+				this.hideLoading();
+				this.loadSucecssMsg()
+			},
+			error: function(){
+				this.hideLoading();
+				this.loadErrorMsg()
+			},
+			beforeSend: function(){
+				this.disableForm();
+				this.showLoading()
+			}
+		});
+	},
+	
+	disableForm: function(){
+		this.$button.attr("disabled",true);
+		this.enable = false;
+	},
+	
+	enableForm: function(){
+		this.$button.removeAttr("disabled");
+		this.enable = true;		
+	},
+	
+	showLoading: function(){
+		this.$button.before( this.loadingMsg.clone() );
+	},
+	
+	hideLoading: function(){
+		this.$button.prev('span').remove();
+	},
+	
+	loadSucecssMsg: function(){
+		var $successMsg = this.successMsg.clone();
+		this.$button.before( $successMsg );
+		$successMsg.fadeIn(500).delay('3000').fadeOut(500,$.proxy(function(){
+			$successMsg.remove();
+			this.enableForm();
+		},this));
+	},
+	
+	loadErrorMsg: function(){
+		var $errorMsg = this.errorMsg.clone();
+		this.$button.before( $errorMsg );
+		$errorMsg.fadeIn(500).delay('3000').fadeOut(500,$.proxy(function(){
+			$errorMsg.remove();
+			this.enableForm();
+		},this));		
+	}
+	
+};/* </footerContact > */
+
+
+var core = {
+		books: function(){
+			$('#books-footer ul').carousel({
+				prev: '#books-footer .prev',
+				next: '#books-footer .next',
+				time: 800
+			});		
+			return this;
 			
-			$_LITE_.jsonRPC({
-				scope: this, 
-				api: 'Contact',
-				method: 'footerContact',
-				data: { params: $.deparam.querystring($form.serialize()) },
-				success: function( data, textStatus, jqXH ){
-					this.hideLoading();
-					this.loadSucecssMsg()
-				},
-				error: function(){
-					this.hideLoading();
-					this.loadErrorMsg()
-				},
-				beforeSend: function(){
-					this.disableForm();
-					this.showLoading()
-				}
+		},
+		donation: function(){
+			//donation
+			$('.donate-button').click(function(event){
+				event.preventDefault();
+				$(this).parents('form').submit();
 			});
+			return this;
 		},
-		
-		disableForm: function(){
-			this.$button.attr("disabled",true);
-			this.enable = false;
+		gotop: function(){
+			//go top
+			$('.gotop').click(function(){
+				$.gotop();		
+			});
+			return this;
 		},
-		
-		enableForm: function(){
-			this.$button.removeAttr("disabled");
-			this.enable = true;		
+		sponsers: function(){
+			//sponser header
+			var sponsers = "Imam Shirazi World Foundation, Imam Ali (A.S) Center Springfield VA,Prestige. Productionz Washington DC,Kabob Factory Lorton VA".split(",");
+			var activeIndex = 1;
+			setInterval(function(){
+				$('#header-sponser span').fadeOut(500,function(){
+					$(this).text(sponsers[activeIndex]).fadeIn(500);
+					if(activeIndex != sponsers.length-1){ activeIndex++; }
+					else{ activeIndex = 0; }
+				});
+			},5000);
+			return this;
 		},
-		
-		showLoading: function(){
-			this.$button.before( this.loadingMsg.clone() );
+		rotateLogo: function(){
+			$('.al-rotate').hover(function(){
+				$(this).css('rotate','-3deg');
+			},function(){
+				$(this).css('rotate',0);
+			});
+			return this;
 		},
-		
-		hideLoading: function(){
-			this.$button.prev('span').remove();
+		alignCarouselArrows: function(){
+			$('.prev figure,.next figure').valign();
+			return this;},
+		resetForm: function(){
+			$('input[type=text],textarea').val("");
+			return this;
 		},
-		
-		loadSucecssMsg: function(){
-			var $successMsg = this.successMsg.clone();
-			this.$button.before( $successMsg );
-			$successMsg.fadeIn(500).delay('3000').fadeOut(500,$.proxy(function(){
-				$successMsg.remove();
-				this.enableForm();
-			},this));
+		fixOutline: function(){
+	
+			// fixing the outline issue
+			$('a').live('mousedown', function() { 	$(this).blur(); 	return false; 	})
+				  .live('click', function() {  $(this).blur(); 	})
+				  .live('focus', function() { 
+						if ( $.browser.msie ) { 
+							$(this).blur(); 
+						} 
+			});
+			return this;
+			
 		},
-		
-		loadErrorMsg: function(){
-			var $errorMsg = this.errorMsg.clone();
-			this.$button.before( $errorMsg );
-			$errorMsg.fadeIn(500).delay('3000').fadeOut(500,$.proxy(function(){
-				$errorMsg.remove();
-				this.enableForm();
-			},this));		
+		tweets: function(){
+			
+			var articles = $('#footer-twitter p'),
+				articleLength = articles.length,
+				
+				generateLinks = function(){
+					var replace,
+						match,
+						twitterSearch = "http://twitter.com/#!/search?q=";
+					
+					articles.each(function(){
+						$(this).html(function(index, text){
+	
+							var matches = text.match(/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/gi);
+							
+							if(matches !== null){
+								for( var i=0; i < matches.length; i++ ){
+									
+									match = matches[i];
+									replace =  "<a href='"+ match  + "'>" + match + "</a>";
+									text = text.replace(match,replace );							
+								}
+							}
+							
+							matches = text.match(/#[\w]+/gi);
+							if(matches !== null){
+								for( var i=0; i < matches.length; i++ ){
+									match = matches[i];
+									replace =  "<a href='"+ twitterSearch+ encodeURIComponent("#") + match.split("#")[1]  + "'>" + match + "</a>";
+									text = text.replace(match,replace );							
+								}
+							}
+							return text;
+						});
+					});
+				}();
+			
+			function next( e ){
+				e.preventDefault();
+				$('#footer-twitter').find('p:visible').fadeOut(500,function(){
+					var that = $(this);
+					var $elem = ( articleLength - 1 == articles.index(that) ) ? articles.first() : that.next();
+					$elem.fadeIn( 500 );
+				});
+			}
+			
+			function prev( e ){
+				e.preventDefault();
+				$('#footer-twitter').find('p:visible').fadeOut(500,function(){
+					var that = $(this);
+					var $elem = ( 0 == articles.index(that) ) ? articles.last() : that.prev();
+					$elem.fadeIn( 500 );
+				});				
+			}
+			
+			$('#footer-twitter #footer-twitter-next').click( next );
+			$('#footer-twitter #footer-twitter-prev').click( prev );
+			return this;
+			
 		}
-		
-}; /* </footerContact > */
+};

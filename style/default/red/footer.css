@@ -4,11 +4,11 @@
 ******************************/
 
 #main-footer{ 
-	position:relative; padding-top: 27px;
+	padding-top: 27px;
 	background: url("images/layout/bg_footer.png") repeat-x left top #e7e7e7;
 	border-top: 6px solid #000; }	
 	
-	.main-footer-section { margin-bottom: 25px;}
+	.main-footer-section {padding-bottom: 25px;}
 	
 	.main-footer-section header{
 		margin-bottom: 20px; padding-bottom: 5px; 
@@ -17,7 +17,7 @@
 	.main-footer-section header figure{
 		height: 25px; line-height: 25px;  width: 226px;
 		background: url("images/layout/sprite.png") no-repeat;
-		text-indent: 30px; font-size: 17px; font-weight: bold; }
+		text-indent: 30px; font-size: 16px; font-weight: bold; }
 
 	#main-footer a{ color: #333; }	
 	
@@ -321,7 +321,7 @@
 	*****************************
 	******************************/	
 	#copyright{
-		position: absolute; bottom: -70px;
+	
 		height: 70px; width: 100%;
 		background: #000; color: #999;  }
 		
