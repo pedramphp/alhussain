@@ -73,8 +73,8 @@
 			
 			
 			$this->results = array('imageThumbs' => $images,
-														 'videoThumbs' => $videos,
-														 'hadith' => $this->getRandomHadith());
+									 'videoThumbs' => $videos,
+									 'hadith' => $this->getRandomHadith());
 			
 		}
 		

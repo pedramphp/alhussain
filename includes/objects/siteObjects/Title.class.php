@@ -12,10 +12,10 @@
 			$title = "AlHussain TV";
 			switch(SiteHelper::GetAction()){
 				case "homepage":
-					$title = "AlHussain TV - ANWAR ALHUSSAIN -SATALITE NETWORK - The First Shia Global Satalite Channel In English";
+					$title = "Anwar Al-Hussain TV - Satalite Network - The First Engilish Shia Global Satalite Channel";
 					break;				
 				case "contact":
-					$title = "Contact Alhussain TV - ANWAR ALHUSSAIN -SATALITE NETWORK - The First Shia Global Satalite Channel In English";
+					$title = "Contact Alhussain TV - Anwar Al-Hussain TV - Satalite Network - The First Engilish Shia Global Satalite Channel";
 					break;		
 			}
 			$this->results = $title;

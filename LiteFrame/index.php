@@ -272,6 +272,8 @@ class  LiteFrame {
 	*/
     public $yActionJson;
 
+    private $pagePath;
+    
     public function __construct(){
   		
     	  $this->fileSystemPath = realpath('.') . "/";
@@ -295,7 +297,13 @@ class  LiteFrame {
 		$this->Action();
 	
     }
-
+	
+    private function setPagePath(){
+    	$this->pagePath = 
+        $this->liteVars['pagePath'] = 
+        'https://'.$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI'];
+    }
+    
     /**
 	* Ultimately this will determine the action to be displayed currently. To do so, we must first set the yAction to determine where we might be going.
 	* After we find our action to be displayed, we try to load the php file and then make a few checks on the desired display options for the action.
@@ -339,6 +347,8 @@ class  LiteFrame {
   public function LoadTemplate(){
 
         $this->SetActionTrigger();
+        $this->SetPagePath();
+        
         $this->UpdateFoldersPaths();
         if($this->RelatedFiles){  $this->CreateRelatedFiles(); } 
     	  if($this->javaScriptActionInfo){ 
