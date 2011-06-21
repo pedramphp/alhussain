@@ -10,7 +10,7 @@ class FooterContact {
 	private static $emailTemplate;
 	private static $userEmailTemplate;
 	private static $emailTitle = 'Alhussain Tv Website';
-	private static $to = 'pedramphp@gmail.com'; //info@alhussaintv.tv
+	private static $to = 'info@alhussaintv.tv'; //info@alhussaintv.tv
 	private static $admin = 'pedramphp@gmail.com';
 	private static $subject = "New Message: AlhussainTV Website Contact Us - Footer";
 	private static $emailLogo;
