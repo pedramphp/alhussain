@@ -62,7 +62,6 @@ class SiteHelper {
 	}	  /* </ __construct >  */
 	
 	public function siteSettings(){
-	
 		$siteSettings = new SiteSettings();
 		$siteSettings->setTemplate();
 		$siteSettings->setTemplateColor();

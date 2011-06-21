@@ -48,15 +48,13 @@
 	
   DIRECTORY
   ==============  
-	- HEADER
-      -NAV
-    - MAIN
-    - SIDEBAR
+	-COMMON
+	-HEADER
+	-MAIN CONTAINER
 */
 
 
-  
-html{ 
+html{
 	
 	height: 100%;
 	/*Text*/
@@ -73,33 +71,33 @@ body {
 /* IE Resizing hack */
 html>body { font-size: 12px }
 
-	
+
 /*	COMMON
 ****************/
 	.center-container{
-		margin-left: auto; margin-right: auto; 
+		margin-left: auto; margin-right: auto;
 		width: 980px; }
 	
 	a,a:hover, a:active, a:focus {
-  	outline: 0; }
-  
+	outline: 0; }
+
 	a{ color: #333; }
-  
+
 	a:hover{ color: #666; }
-  
+
 	.loadingMsg,
 	.successMsg,
 	.errorMsg{  margin-left: 10px; padding-left: 22px; }
-  	
+	
 	.loadingMsg	{ background: url("images/general/loading.gif") no-repeat transparent; }
-    
+	
 	.successMsg,
-  .errorMsg{
+	.errorMsg{
 		background: url("images/layout/sprite_contact.png") no-repeat left -836px;
-		margin-left: 10px; padding-left: 22px; }  
-     
-  .errorMsg{
-  	 background-position: left -854px; }
+		margin-left: 10px; padding-left: 22px; }
+		
+	.errorMsg{
+		background-position: left -854px; }
 
  /*			< HEADER > 
  *****************************
@@ -136,10 +134,10 @@ html>body { font-size: 12px }
 	#header-social #header-youtube{ background-position: -108px -134px; }
 	
 	#header-social li a{   
-			display: block;
-	    color: #333333; font-weight: bold; line-height: 12px;
-	    text-indent: 27px; }
-	   
+		display: block;
+		color: #333333; font-weight: bold; line-height: 12px;
+		text-indent: 27px; }
+
 	#header-social li a:hover{ color: #701219; }
 	
 	#header-social small{ display: block; font-weight:normal; font-style: italic; }
@@ -175,7 +173,7 @@ html>body { font-size: 12px }
 		height: 43px;  }
 		
 	#main-nav li{ float:left; display:block;}
-	  
+	
 	#main-nav .splitter, #main-nav a{ display: block;  float: left; }
 	
 	#main-nav .splitter	 { 
@@ -196,18 +194,18 @@ html>body { font-size: 12px }
 	.ie6 #main-nav span{
 		position: absolute;
 		text-indent: 28px;
-    width: 108px;}
-    
+	width: 108px;}
+
 	.ie6  #main-nav li{ margin-top: -5px; }
 	.ie6  #main-nav a{
-	  padding: 8px 105px 4px 3px; }
+		padding: 8px 105px 4px 3px; }
 
 	#main-nav a:hover{ color: #000; background: url('images/layout/sprite.png') no-repeat left -590px transparent }
 	
 	#main-nav a:hover i.corner{ 
-	  position: absolute; top: 0; float: none; right: -3px;
-    height: 40px; width: 5px;
-    background: url("images/layout/horizontal_sprite.png") no-repeat scroll left top transparent; }
+		position: absolute; top: 0; float: none; right: -3px;
+		height: 40px; width: 5px;
+		background: url("images/layout/horizontal_sprite.png") no-repeat scroll left top transparent; }
 	
 	#nav-news span{ background-position: left -28px; }
 	
@@ -245,13 +243,13 @@ html>body { font-size: 12px }
 	
 
 			
-/*			</ HEADER > 
+/*		</ HEADER > 
 *---------------------------*/
 
 
- /*	< MAIN CONTAINER > 
- *****************************
- ******************************/
+/*	< MAIN CONTAINER >
+*****************************
+******************************/
  
 #main-container{ margin: 50px auto; }
 
@@ -262,7 +260,5 @@ html>body { font-size: 12px }
 
 
 
-/*	 	</ MAIN CONTAINER > 
+/*	</ MAIN CONTAINER >
 *---------------------------*/
- 
-		   

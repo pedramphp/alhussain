@@ -49,19 +49,29 @@ var contact = {
 			method: 'contactUs',
 			data: { params: $.deparam.querystring($form.serialize()) },
 			success: function( data, textStatus, jqXH ){
-				this.hideLoading();
-				this.loadSucecssMsg()
+				if( data.SiteData.Contact_contactUs.success ){
+					this.hideLoading();
+					this.loadSucecssMsg();
+					$form.find('input,textarea').val('');
+				}else{
+					this.error();
+				}
 			},
-			error: function(){
-				this.hideLoading();
-				this.loadErrorMsg()
-			},
+			error: this.error,
 			beforeSend: function(){
 				this.disableForm();
 				this.showLoading()
 			}
 		});
 	},
+	
+	error: function(){
+		
+		this.hideLoading();
+		this.loadErrorMsg()		
+		
+	},
+	
 	
 	disableForm: function(){
 		this.$button.attr("disabled",true);

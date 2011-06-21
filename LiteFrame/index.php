@@ -821,9 +821,16 @@ class  LiteFrame {
   public static function GetApplicationPath(){ return LiteFrame::$yAction['_LITE_']['VARS']['applicationPath']; }
   public static function GetJavascriptPath(){ return LiteFrame::$yAction['_LITE_']['VARS']['liteVars']['javascriptPath']; }
   public static function GetJavascriptModulePath(){ return LiteFrame::$yAction['_LITE_']['VARS']['liteVars']['javascriptModulePath']; }
-  public static function GetStylePath(){ return LiteFrame::$yAction['_LITE_']['VARS']['liteVars']['stylePath']; }
-  public static function GetImagePath(){ return LiteFrame::$yAction['_LITE_']['VARS']['liteVars']['imagePath']; }
-  public static function GetJavascriptLibraryPath(){ return LiteFrame::$yAction['_LITE_']['VARS']['liteVars']['javascriptLibraryPath']; }
+  public static function GetStylePath(){ 
+  	  	$vars = LiteFrame::$yAction['_LITE_']['VARS'];
+  	return $vars['applicationPath'].$vars['styleFolder'].$vars['templateEngineFolder'].$vars['templateColorName'];
+  	
+  }
+  public static function GetImagePath(){ 
+  	$vars = LiteFrame::$yAction['_LITE_']['VARS'];
+  	return $vars['applicationPath'].$vars['styleFolder'].$vars['templateEngineFolder'].$vars['templateColorName'].$vars['imagesFolder'];
+  }
+  	public static function GetJavascriptLibraryPath(){ return LiteFrame::$yAction['_LITE_']['VARS']['liteVars']['javascriptLibraryPath']; }
 	public static function GetStyleLibraryPath(){ return LiteFrame::$yAction['_LITE_']['VARS']['liteVars']['styleLibraryPath']; }
 	public static function GetTemplateIncludePath(){ return LiteFrame::$yAction['_LITE_']['VARS']['fileSystemPaths']['templateIncludePath']; }
 	public static function GetTemplateActionPath(){ return LiteFrame::$yAction['_LITE_']['VARS']['fileSystemPaths']['templateActionPath']; }

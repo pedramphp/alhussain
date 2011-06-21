@@ -84,7 +84,7 @@
 	 ******************************/
  	
  		#homepage-slider { 
- 		  margin: 38px 0;
+ 			margin: 38px 0;
  			width: 952px; height: 312px; }
 		
 		.ie6 #homepage-slider { margin-bottom: 12px; }
@@ -97,9 +97,9 @@
 			height: 312px; width: 862px; } 
 		
 		.carousel-slideshow #slider-shadow{
- 			position: absolute; left: -4px; top: -4px; z-index: 400;
-	    height: 312px; width: 862px;
-	    background: url("images/layout/shadow_slider_behind.png") no-repeat transparent; }
+			position: absolute; left: -4px; top: -4px; z-index: 400;
+			height: 312px; width: 862px;
+		background: url("images/layout/shadow_slider_behind.png") no-repeat transparent; }
 			
 		.carousel-slideshow .links{  width: 45px; height: 312px;}
 		
@@ -111,34 +111,33 @@
 		
 		.carousel-slideshow .next figure, 
 		.carousel-slideshow .prev figure {
-    	width: 45px; height: 115px;
-  	  background: url("images/layout/sprite.png") no-repeat 0 0 transparent; }		
+			width: 45px; height: 115px;
+			background: url("images/layout/sprite.png") no-repeat 0 0 transparent; }		
 		
 		.carousel-slideshow .prev figure {
-   	 background-position: -298px -115px; }
-
+			background-position: -298px -115px; }
+			
 		.carousel-slideshow .prev:hover figure {
-   	 	background-position: -298px top; }
+			background-position: -298px top; }
 			
 		.carousel-slideshow .next figure {
-    	background-position: -348px -115px; } 	
- 	
+			background-position: -348px -115px; }	
+			
 		.carousel-slideshow .next:hover figure {
-    	background-position: -348px top; } 	
-    	
-    .carousel-slideshow li figure,.carousel-slideshow li, .carousel-slideshow li a{ 
-    		width: 850px; height:300px; display: block; cursor: pointer; }	
-    
-    .relative #homepage-slider-shadow{
-    	position: relative; left: 52px; top: -13px; 
-    	width: 845px; height: 39px;
-    	background: url("images/layout/shadow_main_slider.png") no-repeat  transparent;  }
- 		
- 		.ie6 .relative #homepage-slider-shadow{ top: 0; }
- 		
- 		.ie6  #homepage-slider-shadow{ margin-top: -21px; }
- 		
- 		
+			background-position: -348px top; } 	
+		
+		.carousel-slideshow li figure,.carousel-slideshow li, .carousel-slideshow li a{ 
+			width: 850px; height:300px; display: block; cursor: pointer; }	
+	
+		.relative #homepage-slider-shadow{
+			position: relative; left: 52px; top: -13px; 
+			width: 845px; height: 39px;
+			background: url("images/layout/shadow_main_slider.png") no-repeat transparent; }
+		
+		.ie6 .relative #homepage-slider-shadow{ top: 0; }
+		
+		.ie6  #homepage-slider-shadow{ margin-top: -21px; }
+
 
  	
  	/*		</ SLIDESHOW > 
@@ -180,7 +179,7 @@
 	#homepage-hadith i.right{ background-position: -474px -496px; margin-top: 49px; }
 	
 	
-	/*			</ HADITH > 
+	/*		</ HADITH > 
 	*---------------------------*/		
 
 	/*		< HOMEPAGE LEFT > 
@@ -199,7 +198,7 @@
 	
 	#welcome-note h1{
 		padding:20px;   
-    font-size: 13px; line-height: 25px; 
+		font-size: 13px; line-height: 25px; 
 		word-wrap: break-word; }
 	
 	#welcome-note h1 b{ font-size: 18px; }
@@ -229,9 +228,8 @@
 	#homepage-left .carousel figcaption{ 
 		position: absolute; left: 0; 
 		width: 165px; 
-    background: url("images/layout/sprite.png") no-repeat;}
-    
-    	
+		background: url("images/layout/sprite.png") no-repeat;}
+	
 	#homepage-left .more,
 	#homepage-left .more i,
 	#homepage-left .more figcaption{ position: absolute;  }
@@ -250,14 +248,14 @@
 		color: #000; background-position: left  -288px; }   
 
 	#homepage-left .more i{ 
-   	right: -6px; top: 0; 
-   	width:6px;
-   	background: url("images/layout/horizontal_sprite.png") no-repeat right -46px; }
+		right: -6px; top: 0; 
+		width:6px;
+		background: url("images/layout/horizontal_sprite.png") no-repeat right -46px; }
 	
 	#homepage-left .more figcaption { 
-	 		top: 5px; right: 1px;
-	 		background-position: left -179px;
-	 		height: 15px;  width: 9px; }
+			top: 5px; right: 1px;
+			background-position: left -179px;
+			height: 15px;  width: 9px; }
 
 	
 	#homepage-left .more:hover{ color:#fff; background-position: left -318px; }
@@ -275,9 +273,9 @@
 		
 		#homepage-videos .carousel figcaption{ 
 			position: absolute; top: 113px;
-	    height: 13px; 
-	    background-position: left -245px;}
-	    
+			height: 13px; 
+			background-position: left -245px;}
+
 		
 		/*	 </ VIDEOS > 
 		*---------------------------*/	 	
@@ -329,7 +327,7 @@
 			 position: absolute; top: 109px; left: 6px;
 			 height: 13px;
 			 background-position: left -233px; }
-	    
+	
 		/*	 </ IMAGES > 
 		*---------------------------*/	 	
 	
@@ -446,8 +444,9 @@
 		*****************************
 		******************************/
 		#facebook-sidebar #fb-container{ height: 271px;
-    margin-left: 8px;
-    margin-top: 15px;} 
+			margin-left: 8px;
+			margin-top: 15px;}
+			
 		#facebook-sidebar .homepage-box-header figure{ background-position: -459px  -53px; }
 	
 		/*	 </ FACEBOOK > 
