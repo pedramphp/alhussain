@@ -52,11 +52,10 @@ class SiteSettings {
 	public function setCoreJavascript(){
 		
 		LiteFrame::IncludeLibraryJavascript(array('plugins/rotate.js',
-																							'plugins/gotop.js',
-																							'plugins/jquery.ba-bbq.min.js',
-																							'plugins/lazyload.js',
-																							'plugins/plugins.js',
-																							'plugins/jquery.carousel.js'));
+												'plugins/gotop.js',
+												'plugins/jquery.ba-bbq.min.js',
+												'plugins/plugins.js',
+												'plugins/jquery.carousel.js'));
 		
 		if( LiteFrame::GetAction() == "image" || LiteFrame::GetAction() == "homepage"){
 				
@@ -71,13 +70,8 @@ class SiteSettings {
 		}
 		LiteFrame::IncludeJavascript('default.js');
 		
-		/*LiteFrame::IncludeLibraryJavascript('plugins/jquery.gotop.js');
-		if( SiteHelper::GetAction() === 'tools' ){
-			LiteFrame::ExternalJavascript('http://connect.facebook.net/en_US/all.js#appId=133202353404448&&amp;xfbml=1');
-		}else{
-			LiteFrame::ExternalJavascript('http://connect.facebook.net/en_US/all.js#xfbml=1');
-		}
-		*/
+		LiteFrame::ExternalJavascript('https://www.google.com/jsapi');
+		
 		
 	} /* </ SetCoreJavascript > */
 	

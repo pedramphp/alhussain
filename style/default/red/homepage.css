@@ -204,7 +204,7 @@
 	
 	#welcome-note h1 b{ font-size: 18px; }
 	
-	#homepage-left section{ margin-bottom: 50px; }
+	#homepage-left section{ margin-bottom: 47px; }
 	
 	#homepage-left  .homepage-box-header,
 	#homepage-left  .homepage-box-footer{ width: 679px; }
@@ -285,7 +285,6 @@
 		/*		< POSTS > 
 		*****************************
 		******************************/
-		
 		#homepage-posts .homepage-box-header figure{ background-position: -459px -141px; }
 		
 		#homepage-posts ul{ margin: 19px 5px;  }
@@ -344,9 +343,11 @@
 	
 	#homepage-sidebar{ width: 265px; float: left; }
 	
-	#homepage-sidebar section{ margin-bottom: 50px; }
+	#homepage-sidebar section{ margin-bottom: 45px; }
 	
 	#homepage-sidebar .homepage-box-header{ width: 259px;  }
+	
+	#homepage-sidebar #volunteerHeader{ margin-bottom: 48px; }
 	
 	#homepage-sidebar .homepage-box-header figure{ text-indent: 32px;  }
 	
@@ -367,9 +368,14 @@
 		******************************/
 		#donation-sidebar .homepage-box-header figure{ background-position: -459px -83px; text-indent: 23px}
 		
-		#donation-sidebar div{  margin: 20px auto; width: 226px;}
+		#donation-sidebar{ margin-bottom: 0 !important; }
+		
+		#donation-sidebar div{  margin: 20px auto 0; width: 226px;}
 		
 		#sidebar-donate-button{	padding: 5px 12px; margin-left: 10px;	}
+		#sidebar-donate-button:hover{
+			background: #b00b00; color: #fff;
+		}
 		
 		#sidebar-donate-paypal,
 		#sidebar-donate-creditcard{
@@ -406,10 +412,12 @@
 		
 		#tweet-sidebar-box{ margin:17px 5px 10px; }
 		
+		.ie #tweet-sidebar-box section{ height:78px; }
+		
 		#tweet-sidebar-box section{
 			position: relative;
 			padding: 10px; margin-bottom: 10px;
-			width: 226px; 
+			width: 226px; height: 78px; min-height: 78px;
 			border: 1px solid #ababab;
 			-moz-border-radius: 5px; 
 			-webkit-border-radius: 5px; 

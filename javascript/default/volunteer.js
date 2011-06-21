@@ -10,8 +10,9 @@ var volunteer = {
 	loadingMsg: $("<span class='loadingMsg'>Sending message please wait</span>"),
 	successMsg: $("<span class='successMsg'>Your message has been sent</span>"),
 	errorMsg: $("<span class='errorMsg'>Message Failed,Please try Again</span>"),
-	$button: $("#volunteer-form button"),
+	$button: null,
 	init: function(){
+		this.$button =  $("#volunteer-form button");
 		this.events();
 	},
 	

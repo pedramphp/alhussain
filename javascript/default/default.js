@@ -1,15 +1,8 @@
-$(document).ready(function(){
+$(window).load(function(){
 	$('html').removeClass('hide');
 	if ( $.browser.msie && $_LITE_.action != 'homepage') {
 		$('html').css('background','url("'+$_LITE_.imagePath+'layout/bg2.png") repeat-x transparent');
 	}
-	
-	/*
-	$("#main-container img").lazyload({ 
-	    placeholder : $_LITE_.GetVariable('imagePath') + "general/grey.gif",
-	    effect : "fadeIn"
-	});
-	*/
 	
 	$('[data-borderradius]').css('borderRadius',function(){
 		return $(this).data("borderradius");
@@ -25,6 +18,8 @@ $(document).ready(function(){
 		.alignCarouselArrows()
 		.sponsers()
 		.rotateLogo()
+		.twitterFader()
+		.visitors();
 	
 });
 
@@ -35,8 +30,9 @@ var footerContact = {
 	loadingMsg: $("<span class='loadingMsg'>Sending message please wait</span>"),
 	successMsg: $("<span class='successMsg'>Your message has been sent</span>"),
 	errorMsg: $("<span class='errorMsg'>Please try Again</span>"),
-	$button: $("#contact-footer button"),
+	$button: null,
 	init: function(){
+		this.$button = $("#contact-footer button");
 		this.events();
 	},
 	
@@ -120,6 +116,29 @@ var core = {
 			return this;
 			
 		},
+		
+		visitors: function(){
+			var countries= {};
+			$.getJSON("http://api.getclicky.com/api/stats/4?site_id=66435237&sitekey=561bc24f94399f2b&type=visitors-list&date=today&output=json&json_callback=?",function( response ){
+					
+					$.each(response[0].dates[0].items,function(index,value){
+						if(!countries[value.country_code]){ countries[value.country_code] = 1 }
+						else{ countries[value.country_code]++; }
+					});
+
+					var $copyright = $('#copyright');
+					var $countries = $("<div id='countries' />");
+					var $countryUL = $("<ul class='center-container horizontal clearfix' />");
+					$countryUL.appendTo( $countries );
+					$.each(countries,function(country,count){
+						var plural = (count>1)?"s":"";
+						$countryUL.append("<li><img src='"+$_LITE_.imagePath + "general/flags/"+country+".gif' /><span>" + count + " visitor"+plural+"</span></li>");
+					});
+					$copyright.after( $countries );
+			});
+			return this;
+		},
+		
 		donation: function(){
 			//donation
 			$('.donate-button').click(function(event){
@@ -128,6 +147,7 @@ var core = {
 			});
 			return this;
 		},
+		
 		gotop: function(){
 			//go top
 			$('.gotop').click(function(){
@@ -135,6 +155,7 @@ var core = {
 			});
 			return this;
 		},
+		
 		sponsers: function(){
 			//sponser header
 			var sponsers = "Imam Shirazi World Foundation, Imam Ali (A.S) Center Springfield VA,Prestige. Productionz Washington DC,Kabob Factory Lorton VA".split(",");
@@ -148,7 +169,27 @@ var core = {
 			},5000);
 			return this;
 		},
+		
+		twitterFader: function(){
+			
+			$('.tweetAutoFader').each(function(){
+					var $tweets = $(this).find('p'),
+					$next = null,
+					ticker = function(){
+						$tweets.filter(':visible').delay(5000).fadeOut(500,function(){
+							$next = ( $(this).next().length ) ? $(this).next() : $tweets.first();
+							$next.fadeIn(500,ticker);	
+						});
+						
+					};
+					ticker();
+			});
+			return this;
+			
+		},
+		
 		rotateLogo: function(){
+			
 			$('.al-rotate').hover(function(){
 				$(this).css('rotate','-3deg');
 			},function(){
@@ -156,13 +197,17 @@ var core = {
 			});
 			return this;
 		},
+		
 		alignCarouselArrows: function(){
 			$('.prev figure,.next figure').valign();
-			return this;},
+			return this;
+		},
+		
 		resetForm: function(){
 			$('input[type=text],textarea').val("");
 			return this;
 		},
+		
 		fixOutline: function(){
 	
 			// fixing the outline issue
@@ -176,6 +221,7 @@ var core = {
 			return this;
 			
 		},
+		
 		tweets: function(){
 			
 			var articles = $('#footer-twitter p'),

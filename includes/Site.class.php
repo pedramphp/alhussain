@@ -98,7 +98,7 @@ class Site extends SiteHelper{
 	
 	
 	private function jsonrpc(){
-			parent::__construct();
+		  parent::__construct();
 		  $post = LiteFrame::FetchPostVariable();
 		  $api = new $post['api']();
 		  self::$siteObjectsData[$post['api'] . "_" . $post['method']] = call_user_func_array(array($api, $post['method']), $post['config']);

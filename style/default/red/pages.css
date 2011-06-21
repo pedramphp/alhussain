@@ -23,7 +23,8 @@
 .form label {
 	cursor: text;
 	line-height: 25px;
-	padding-right: 30px;}
+	padding-right: 30px;
+	font-size: 14px; }
 
 .form span {
 	font-size: 12px;

@@ -43,14 +43,6 @@ $(document).ready(function() {
 	
 	$("#homepage-videos li a").colorbox({width:"100%", height:"100%", iframe:true});
 	
-	/*
-	$("#homepage-videos li img").niceZoom({
-		align : 'center',  // center , left  , right  [default :center  ]
-		valign: 'middle',   // middle , top , bottom  [default : middle ]
-		duration : 500 ,  // time in milliseconds     [default : 300    ]
-		zoom : 5 
-	});
-	*/
 	
 	$("a.largeImage img").niceZoom({
 		align : 'center',  // center , left  , right  [default :center  ]

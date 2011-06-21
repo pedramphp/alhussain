@@ -42,10 +42,11 @@
 			<section  id='homepage-posts' class='relative'>
 				<!-- <a href='javscript:void' class='more'><figure>More Posts<figcaption></figcaption></figure><i></i></a> -->
 				<header class='homepage-box-header'>
-					<figure>Latest Posts</figure>
+					<figure>Latest News</figure>
 					<i></i>
 				</header>
-					<h1 style="margin:20px 0; text-align:center; font-size: 22px;text-shadow: 2px 3px 37px #333">Coming Soon</h1>
+					<div style='height:265px;'><h1 style="margin:20px 0; height: 269px; line-height: 269px;text-align:center; font-size: 28px;text-shadow: 3px 8px 14px #333333">Coming Soon</h1>
+					</div>
 				<!--
 				<ul>
 					<li>
@@ -116,13 +117,7 @@
 			</section> <!-- </homepage-images> -->
 			
 		</section> <!-- </homepage-boxes > -->
-		<aside id='homepage-sidebar'>
-			<header>
-				<a href='<!--{$applicationPath}-->volunteer' id='volunteer-sidebar'>
-					<figure></figure>
-				</a>		
-			</header>
-			
+		<aside id='homepage-sidebar'>			
 			<section id='donation-sidebar'>
 				<header class='homepage-box-header'>
 					<figure>Donate</figure>
@@ -140,6 +135,11 @@
 				</div>
 				<footer class='homepage-box-footer'><figure></figure></footer>
 			</section><!-- </donation-sidebar> -->
+			<header id='volunteerHeader'>
+				<a href='<!--{$applicationPath}-->volunteer' id='volunteer-sidebar'>
+					<figure></figure>
+				</a>		
+			</header>
 			<!-- 
 			<section id='vote-sidebar'>
 				<header class='homepage-box-header'>
@@ -152,31 +152,31 @@
 				<footer class='homepage-box-footer'><figure></figure></footer>
 			</section>
 			 -->
+			 <section id='facebook-sidebar'>
+				<header class='homepage-box-header'>
+					<figure>Find us on Facebook</figure>
+					<i></i>
+				</header>
+				<div id='fb-container'>
+					<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FAnwar-Al-Hussain-Guidance-for-Revival%2F160722923969793&amp;width=250&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=262" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:262px;" allowTransparency="true"></iframe>
+			 	</div>
+				<footer class='homepage-box-footer'><figure></figure></footer>
+			</section><!-- </facebook-sidebar> -->
 			<section id='tweet-sidebar'>
 				<header class='homepage-box-header'>
 					<figure>Latest Tweets</figure>
 					<i></i>
 				</header>
-				<div id='tweet-sidebar-box'>
+				<div id='tweet-sidebar-box' class='tweetAutoFader'>
 					<section>
 						<i></i>
-						<p>
-							<!--{$SiteData.tweets[0]}-->
-						</p>
+					  <!--{foreach from=$SiteData.tweets key =key item=tweet}-->
+					  	<p <!--{if $key neq 0}--> style="display:none;"<!--{/if}--> itemprop="tweet"><!--{$tweet}--></p>
+					  <!--{/foreach}-->
 					</section>
 					<a href='<!--{$SiteData.socialLinks.twitter.url}-->' title='<!--{$SiteData.socialLinks.twitter.title}-->' id='tweet-sidebar-icon'>Follow us on Twitter</a>
 				</div>
 				<footer class='homepage-box-footer'><figure></figure></footer>
 			</section><!-- </tweet-sidebar> -->
 			
-			<section id='facebook-sidebar'>
-				<header class='homepage-box-header'>
-					<figure>Find us on Facebook</figure>
-					<i></i>
-				</header>
-				<div id='fb-container'>
-				<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FAnwar-Al-Hussain-Guidance-for-Revival%2F160722923969793&amp;width=250&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=262" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:262px;" allowTransparency="true"></iframe>
-			 </div>
-				<footer class='homepage-box-footer'><figure></figure></footer>
-			</section><!-- </facebook-sidebar> -->
 		</aside> <!-- </ homepage-sidebar > -->

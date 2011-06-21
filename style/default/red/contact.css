@@ -88,9 +88,8 @@
 			float: right;
 			font-size: 12px;}
 
-		#contact-map figure img{
-			padding: 10px;
-			border: 1px solid #ccc;}
+		#contact-map figure{
+			padding: 10px; }
 			
 		#contact-map figcaption {
 			margin: 0 auto;

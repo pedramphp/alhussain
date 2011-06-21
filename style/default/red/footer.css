@@ -325,7 +325,7 @@
 		height: 70px; width: 100%;
 		background: #000; color: #999;  }
 		
-		#copyright-inner{ height: 70px; }
+		#copyright-inner{ height: 70px; width: 900px !important; }
 		
 		#copyright-inner-left{	position: relative; width: 508px; line-height: 19px; padding-top: 16px; }
 		
@@ -354,6 +354,18 @@
 		   
 		/*  </ COPYRIGHT >
 		*********************/	   
+
+		/*		< COUNTRIES > 
+		*****************************
+		******************************/	
+		
+		#countries { margin-top: 10px; }
 	
+		#countries li{margin-right:30px}
+		
+		#countries span{ padding-left:5px; } 
+		/*  </ COPYRIGHT >
+		*********************/		
+		
 /*  < /FOOTER >
 *********************/		   

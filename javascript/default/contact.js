@@ -1,8 +1,24 @@
 $(document).ready(function(){
 	
 	contact.init();
+	var address = '7900 Backlick Rd Springfield VA,USA';
+	var map = $("#map_canvas").gMap({
+		address: address,
+		zoom: 16,
+		mapType: 'SATELLITE'
+	});
+	map.getLatLng(address,function( latLng, success, error  ){
+	  	map.addMarkers([{
+			click: function(){},
+			latitude: latLng.lat(),
+			longitude: latLng.lng()
+	  	 }]);
+	});
 	
 });
+
+
+
 
 var contact = {
 	
@@ -10,8 +26,10 @@ var contact = {
 	loadingMsg: $("<span class='loadingMsg'>Sending message please wait</span>"),
 	successMsg: $("<span class='successMsg'>Your message has been successfully sent</span>"),
 	errorMsg: $("<span class='errorMsg'>Message was not sent, Please try Again</span>"),
-	$button: $("#contact-form button"),
+	$button: null,
 	init: function(){
+	
+		this.$button = $("#contact-form button");
 		this.events();
 	},
 	
