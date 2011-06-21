@@ -52,7 +52,7 @@ var contact = {
 				if( data.SiteData.Contact_contactUs.success ){
 					this.hideLoading();
 					this.loadSucecssMsg();
-					$form.find('input,textarea').val('');
+					$form.find(':text,textarea').val('');
 				}else{
 					this.error();
 				}

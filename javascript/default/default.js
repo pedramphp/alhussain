@@ -53,18 +53,27 @@ var footerContact = {
 			method: 'footerContact',
 			data: { params: $.deparam.querystring($form.serialize()) },
 			success: function( data, textStatus, jqXH ){
-				this.hideLoading();
-				this.loadSucecssMsg()
+				if( data.SiteData.Contact_footerContact.success ){
+					this.hideLoading();
+					this.loadSucecssMsg();
+					$form.find(':text,textarea').val('');
+				}else{
+					this.error();
+				}
 			},
-			error: function(){
-				this.hideLoading();
-				this.loadErrorMsg()
-			},
+			error: this.error,
 			beforeSend: function(){
 				this.disableForm();
 				this.showLoading()
 			}
 		});
+	},
+	
+	error: function(){
+		
+		this.hideLoading();
+		this.loadErrorMsg()		
+		
 	},
 	
 	disableForm: function(){
