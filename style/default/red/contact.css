@@ -21,7 +21,9 @@
 		
 #contact-page {
 	margin-bottom: 30px;}
-		
+	
+#contact-page option{ margin: 5px; }
+	
 	#contact-content {
 		float: left;
 		width: 550px;}

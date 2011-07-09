@@ -106,7 +106,8 @@ html>body { font-size: 12px }
 
 #main-header hgroup h1{ width: 401px; }
 
-#logo{ display: block; 	height: 100px; position:relative;  }
+#logo{ display: block; 	height: 100px;  }
+	#logo figure{ position: absolute;}
 
 	#logo img{ width: 72px; height: 100px; }
 	

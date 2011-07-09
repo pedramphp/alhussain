@@ -22,17 +22,24 @@
 	
 .form label {
 	cursor: text;
+	float: left;
 	line-height: 25px;
-	padding-right: 30px;
-	font-size: 14px; }
+	margin-right: 30px;
+	font-size: 13px; }
 
 .form span {
-	font-size: 12px;
-	color: #888;}
+	font-size: 11px;
+	line-height: 12px;
+	float: left;
+	margin: 1px 12px 20px 3px}
 	
-.form input, .form textarea, .form select {
+.form input.txt, .form textarea, .form select {
 	margin-bottom: 15px;
 	background-repeat: no-repeat;}
+
+.form input[type="checkbox"]{
+	float: left;
+}
 	
 #fullName input{
 	background-image: url('images/layout/sprite_contact.png');
@@ -74,14 +81,14 @@
 	#website.error input{ 
 		background-position: right -330px;}	
 
-#question input{
+#question input, .question input{
 	background-image: url('images/layout/sprite_contact.png');
 	background-position: right -360px;}
 	
-	#question input:focus {
+	#question input:focus, .question input:focus {
 		background-position: right -390px;}
 		
-	#question.error input{ 
+	#question.error input, .question.error input{ 
 		background-position: right -420px;}	
 		
 #address input{
@@ -207,3 +214,68 @@
 	/*		</ Inner Page Header > 
 	*****************************
 	******************************/
+	
+	
+	
+	/*		< POST LIST > 
+	*****************************
+	******************************/
+	
+.post-list p { margin-bottom: 10px; clear: both;}
+
+.post-list header { margin-bottom: 20px;}
+
+	.post-list header figure{
+		float: left;
+		position: relative;
+		margin: 10px 10px 0 0;
+		border: 1px solid #363636}
+	
+	.post-list header figure figcaption {
+		width: 255px; height: 7px;
+		bottom: -8px;
+		background: url('images/layout/sprite.png') no-repeat 0 -265px transparent;
+		position: absolute;}
+	
+	.post-list header figure img {display: block;}
+	
+	.post-list header aside{
+		float: left;
+		width: 710px;
+		margin-top: 20px;}
+		
+	.post-list header aside h2 {
+		font-size: 20px;
+		margin-bottom: 10px;
+		color: #000;}
+	
+	#details {
+		float: left;
+		margin-left: 0;
+		margin-bottom: 15px}
+		
+		#details li {
+			float: left;
+			font-size: 12px;
+			line-height: 13px;
+			color: #888;
+			margin-right: 10px; padding-left: 16px; padding-right: 10px;
+			border-right: 1px solid #888;
+			background-image: url('images/layout/sprite.png');
+			background-repeat: no-repeat}
+		
+		#details .author {
+			background-position: -25px -215px}
+			
+		#details .date {
+			background-position: -130px -215px}
+			
+		#details .time {
+			border-right: none;
+			background-position: -240px -215px }
+
+			
+	/*		</ POST LIST > 
+	*****************************
+	******************************/	
+	

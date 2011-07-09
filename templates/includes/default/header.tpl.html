@@ -1,12 +1,12 @@
 	<header role='banner' id='main-header' class='center-container clearfix'>
 		<hgroup itemref='content-info' itemscope itemtype='http://microformats.org/profile/hcard'>
 			<h1 itemprop='fn org'>
-				<a itemprop='url' href='http://alhussaintv.tv' id='logo' <!--{if $action eq 'homepage'}-->class='invisible'<!--{/if}--> >
-					<figure>
+				<a itemprop='url' href='http://alhussaintv.tv' id='logo'  >
+					<figure <!--{if $action eq 'homepage'}-->class='invisible'<!--{/if}-->>
 						<img itemprop='logo' alt='Alhussain TV' src='<!--{$imagePath}-->layout/al-hussain-logo.png' />
 						<figcaption class='ir'>Anwar Al-Hussain TV - Official Logo</figcaption>
 					</figure>
-					<figure id='logoText'>
+					<figure id='logoText' <!--{if $action eq 'homepage'}-->class='invisible'<!--{/if}-->>
 						<figcaption class='ir'>Anwar Al-Hussain TV - Guidance for revival</figcaption>
 					</figure>
 				</a>

@@ -17,6 +17,8 @@
 							<li><a href='<!--{$applicationPath}-->about'><i></i>About us</a></li>
 							<li><a href='<!--{$applicationPath}-->blog'><i></i>Blog</a></li>
 							<li><a href='<!--{$applicationPath}-->contact'><i></i>Contact us</a></li>
+							<li><a href='<!--{$applicationPath}-->testimonial'><i></i>Comments</a></li>
+							<li><a href='<!--{$applicationPath}-->faq'><i></i>FAQ</a></li>
 						</ul>
 					</nav>					
 				</section><!-- </pages-footer> -->
@@ -54,7 +56,7 @@
 			
 			<section id='books-footer' class='main-footer-section'>
 				<header>
-					<figure> Books that we recommend	</figure>
+					<figure> Books we recommend	</figure>
 				</header>
 				<div class='carousel-big carousel clearfix'>
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous books</figure></a>
@@ -89,7 +91,7 @@
 					<ul id='footer-fb-rss'>
 						<li id='footer-fb-icon' class='clearfix'>
 							<figure></figure>
-							<span>Join us on Facebook</span>
+							<span>Join us in facebook</span>
 							<span>Share us with your friends</span>						
 						</li>
 						<li id='footer-rss-icon' class='clearfix'>
@@ -104,15 +106,15 @@
 					</ul>
 					<section id='footer-twitter' data-borderRadius='5'>
 						<a href='<!--{$SiteData.socialLinks.twitter.url}-->' title='<!--{$SiteData.socialLinks.twitter.title}-->' id='footer-twitter-link' >Latest tweets</a>
-						<a href='javascript:void(0)' id='footer-twitter-icon' class='ir'>Alhussain Tweets</a>
+						<a href='javascript:void(0)' id='footer-twitter-icon' class='ir'>Anwar Al-Hussain Tweets</a>
 						<a href='javascript:void(0)' id='footer-twitter-next' class='ir'>Next tweet</a>
 						<a href='javascript:void(0)' id='footer-twitter-prev' class='ir'>Previous tweet</a>
 					  <!--{foreach from=$SiteData.tweets key =key item=tweet}-->
 					  	<p <!--{if $key neq 0}--> style="display:none;"<!--{/if}--> itemprop="tweet"><!--{$tweet}--></p>
 					  <!--{/foreach}-->
 					</section> <!-- </footer-twitter> -->
-					<p class='clearBoth'>You can donate to Al-Hussain TV in order to support the muslim community. Al-Hussian TV's mission is to make better social environment for all muslims by it's TV Channel and website.</p>
-					<p>Donate to Al-Hussain TV now and support the muslim community.</p>
+					<p class='clearBoth'>You can donate to Anwar Al-Hussain in order to support the Muslim community. Al-Hussian TV's mission is to make better social environment for all Muslims by it's TV Channel and website.</p>
+					<p>Donate to Anwar Al-Hussain now and support the Muslim community.</p>
 					<figure id='footer-donate-paypal'></figure>
 					<figure id='footer-donate-creditcard'></figure>
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -170,6 +172,7 @@
 					<a itemprop='url' href='javascript:void(0)'>Privacy policy</a>
 					<a itemprop='url' href='<!--{$applicationPath}-->about'>About Al-Hussain TV</a>|
 					<a itemprop='url' href='javascript:void(0)'>RSS Feed</a>|
+					<a itemprop='url' href='<!--{$applicationPath}-->faq'>FAQ</a>|
 					<a itemprop='url' href='<!--{$applicationPath}-->contact'>Contact us</a> 
 				</p>
 			</li> 

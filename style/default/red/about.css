@@ -1,12 +1,74 @@
 #about-intro {
-	margin-bottom: 50px;
-	  font-size: 14px;
-    line-height: 29px;}
+	margin-bottom: 50px;}
 
 	
 #about-content article {
 	margin-bottom: 30px;}
 	
+#members {
+	margin: 0 auto;
+	width: 100%;
+}
+
+
 	
-#about-content p{
+#about-content p, #about-intro p{
 	line-height:28px; font-size:14px; }	
+	
+#members li{
+	display: inline-block;
+	margin: 0 20px 20px 0;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 20px;
+}
+
+#members li.last {border-bottom: none;}
+
+#members figure {
+	float: left;
+	width: 133px; height: 153px;
+	padding: 17px;
+	background: url('images/layout/bg_pic_about.png') no-repeat transparent;
+}
+
+#members div{
+	float: left;
+	width: 790px;
+	margin-left: 0
+}
+
+#members h2 {
+	font-size: 18px;
+	font-weight: bold
+}
+
+#members span {
+	font-size: 12px;
+	display: block;
+	color: #888;
+}
+
+#members p {
+	margin: 10px 0;
+}
+
+#members nav a{
+	float: left;
+	width: 24px; height: 40px;
+	margin-right: 5px;
+	background-color: transparent;
+	background-image: url('images/layout/icon_socials.png');
+	background-repeat: no-repeat;
+	text-indent: -999em;
+}
+
+#members nav a.facebook { background-position: 0 0;}
+#members nav a.twitter { background-position: -32px 0;}
+#members nav a.delicius { background-position: -64px 0;}
+#members nav a.digg { background-position: -96px 0;}
+#members nav a.yahoo { background-position: -128px 0;}
+#members nav a.myspace { background-position: -160px 0;}
+#members nav a.linked { background-position: -192px 0;}
+#members nav a.skype { background-position: -224px 0;}
+#members nav a.google { background-position: -256px 0;}
+#members nav a.website { background-position: -288px 0;}

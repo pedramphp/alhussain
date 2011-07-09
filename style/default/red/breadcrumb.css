@@ -9,6 +9,13 @@
 	#breadcrumb a{
 		margin-right: 5px;
 		color: #fff;}
+		
+	
+	#breadcrumb i{
+		margin: 0 2px;
+		width: 10px; height: 15px;
+		display:inline-block;
+		background: url("images/layout/arrow_right.png") no-repeat left 2px transparent;}
 	
 /*		</ Breadcrumb > 
 *****************************

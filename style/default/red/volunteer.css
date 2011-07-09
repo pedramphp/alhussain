@@ -1,8 +1,11 @@
-#volunteer-intro {
-	margin-bottom: 50px;}
-
-#volunteer-intro h1{ font-size: 17px; line-height: 30px; width: 750px;}
+#volunteer-intro { margin-bottom: 50px;}
 	
+#volunteer-intro h1{ margin-top: 20px; font-size: 17px; line-height: 30px;}
+
+#volunteer-sidebar {
+    float: right;
+    width: 480px; }
+
 .innerPageTitle {
 	width: 100%;
 	font-size: 20px;
@@ -28,17 +31,18 @@
 		
 	#facebook-icon {
 		background-position: left -638px }
-	
+
+#volunteer-content { display: inline-block; margin-bottom: 50px;}
 		
-#volunteer-content {
+#volunteer-left {
 	float: left;
 	width: 480px;
 	margin: 0 15px 0 0;}
 	
-	#volunteer-content ul.list{
-		font-size: 17px;  }
+	#volunteer-left ul.list{
+		font-size: 17px; }
 	
-	#volunteer-content ul.list li{ padding-left: 30px; margin-bottom: 10px }	
+	#volunteer-left ul.list li{ padding-left: 30px; margin-bottom: 10px }	
 		
 	#volunteer-form input.txt{
 		width: 260px;}
@@ -96,7 +100,5 @@
 		#question.error input{ 
 			background-position: right -330px;}
 
-			
-#volunteer-sidebar {
-	float: right;
-	width: 480px}
+
+#volunteer-form tr{ margin-bottom: 10px; }

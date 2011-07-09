@@ -1,0 +1,62 @@
+	
+#faq-content { margin-bottom: 50px;}
+
+#faq-list {margin-top: 20px}
+
+#faq-list li a{
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f5f5f5), to(#dedede));
+	background: -moz-linear-gradient(#f5f5f5, #dedede);
+	background: linear-gradient(#f5f5f5, #dedede);
+	/* For Internet Explorer 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#F0000000, endColorstr=#00000000);
+	/* For Internet Explorer 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#F0000000, endColorstr=#00000000)";	
+	border: 1px solid #b9b9b9;
+	text-shadow: 1px 1px 0 #FFF;
+	padding: 1px 30px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	
+	-moz-box-shadow: 0 0 4px #ccc;
+	-webkit-box-shadow: 0 0 4px #ccc;
+	box-shadow: 0 0 4px #ccc;
+	font-size: 16px;
+	display: block;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+	#faq-list li a:hover, #faq-list li.active a {
+		border-color: #b9b9b9;
+		background: -webkit-gradient(linear, 0 0, 0 bottom, from(#dedede), to(#f5f5f5));
+		background: -moz-linear-gradient(#dedede, #f5f5f5);
+		background: linear-gradient(#dedede, #f5f5f5);
+		
+		color: #333;
+		
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
+#faq-list li figure {
+	position: absolute;
+	left: 6px; top: 0px;
+	background: url('images/layout/icon_plus.png') no-repeat 0 0 transparent;
+	width: 16px; height: 27px;
+}
+
+#faq-list li.active figure {
+	background-position: 0 -27px;
+}
+
+#faq-list div {
+	margin: 10px 10px 20px;
+	 font-size: 13px;
+    line-height: 31px;
+}
+
+#faq-list ol {
+	margin: 10px 40px;
+}

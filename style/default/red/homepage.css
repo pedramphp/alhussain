@@ -170,13 +170,14 @@
     font-size: 17px; word-wrap: break-word; }
 	
 	#homepage-hadith figure{ 
-		margin-top: 29px; 
-		height: 45px; width: 135px;
-		background-position: -424px -451px; }
+		background-position: -420px -456px;
+	    height: 50px;
+	    margin-top: 29px;
+	    width: 156px; }
 
-	#homepage-hadith i.left{ background-position: -424px -502px; }
+	#homepage-hadith i.left{ background-position: -424px -504px; }
 	
-	#homepage-hadith i.right{ background-position: -474px -496px; margin-top: 49px; }
+	#homepage-hadith i.right{ background-position: -474px -510px; margin-top: 49px; }
 	
 	
 	/*		</ HADITH > 
@@ -204,6 +205,8 @@
 	#welcome-note h1 b{ font-size: 18px; }
 	
 	#homepage-left section{ margin-bottom: 47px; }
+	
+	.ie8 #homepage-left section{ margin-bottom: 55px; }
 	
 	#homepage-left  .homepage-box-header,
 	#homepage-left  .homepage-box-footer{ width: 679px; }
