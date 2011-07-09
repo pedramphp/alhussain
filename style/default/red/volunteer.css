@@ -102,3 +102,9 @@
 
 
 #volunteer-form tr{ margin-bottom: 10px; }
+
+.valCheckboxes div{
+	width: 400px;clear:both; margin:35px 0 15px 30px;
+}
+
+

@@ -37,7 +37,7 @@
 						</tr>
 						<tr id="school">
 							<td><label>School/Work</label></td>
-							<td><input type="text" class="txt" name="volSchool"></td>
+							<td><input type="text" class="txt" name="volWork"></td>
 						</tr>
 						<tr id="city" class="question">
 							<td><label>What city do you live in?</label></td>
@@ -45,37 +45,44 @@
 						</tr>
 						
 						<tr>
-							<td><label>When is the best time to contact you?</label></td>
-							<td>
-								<input type="checkbox" class="" name="checkWeekdays"><span>Weekdays</span>
-								<input type="checkbox" class="" name="checkWeekends"><span>Weekends</span>
-								<input type="checkbox" class="" name="checkDayTime"><span>Daytime</span>
-								<input type="checkbox" class="" name="checkEvening"><span>Evening</span>
-							</td>
+							<td colspan="2" class='valCheckboxes'><label>When is the best time to contact you?</label>
+								<div>
+									<input type="checkbox" name="valWeekdays"><span>Weekdays</span>
+									<input type="checkbox"  name="valWeekends"><span>Weekends</span>
+									<input type="checkbox"  name="valDayTime"><span>Daytime</span>
+									<input type="checkbox"  name="valEvening"><span>Evening</span>
+								</div>
 						</tr>
 						<tr>
-							<td><label>What is the best way to contact you?</label></td>
-							<td>
-								<input type="checkbox" class="" name="checkPhone"><span>Phone</span>
-								<input type="checkbox" class="" name="checkEmail"><span>Email</span>
+							<td colspan="2" class='valCheckboxes'><label>What is the best way to contact you?</label>
+								<div>
+									<input type="checkbox"  name="valPhone"><span>Phone</span>
+									<input type="checkbox"  name="valEmail"><span>Email</span>
+								</div>
 							</td>
 						</tr>
 					
 						<tr>
-							<td><label>What are your interests?</label></td>
+							<td colspan="2" class='valCheckboxes'><label>What are your interests?</label>
+								<div>
+									<input type="checkbox"  name="valHosting"><span>Hosting</span>
+									<input type="checkbox"  name="valArt"><span>Art/ Design</span>
+									<input type="checkbox"  name="valResearch"><span>Research</span>
+									<input type="checkbox"  name="valTechnical"><span>Technical</span>
+									<br/><br/><input type="checkbox"  name="valActing"><span>Acting</span>
+									<input type="checkbox"  name="valWriter"><span>Writer</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><label>Other</label></td>
 							<td>
-								<input type="checkbox" class="" name="checkPhone"><span>Hosting</span>
-								<input type="checkbox" class="" name="checkEmail"><span>Art/ Design</span>
-								<input type="checkbox" class="" name="checkEmail"><span>Research</span>
-								<input type="checkbox" class="" name="checkEmail"><span>Technical</span>
-								<br/><br/><input type="checkbox" class="" name="checkEmail"><span>Acting</span>
-								<input type="checkbox" class="" name="checkEmail"><span>Writer</span>
-								<br/><br/><span>Other?</span><textarea name="checkMessage"></textarea>
+								<textarea name='valMessage'></textarea>
 							</td>
 						</tr>
 						<tr>
 							<td></td>
-							<td><button type="submit">Submit</button></td>
+							<td><button type="submit" style='float:right'>Submit</button></td>
 						</tr>
 					</tbody></table>
 				</form>
