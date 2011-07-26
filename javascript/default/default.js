@@ -124,7 +124,7 @@ var core = {
 				nav : 'nav',
 				time: 800,
 				loop: true,
-				limit: 3
+				limit: 4
 			});		
 			
 			$('a.books-shadow:has(:not(span))').live('mouseenter',function(e){

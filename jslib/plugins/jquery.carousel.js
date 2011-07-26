@@ -48,7 +48,7 @@
 					e.preventDefault();
 					e.stopPropagation();
 					if( $ul.is(':animated') ){ return; }
-					if( activeIndex >= size - options.limit ){
+					if( activeIndex > size - options.limit ){
 						if( !options.loop) return;
 			
 						activeIndex = 1;
@@ -69,12 +69,15 @@
 					if( activeIndex === 1 ){ 
 						if( !options.loop ) return;
 				
-						activeIndex += options.limit;
-						
-						$ul.animate({ left: (size - options.limit) * -elementWidth  }, options.time);
+						if( size-options.limit < options.limit){
+							start = options.limit;
+						}
+						activeIndex = start+1;
+						$ul.animate({ left: start * elementWidth * -1  }, options.time);
 						return; 
 					}
 					activeIndex -= options.limit;	
+					
 					$ul.animate({ left: parseInt($ul.css('left'))  + parseInt(options.limit * elementWidth) }, options.time);
 
 				}
