@@ -1,0 +1,78 @@
+body {
+	background: url("images/login/bg.png") repeat-x #eee;
+}
+
+
+#login-container {
+	margin: 150px auto 0;
+	position: relative;
+	background: pink;
+	width: 510px;
+}
+
+#login-container figure {
+	position: absolute; top: 120px; left: 0;
+}
+
+#login-form {
+	position: absolute; top: 0; right: 0;
+	width: 320px;
+	text-align: center;
+}
+
+#login-form section {
+	width: 100%;
+	background-color: #f3f3f3;
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	-o-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	text-align: left;
+}
+
+#login-form section form { padding: 20px; display: block;}
+
+#login-form form p {
+	margin-bottom: 10px;
+}
+
+#login-form form label {
+	display: block;
+	cursor: default;
+	margin-bottom: 5px;
+}
+
+#login-form form input[type=text], #login-form form input[type=password], input.txt {
+	width: 270px;
+	font-size: 20px;
+	padding: 6px 5px;
+}
+
+
+#login-form hgroup{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#login-button {
+	background: url("images/login/bg_btn.png") no-repeat transparent;
+	width: 90px; height: 30px;
+	color: #fff;
+	text-shadow: 1px 1px 0 #000;
+	border: none;
+	margin: 20px auto;
+	display: block;
+}
+
+#login-form h6 {font-size: 1em}
+
+#login-form h3 {font-size: 1.3em}
+
+#forgot-link {
+	display: inline-block;
+	margin: 15px auto;
+}
+
+#forgot-link:hover {
+	border-bottom: 1px solid;
+}
