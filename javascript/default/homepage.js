@@ -37,30 +37,58 @@ $(document).ready(function() {
 	    prev:   '.carousel-slideshow .prev'
 	});
     
-	$('#homepage-videos ul').carousel({
-		prev: '#homepage-videos .prev',
-		next: '#homepage-videos .next',
-		time: 800
+	$('#homepage-videos,#homepage-images').carousel({
+		prev: '.prev',
+		next: '.next',
+		nav : 'nav',
+		time: 800,
+		loop: true,
+		limit: 3
 	});		
 
-	$('#homepage-images ul').carousel({
-		prev: '#homepage-images .prev',
-		next: '#homepage-images .next',
-		time: 800
-	});			
 	
 
 	
 	$("a.largeImage").colorbox();
 	
 	$("#homepage-videos li a").colorbox({width:"100%", height:"100%", iframe:true});
-	
-	
+	/*
 	$("a.largeImage img").niceZoom({
 		align : 'center',  // center , left  , right  [default :center  ]
 		valign: 'middle',   // middle , top , bottom  [default : middle ]
 		duration : 500 ,  // time in milliseconds     [default : 300    ]
 		zoom : 5 
+	});*/
+	
+	
+	
+	$('#homepage-videos li a:has(:not(span))').live('mouseenter',function(e){
+		var $span = $("<span style='left:169px;'/>");
+		$span.insertAfter( $(this).find('figure') );
+		$span.stop().delay(100).animate({left:0, opacity: 1},{queue:false,duration:600,specialEasing: {right: 'easeOutQuint'}},function(){
+			$(this).closest('li').css('border-color','#660000');
+		});
 	});
+	
+	$('#homepage-videos li a:has(span)').live('mouseleave',function(e){
+		$(this).find('span').stop().delay(100).animate({left:-169, opacity: 0}, {queue:false,duration:600,specialEasing:{right: 'easeOutQuint'}},function(){
+			$(this).closest('li').css('border-color','#363636').end().remove();
+		});
+	});
+	
+	$('#homepage-images li a:has(:not(span))').live('mouseenter',function(e){
+		var $span = $("<span style='left:176px;'/>");
+		$span.insertAfter( $(this).find('figure') );
+		$span.stop().delay(100).animate({left:0, opacity: 1},{queue:false,duration:600,specialEasing: {right: 'easeOutQuint'}},function(){
+			$(this).closest('li').css('border-color','#660000');
+		});
+	});
+	
+	$('#homepage-images li a:has(span)').live('mouseleave',function(e){
+		$(this).find('span').stop().delay(100).animate({left:-176, opacity: 0}, {queue:false,duration:600,specialEasing:{right: 'easeOutQuint'}},function(){
+			$(this).closest('li').css('border-color','#363636').end().remove();
+		});
+	});
+	
 	
 });

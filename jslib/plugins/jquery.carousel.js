@@ -1,60 +1,98 @@
 (function($){
 
-			$.fn.carousel = function( options ){
-				options = $.extend({}, $.fn.carousel.settings, options );
-				this.each(function(){
+	$.fn.carousel = function( options ){
+		options = $.extend({}, $.fn.carousel.settings, options );
+		this.each(function(){
 
-					var activeIndex = 1,
-					container = this,
-					$container = $(container),
-					elementWidth = $container.find(':first-child').outerWidth(true),
-					size = $container.children().length; 
-					$container.css('width', elementWidth * size );
-				    
-					$container.css('left',0); 
-	
-					var slider = {
-
-						init: function(){
-							if(size <= options.limit){ $( options.next+","+options.prev ).remove(); return; }
-							$( options.next ).click($.proxy(this,"next"));
-							$( options.prev ).click( $.proxy(this,"prev"));
-							
-						},
-						next: function(e){
-
-							e.preventDefault();
-							e.stopPropagation();
-							if( $container.is(':animated') ){ return; }
-							if( activeIndex >= size - options.limit ){ return; }
-							activeIndex += options.limit;	
-							$container.animate({ left: parseInt($container.css('left')) + parseInt( options.limit * elementWidth * -1 ) }, options.time);
-
-						},
-						prev: function(e){
-							
-							e.preventDefault();
-							e.stopPropagation();
-							if( activeIndex === 1 || $container.is(':animated')  ){ return; }
-							activeIndex -= options.limit;	
-							$container.animate({ left: parseInt($container.css('left'))  + parseInt(options.limit * elementWidth) }, options.time);
-
-						}
-
-					};
-
-					slider.init();
-					
-				});
-				
-			}; 
-
-			$.fn.carousel.settings = {
-				prev: '.prev',
-				next:  '.next',
-				limit: 3,
-				time: 500
-			};
+			var activeIndex = 1,
+			container = this,
+			$ul = $(container).find('ul:first'),
+			size = $ul.children().length; 
 			
+			$ul.find('li').css({
+				display: 'block',
+				'float': 'left'
+			});
+			
+			var elementWidth = $ul.find(':first-child').outerWidth(true);
+			
+			$ul.css({
+				width :elementWidth * size, 
+				position: 'relative',
+				left: 0
+			});
+			$(container).find(options.nav).css({
+		    	position: 'relative',
+			    display: 'block',
+			    overflow: 'hidden'
+			});
 
-		})(jQuery);
+
+
+			
+			var slider = {
+
+				init: function(){
+					if(size <= options.limit){ 
+						$( options.next+","+options.prev ).remove(); 
+						return; 
+					}
+					$(container).find( options.next ).click($.proxy(this,"next"));
+					$(container).find( options.prev ).click( $.proxy(this,"prev"));
+					$(container).bind('swipeleft', $.proxy(this,"next"));
+					$(container).bind('swiperight', $.proxy(this,"prev"));
+				},
+				
+				next: function(e){
+
+					e.preventDefault();
+					e.stopPropagation();
+					if( $ul.is(':animated') ){ return; }
+					if( activeIndex >= size - options.limit ){
+						if( !options.loop) return;
+			
+						activeIndex = 1;
+						$ul.animate({ left: 0 }, options.time);
+						return; 
+					}
+					activeIndex += options.limit;	
+					
+					$ul.animate({ left: parseInt($ul.css('left')) + parseInt( options.limit * elementWidth * -1 ) }, options.time );							
+				
+
+				},
+				prev: function(e){
+					
+					e.preventDefault();
+					e.stopPropagation();
+					if( $ul.is(':animated') ){ return; }
+					if( activeIndex === 1 ){ 
+						if( !options.loop ) return;
+				
+						activeIndex += options.limit;
+						
+						$ul.animate({ left: (size - options.limit) * -elementWidth  }, options.time);
+						return; 
+					}
+					activeIndex -= options.limit;	
+					$ul.animate({ left: parseInt($ul.css('left'))  + parseInt(options.limit * elementWidth) }, options.time);
+
+				}
+
+			};
+
+			slider.init();
+			
+		});
+		
+	}; 
+	$.fn.carousel.settings = {
+		prev: '.prev',
+		next:  '.next',
+		limit: 3,
+		time: 500,
+		loop: false
+	};
+	
+
+})(jQuery);

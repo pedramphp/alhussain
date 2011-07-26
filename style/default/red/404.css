@@ -1,0 +1,17 @@
+.not-found-page h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.not-found-page ul{
+	margin: 20px 30px;
+}
+
+.not-found-page p {
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.not-found-page a{ color: #5580D5; }
+.not-found-page a:hover{ color: #315CB1; border-bottom:1px dashed #3f7ebd; padding-bottom: 2px; }
+

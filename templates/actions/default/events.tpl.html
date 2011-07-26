@@ -1,35 +1,41 @@
-		<section id='events-box'>
-			<time>May 27-29<sup>th</sup> 2011</time>
-			<div class='clearfix'>
-				<h2>UMAA Convention</h2>
-				<p>"The Quran, Ahlul Bayt & Modern Society: A Focus on Identity, Citizenship and Collaboration"</p>
+		<section id='event-box'>
+			<figure class='ir'></figure>
+			<div class='roundedCorner' id='event-container'>
+				<h2><!--{$SiteData.event.activeRecord.title}--></h2>
+				<time><!--{$SiteData.event.activeRecord.entryDate}--></time>
+				<p>"<!--{$SiteData.event.activeRecord.subTitle}-->"</p>
 				<section>
 					<figure>
-						<img src='<!--{$imagePath}-->events/hilton_suites_toronto.jpg' alt='Hilton Suites Toronto' />
+						<img src='<!--{$SiteData.event.activeRecord.image}-->'  />
 						<figcaption>
-							<h3>Hilton Suites Toronto</h3>
+
+							<h3><!--{$SiteData.event.activeRecord.imageTitle}--></h3>
 						</figcaption>
 					</figure>
 					<address>
-						8500 Warden Avenue, Markham, Ontario, Canada L6G 1A5<br/>
-						 <span>Tel: 1-905-470-8500</span>
+						<!--{$SiteData.event.activeRecord.moreInfo}-->
 						 <nav>
 							<a class='event-facebook ir' href='<!--{$SiteData.socialLinks.facebook.url}-->' title='<!--{$SiteData.socialLinks.facebook.title}-->'>AlhussainTV Facebook Link</a>
 							<a class='event-twitter ir' href='<!--{$SiteData.socialLinks.twitter.url}-->' title='<!--{$SiteData.socialLinks.twitter.title}-->'>AlhussainTV Twitter Link</a>
 							<a class='event-youtube ir' href='<!--{$SiteData.socialLinks.youtube.url}-->' title='<!--{$SiteData.socialLinks.youtube.title}-->'>AlhussainTV Youtube Link</a>
 						 </nav>
+						 <span>Tel: 1-905-470-8500</span>
 					</address>
 				</section>
-				<aside>
-						<h1>Activities include:</h1>
-						<ul class='list'>
-							<li>Lectures, Workshops, and Special Sessions</li>
-							<li>Matrimonial Services</li>
-							<li>The first ever international Shia Video Games tournament competition for the yout</li>
-							<li>Brand new Museum Exhibit</li>
-							<li>Islamic Movie Programming</li>
-						</ul>
-				</aside>
 			</div>
-			<footer></footer>
 		</section>
+		<aside id='event-list'>
+			<header class='innerPageTitle'>
+				<figure>Latest Events</figure>
+			</header>
+			
+			<ul>
+				<!--{foreach from=$SiteData.event.records key=k item=event}-->
+					<li><a class='<!--{$event.type}--><!--{if $event.active}--> active<!--{/if}-->' href='<!--{$event.link}-->'><p><!--{$event.title}--></p><time><!--{$event.entryDate}--></time></a></li>
+				<!--{/foreach}-->
+				<!-- <li><a class='shihadat' href='javascript:void(0)'><p>Imam Ali (A.S.) Shihadat</p><time>13 Jul, 2011</time></a></li>
+				<li><a class='eid' href='javascript:void(0)'><p>Fetr Eid</p><time>24 Jul, 2011</time></a></li>
+				<li><a class='active viladat' href='javascript:void(0)'><p>Imam Hussain (A.S.) Viladat</p><time>23 Aug, 2011</time></a></li>
+				 -->
+			</ul>
+		</aside>

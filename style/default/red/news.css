@@ -1,52 +1,35 @@
-#blog-page { font-size: 15px; }
+#news-page { font-size: 15px;  margin-bottom: 50px; }
 
-#blog-content p {margin-bottom: 10px;}
+.news-list article {
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 20px;
+}
 
-#blog-content header { margin-bottom: 20px;}
+#news-content p {margin-bottom: 10px;}
 
-	#blog-content header figure{
+#news-content header { margin-bottom: 20px;}
+
+	#news-content header figure{
 		float: left;
 		position: relative;
 		margin: 10px 10px 0 0;
 		border: 1px solid #363636}
 	
-	#blog-content header figure figcaption {
+	#news-content header figure figcaption {
 		width: 255px; height: 7px;
 		bottom: -8px;
 		background: url('images/layout/sprite.png') no-repeat 0 -265px transparent;
 		position: absolute;}
 	
-	#blog-content header figure img {display: block;}
+	#news-content header figure img {display: block;}
 	
-	#blog-content header aside{
+	#news-content header aside{
 		float: left;
 		width: 710px;
 		margin-top: 20px;}
 		
-	#blog-content header aside h2 {
+	#news-content header aside h2 {
 		font-size: 20px;
 		margin-bottom: 10px;
 		color: #000;}
 	
-	#details {
-		margin-left: 0;}
-		
-		#details li {
-			float: left;
-			font-size: 12px;
-			line-height: 13px;
-			color: #888;
-			margin-right: 10px; padding-left: 16px; padding-right: 10px;
-			border-right: 1px solid #888;
-			background-image: url('images/layout/sprite.png');
-			background-repeat: no-repeat}
-		
-		#details .author {
-			background-position: -25px -215px}
-			
-		#details .date {
-			background-position: -130px -215px}
-			
-		#details .time {
-			border-right: none;
-			background-position: -240px -215px }

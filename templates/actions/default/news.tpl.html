@@ -1,31 +1,33 @@
-	<section>
-	
+<section id='news-page'>
+
+<!--{if $SiteData.news.record eq ''}-->
 	<div style="text-align:center; margin:70px 0;">
+			<img src="http://alhussaintv.tv/style/default/red/images/general/underconstruction.png">
+			<h1 style='font-size:28px'>Coming Soon</h1>
+	</div>
+<!--{else}-->
+	<section id='news-content'>
+		<article>
+			<header class='clearfix'>
+				<figure>
+					<a href='<!--{$SiteData.news.record.link}-->'>
+						<img src='<!--{$imagePath}-->news/thumbnail/<!--{$SiteData.news.record.image}-->' width='255' height='170' />
+					</a>
+					<figcaption class='ir'></figcaption>
+				</figure>
+				<aside>
+					<h2><!--{$SiteData.news.record.title}--></h2>
+					<div id='details'>
+						<span class='author'><!--{$SiteData.news.record.fullname}--></span>
+						<span class='date'><!--{$SiteData.news.record.friendlyDate}--></span>
+						<span class='time'><!--{$SiteData.news.record.time}--></span>
+					</div>
+				</aside>
+			</header>
+			<!--{$SiteData.news.record.article}-->
+		</article>
+	</section>		
+	<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:comments href="<!--{$pagePath}-->" num_posts="7" width="800"></fb:comments>
 	
-	<img src="http://alhussaintv.tv/style/default/red/images/general/underconstruction.png">
-<h1 style='font-size:28px'>Coming Soon</h1>
-</div>
-<!--
-			<section id='blog-content'>
-				<article>
-					<header class='clearfix'>
-						<figure>
-							<img src='<!--{$imagePath}-->news/blog_pic.jpg' width='255' height='170' alt='' />
-							<figcaption class='ir'></figcaption>
-						</figure>
-						<aside>
-							<h2>An islamic religion teacher disputed the testimony of a Nazi camp survivor who recounted his story to students in a Brussels secondary school, Le Soir daily newspaper reported Tuesday.</h2>
-							<ul id='details'>
-								<li class='date'>May 19th, 2011</li>
-								<li class='time'>19:30</li>
-							</ul>
-						</aside>
-					</header>
-					<p>Henri Kichka, 83, from the Union of Jewish deportees in Belgium, had been invited last Friday by the school in Laeken, a Brussels commune, to describe how he survived Buchenwald and his family members were killed in the death camps.</p>
-					<p>During the meeting with the 150 students, the school was told by a teacher of Islamic religion that Kichka's account "was largely exaggerated." </p>
-					<p>"This never happened to me in 25 years," Kichka, who is regularly invited to meet young people, told Le Soir.</p>
-					<p>The school management had decided to film the meeting because, it said, "witnesses disappear and we want to keep tracks."</p>
-				</article>
-			</section>
-				-->
-		</section>
+<!--{/if}-->		
+</section>		

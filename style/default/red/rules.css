@@ -318,31 +318,32 @@ a:link { -webkit-tap-highlight-color: #A80C6A; }
 		-webkit-box-shadow: 0 0 5px #ccc;
 		box-shadow: 0 0 5px #ccc;}
 		
-	
 	a.button, button, select {
-		display: inline-block;
-		padding: 4px 12px; 
-		border: 1px solid #b9b9b9;  -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;    
-		background: #eee; color: #666;
-		background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f5f5f5), to(#dddddd));
-		background: -moz-linear-gradient(#f5f5f5, #dddddd);
-		background: linear-gradient(#f5f5f5, #dddddd);
-		font-size: 14px;  line-height: 21px;
-		text-decoration: none;
-		cursor: pointer; }
-		
-	a.button:hover, button:hover{
-		background: -webkit-gradient(linear, 0 0, 0 bottom, from(#dddddd), to(#f5f5f5));
-		background: -moz-linear-gradient(#dddddd, #f5f5f5);
-		background: linear-gradient(#dddddd, #f5f5f5);
-		border-color: #bbb;
-		color: #222;}
+        display: inline-block;
+        padding: 2px 12px; 
+        border: 1px solid #b9b9b9;  -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;
+        background: #eee; color: #666;
+        background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f5f5f5), to(#dddddd));
+        background: -moz-linear-gradient(#f5f5f5, #dddddd);
+        background: linear-gradient(#f5f5f5, #dddddd);
+        font-size: 13px;  line-height: 21px;
+        text-decoration: none;
+        text-shadow: 1px 1px 0 #FFF;
+        cursor: pointer; }
+        
+    a.button:hover, button:hover{
+        background: -webkit-gradient(linear, 0 0, 0 bottom, from(#b51625), to(#700c16));
+        background: -moz-linear-gradient(#b51625, #700c16);
+        background: linear-gradient(#b51625, #700c16);
+        border-color: #5e0007;
+        text-shadow: 1px 1px 0 #690a13;
+        color: #fff;}
 
-	a.button:active, button:active, select:active {
-		background: -webkit-gradient(linear, 0 0, 0 bottom, from(#dddddd), to(#f5f5f5));
-		background: -moz-linear-gradient(#ccc, #ebebeb);
-		background: linear-gradient(#dddddd, #f5f5f5);
-		border-color: #bbb;}   
+    a.button:active, button:active, select:active {
+        background: -webkit-gradient(linear, 0 0, 0 bottom, from(#b51625), to(#700c16));
+        background: -moz-linear-gradient(#b51625, #700c16);
+        background: linear-gradient(#b51625, #700c16);} 
+
 	   
 	  /*	< CAROUSEL > 
 	  *****************************
@@ -360,7 +361,7 @@ a:link { -webkit-tap-highlight-color: #A80C6A; }
 		.carousel .prev figure{ 
 			background: url('images/layout/sprite.png') no-repeat transparent; }
 		
-		.carousel ul{ height: 100%; width: 100%; position: relative; overflow:hidden;  }
+		.carousel ul{ height: 100%;  }
 		
 		.carousel li{ height: 100%; }
 		

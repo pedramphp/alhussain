@@ -98,7 +98,8 @@
 		height: 120px; width: 100px;
 		box-shadow: 0 2px 6px rgba(68, 68, 68, 0.6); 
 		-webkit-box-shadow: 0 2px 6px rgba(68, 68, 68, 0.6);
-	  -moz-box-shadow: 0 2px 6px rgba(68, 68, 68, 0.6);  }
+	    -moz-box-shadow: 0 2px 6px rgba(68, 68, 68, 0.6);  
+	    overflow:hidden;}
 	
 	#books-footer .title a{ color: #678cb2; font-size: 12px; }
 	
@@ -106,7 +107,12 @@
 	
 	#books-footer .author{ color: #a9a9a9; font-style: italic; }
 	
-
+	#books-footer li a span {
+        position: absolute; left: 0; top: 0;
+        width: 100px; height: 120px;
+        background: rgba(255,255,255,0.8) url(images/layout/icon_download.png) no-repeat center center;}
+        
+    #books-footer .books-shadow figure{ display: block; width: 100px; height: 120px; }
 	
 	/*	 	</ BOOKS > 
 	*---------------------------*/	

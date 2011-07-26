@@ -21,7 +21,7 @@
 				<div class='carousel-small carousel clearfix'>
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous video</figure></a>
 					<nav>
-						<ul class='horizontal'>
+						<ul class='clearfix'>
 							<!--{foreach from=$SiteData.homepage.videoThumbs item=video name='videolist'}-->
 							<li>
 								<a href='<!--{$video.original}-->'>
@@ -40,50 +40,31 @@
 			</section> <!-- </homepage-videos> -->
 			
 			<section  id='homepage-posts' class='relative'>
-				<!-- <a href='javscript:void' class='more'><figure>More Posts<figcaption></figcaption></figure><i></i></a> -->
 				<header class='homepage-box-header'>
 					<figure>Latest News</figure>
 					<i></i>
-				</header>
+				</header>		
+				<!--{if $SiteData.homepage.news|@count eq 0}-->
 					<div style='height:265px;'><h1 style="margin:20px 0; height: 269px; line-height: 269px;text-align:center; font-size: 28px;text-shadow: 3px 8px 14px #333333">Coming Soon</h1>
 					</div>
-				<!--
+				<!--{else}-->
+				<a href='<!--{$applicationPath}-->newsList' class='more'><figure>More News<figcaption></figcaption></figure><i></i></a>
 				<ul>
+					<!--{foreach from=$SiteData.homepage.news key=k item=news}-->
 					<li>
 						<article>
 							<header>
-								<h2><a href='#'>About prophet mohammad</a></h2>
-								<figure><img src='' /></figure>
+								<h2><a href='<!--{$news.link}-->'><!--{$news.title}--></a></h2>
+								<figure><img src='<!--{$news.image}-->' /></figure>
 							</header>
-							<p>	aasdasdadsadsasdasdasdasdasd as da dsa ds ads as asd asasdasdasdasdasdasdasdadsas asd adsassssssssssssssssssssssasdasdasd asdas da sda d asd as da d asd as da sd as asd ads as d asd as da da s	
-							...<a href='javascript:void(0)'>more</a>
+							<p>	<!--{$news.shortDescription}-->	
+							...<a href='<!--{$news.link}-->'>more</a>
 							</p>
 						</article>
-					</li>
-					<li>
-						<article>
-							<header>
-								<h2><a href='#'>About prophet mohammad</a></h2>
-								<figure><img src='' /></figure>
-							</header>
-							<p>	aasdasdadsadsasdasdasdasdasd as da dsa ds ads as asd asasdasdasdasdasdasdasdadsas asd adsassssssssssssssssssssssasdasdasd asdas da sda d asd as da d asd as da sd as asd ads as d asd as da da s	
-							...<a href='javascript:void(0)'>more</a>
-							</p>
-						</article>
-					</li>
-					<li class='last'>
-						<article>
-							<header>
-								<h2><a href='#'>About prophet mohammad</a></h2>
-								<figure><img src='' /></figure>
-							</header>
-							<p>	aasdasdadsadsasdasdasdasdasd as da dsa ds ads as asd asasdasdasdasdasdasdasdadsas asd adsassssssssssssssssssssssasdasdasd asdas da sda d asd as da d asd as da sd as asd ads as d asd as da da s	
-							...<a href='javascript:void(0)'>more</a>
-							</p>
-						</article>
-					</li>										
+					</li>			
+					<!--{/foreach}-->			
 				</ul>
-				-->
+				<!--{/if}-->
 				<footer class='homepage-box-footer'><figure></figure></footer>
 			</section> 
 			
@@ -98,7 +79,7 @@
 				<div class='carousel-small carousel clearfix'>
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous image</figure></a>
 					<nav>
-						<ul class='horizontal clearfix'>
+						<ul class='clearfix'>
 							<!--{foreach from=$SiteData.homepage.imageThumbs item=image name='imagelist'}-->
 							<li <!--{if $smarty.foreach.imagelist.first}-->class=='last'<!--{/if}-->>
 								<a href='<!--{$image.original}-->' class='largeImage' rel="myImage">

@@ -19,7 +19,8 @@ $(window).load(function(){
 		.sponsers()
 		.rotateLogo()
 		.twitterFader()
-		.visitors();
+		.visitors()
+		.href();
 	
 });
 
@@ -117,11 +118,28 @@ var footerContact = {
 
 var core = {
 		books: function(){
-			$('#books-footer ul').carousel({
-				prev: '#books-footer .prev',
-				next: '#books-footer .next',
-				time: 800
+			$('#books-footer').carousel({
+				prev: '.prev',
+				next: '.next',
+				nav : 'nav',
+				time: 800,
+				loop: true,
+				limit: 3
 			});		
+			
+			$('a.books-shadow:has(:not(span))').live('mouseenter',function(e){
+				var $span = $("<span style='left:100px;'/>");
+				$span.insertAfter( $(this).find('figure') );
+				$span.stop().delay(100).animate({left:0, opacity: 1},{queue:false,duration:600,specialEasing: {right: 'easeOutQuint'}});
+			});
+			
+			$('a.books-shadow:has(span)').live('mouseleave',function(e){
+				$(this).find('span').stop().delay(100).animate({left:-100, opacity: 0}, {queue:false,duration:600,specialEasing:{right: 'easeOutQuint'}},function(){
+					$(this).remove();
+				});
+				
+			});
+			
 			return this;
 			
 		},
@@ -205,6 +223,14 @@ var core = {
 				$(this).css('rotate',0);
 			});
 			return this;
+		},
+		
+		href: function(){
+			
+			$('[data-href]').live('click',function(){
+				window.location.href = $(this).data('href');
+			});
+			
 		},
 		
 		alignCarouselArrows: function(){

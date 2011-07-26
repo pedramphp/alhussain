@@ -1,3 +1,29 @@
+	#details {
+        float: left;
+        margin-left: 0;
+        margin-bottom: 15px}
+       
+        #details span {
+            float: left;
+            font-size: 12px;
+            line-height: 13px;
+            color: #888;
+            margin-right: 10px; padding-left: 16px; padding-right: 10px;
+            border-right: 1px solid #888;
+            background-image: url('images/layout/sprite.png');
+            background-repeat: no-repeat}
+       
+        #details .author {
+            background-position: -595px -460px}
+           
+        #details .date {
+            background-position: -595px -490px}
+           
+        #details .time {
+            border-right: none;
+            background-position: -595px -520px }
+	
+	
 	/*		< Forms > 
 	*****************************
 	******************************/	
@@ -189,7 +215,7 @@
 		
 		#volunteer-banner-figure {		
 			height: 243px;
-			background-position: right -485px;}
+			background-position: right -490px;}
 		
 		#about-banner-figure {
 			height: 234px;
@@ -197,7 +223,7 @@
 		
 		#blog-banner-figure {
 			height: 240px;
-			background-position: right -730px;}
+			background-position: right -733px;}
 		
 		#contact-banner-figure {
 			height: 194px;
@@ -205,7 +231,7 @@
 		
 		#news-banner-figure {
 			height: 245px;
-			background-position: right -1410px;}
+			background-position: right -1415px;}
 		
 		#events-banner-figure {
 			height: 237px;
@@ -226,6 +252,14 @@
 		#privacy-banner-figure {
 			height: 228px;
 			background-position: right -2585px;}	
+		
+		#sponsors-banner-figure {
+			 background-position: right -2819px;
+    		height: 237px;}		
+    		
+    	#notfound-banner-figure {
+			height: 150px;
+			background-position: right -3060px;}	
 			
 	/*		</ Inner Page Header > 
 	*****************************
@@ -265,30 +299,6 @@
 		margin-bottom: 10px;
 		color: #000;}
 	
-	#details {
-		float: left;
-		margin-left: 0;
-		margin-bottom: 15px}
-		
-		#details li {
-			float: left;
-			font-size: 12px;
-			line-height: 13px;
-			color: #888;
-			margin-right: 10px; padding-left: 16px; padding-right: 10px;
-			border-right: 1px solid #888;
-			background-image: url('images/layout/sprite.png');
-			background-repeat: no-repeat}
-		
-		#details .author {
-			background-position: -25px -215px}
-			
-		#details .date {
-			background-position: -130px -215px}
-			
-		#details .time {
-			border-right: none;
-			background-position: -240px -215px }
 
 			
 	/*		</ POST LIST > 

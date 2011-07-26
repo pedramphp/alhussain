@@ -1,7 +1,7 @@
 	<header role='banner' id='main-header' class='center-container clearfix'>
 		<hgroup itemref='content-info' itemscope itemtype='http://microformats.org/profile/hcard'>
 			<h1 itemprop='fn org'>
-				<a itemprop='url' href='http://alhussaintv.tv' id='logo'  >
+				<a itemprop='url' href='<!--{$applicationPath}-->' id='logo'  >
 					<figure <!--{if $action eq 'homepage'}-->class='invisible'<!--{/if}-->>
 						<img itemprop='logo' alt='Alhussain TV' src='<!--{$imagePath}-->layout/al-hussain-logo.png' />
 						<figcaption class='ir'>Anwar Al-Hussain TV - Official Logo</figcaption>
@@ -20,20 +20,20 @@
 		</ul>
 		<div id='header-sponser'>
 			<h1 class='floatLeft'><small>Our</small>Sponsors</h1>
-			<span class='floatLeft blockBox'>Imam Shirazi World Foundation</span>
+			<a href='<!--{$applicationPath}-->sponsors'><span class='floatLeft blockBox'>Imam Shirazi World Foundation</span></a>
 		</div>
 		<div class='clearBoth'></div>
-		<nav id='main-nav' class='horizontal' role='navigation'>
-			<ul class='clearfix'>
-				<li id='nav-home' class='clearfix'><a href='<!--{$applicationPath}-->homepage'><span>Home</span><i class='corner'></i></a><i class='splitter'></i></li>
-				<li id='nav-news' class='clearfix'><a href='<!--{$applicationPath}-->news'><span>News</span><i class='corner'></i></a><i class='splitter'></i></li>
-				<li id='nav-image' class='clearfix'><a href='<!--{$applicationPath}-->imageGallery'><span>Image Gallery</span><i class='corner'></i></a><i class='splitter'></i></li>
-				<li id='nav-video' class='clearfix'><a href='<!--{$applicationPath}-->video'><span>Video Gallery</span><i class='corner'></i></a><i class='splitter'></i></li>
-				<li id='nav-events' class='clearfix'><a href='<!--{$applicationPath}-->events'><span>Events</span><i class='corner'></i></a><i class='splitter'></i></li>
-				<li id='nav-about' class='clearfix'><a href='<!--{$applicationPath}-->about'><span>About us</span><i class='corner'></i></a><i class='splitter'></i></li>
-				<li id='nav-blog' class='clearfix'><a href='<!--{$applicationPath}-->blog'><span>Blog</span><i class='corner'></i></a><i class='splitter'></i></li>
-				<li id='nav-contact' class='last clearfix'><a href='<!--{$applicationPath}-->contact'><span>Contact us</span><i class='corner'></i></a></li>			
-			</ul>
-		</nav>
+		<nav id='main-nav' class='horizontal'>
+            <ul class='clearfix'>
+                <li id='nav-home' class='first'><div><a href='<!--{$applicationPath}-->'><span>Home</span><i class="corner"></i></a></div></li>
+                <li id='nav-news'><div><a href='<!--{$applicationPath}-->newsList'><span>News</span><i class="corner"></i></a></div></li>
+                <li id='nav-image'><div><a href='<!--{$applicationPath}-->imageGallery'><span>Image Gallery</span><i class="corner"></i></a></div></li>
+                <li id='nav-video'><div><a href='<!--{$applicationPath}-->video'><span>Video Gallery</span><i class="corner"></i></a></div></li>
+                <li id='nav-events'><div><a href='<!--{$applicationPath}-->events'><span>Events</span><i class="corner"></i></a></div></li>
+                <li id='nav-about'><div><a href='<!--{$applicationPath}-->about'><span>About us</span><i class="corner"></i></a></div></li>
+                <li id='nav-blog'><div><a href='<!--{$applicationPath}-->blogs'><span>Blog</span><i class="corner"></i></a></div></li>
+                <li id='nav-contact' class='last'><div><a href='<!--{$applicationPath}-->contact'><span>Contact us</span><i class="corner"></i></a></div></li>
+            </ul>
+        </nav>
 		<!--{include file = $includeTemplate|cat:$action|cat:"Header.tpl.html"}-->
 	</header>

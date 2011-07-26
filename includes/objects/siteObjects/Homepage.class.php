@@ -6,75 +6,76 @@
 			parent::__construct();
 		}
 		
+		private static $IMAGE_LIST_SQL = "
+			SELECT I.`image_thumb_url`,
+				   I.`image_url`,
+				   I.`title`
+			FROM `images` AS I
+			WHERE	I.`status` = 'active'
+			ORDER BY I.`entry_date` ASC
+			LIMIT 30
+		";
 		
+		private static $VIDEO_LIST_SQL = "
+			SELECT V.`video_url`,
+				   V.`title`,
+				   V.`image_thumb_url`
+			FROM `videos` AS V
+			WHERE	V.`status` = 'active'
+			ORDER BY V.`entry_date` ASC
+			LIMIT 30
+		";
+		
+		private static $NEWS_LIST_SQL = "
+			SELECT A.`fullname`,
+				   N.`id` AS newsId,
+				   N.`title`,
+				   N.`short_description` AS shortDescription,
+				   N.`rate_average`,
+				   N.`entry_date`,
+				   N.`image`
+			FROM news AS N
+			JOIN authors AS A on ( A.`id` = N.`author_id` )
+			WHERE N.`status` = 'active'
+			ORDER BY N.`entry_date` DESC
+			LIMIT 2
+		";
+				
 		public function process(){
+
+			
+			
+			$videos = array();
+			$result = DatabaseStatic::Query(self::$VIDEO_LIST_SQL);
+			while($row=DatabaseStatic::FetchAssoc($result)){
+				$videos[] = array(
+					"original" => UrlModule::buildVimeoURL($row['video_url']),
+					"thumb"	=>	UrlModule::$VIDEO_GALLERY_THUMB_PATH . $row['image_thumb_url'],
+					"title" => $row['title']
+				);
+			}
+	
 			$images = array();
-			$imageThumbUrl = "style/default/red/images/gallery/private/thumb/";
-			$imageOriginalUrl = "style/default/red/images/gallery/private/original/";
-			$sources = 
-			array("IMG_2747.jpg",
-						"IMG_2748.jpg",
-						"IMG_2752.jpg",
-						"IMG_2755.jpg",
-						"IMG_2762.jpg",
-						"IMG_2766.jpg",
-						"IMG_2767.jpg",
-						"IMG_2771.jpg",
-						"IMG_2773.jpg",
-						"IMG_1202.jpg",
-						"IMG_1209.jpg",
-						"IMG_1215.jpg",
-						"IMG_1228.jpg",
-						"IMG_1230.jpg",
-						"IMG_1245.jpg",
-						"IMG_1253.jpg",
-						"IMG_1254.jpg",
-						"IMG_1258.jpg",
-						"IMG_1261.jpg",
-						"A.H.-TV-021.jpg",
-						"A.H.-TV-030.jpg",
-						"A.H.-TV-033.jpg",
-						"A.H.-TV-107.jpg",
-						"A.H.-TV-108.jpg",
-						"A.H.-TV-137.jpg",
-						"A.H.-TV-151.jpg",
-						"A.H.-TV-159.jpg",
-						"A.H.-TV-160.jpg",
-						"DSCN0055.jpg",
-						"DSCN0058.jpg",
-						"DSCN0059.jpg",
-						"DSCN0073.jpg",
-						"DSCN0083.jpg",
-						"DSCN0085.jpg",
-						"IMG_2723.jpg",
-						"IMG_2724.jpg",
-						"IMG_2729.jpg",
-						"IMG_2730.jpg",
-						"IMG_2740.jpg"
-			);
-			
-						
-			$videoThumb = "style/default/red/images/videoGallery/";
-			$videos = 
-			array( array('thumb' => $videoThumb."video4.jpg",'original' => 'http://player.vimeo.com/video/24204187?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'),
-						 array('thumb' => $videoThumb."video6.jpg",'original' => 'http://player.vimeo.com/video/24203816?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'),
-						 array('thumb' => $videoThumb."video3.jpg",'original' => 'http://player.vimeo.com/video/24204283?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'),
-						 array('thumb' => $videoThumb."video1.jpg",'original' => 'http://player.vimeo.com/video/24143863?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'),
-						 array('thumb' => $videoThumb."video5.jpg",'original' => 'http://player.vimeo.com/video/24204130?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'),
-						 array('thumb' => $videoThumb."video2.jpg",'original' => 'http://player.vimeo.com/video/24204753?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1')
-						 
-			);
-			
-			foreach( $sources as $key => $value){
-				$images[$key]['thumb'] =		$imageThumbUrl.$value;
-				$images[$key]['original'] =	$imageOriginalUrl.$value;
+			$result = DatabaseStatic::Query(self::$IMAGE_LIST_SQL);
+			while($row=DatabaseStatic::FetchAssoc($result)){
+				$images[] = array(
+					"original" => UrlModule::$IMAGE_GALLERY_ORIGINAL_PATH . $row['image_url'],
+					"thumb"	=>	UrlModule::$IMAGE_GALLERY_THUMB_PATH . $row['image_thumb_url'],
+					"title" => $row['title']
+				);
 			}
 			
-			
-			
+			$news = array();
+			$result = DatabaseStatic::Query(self::$NEWS_LIST_SQL);
+			while($row=DatabaseStatic::FetchAssoc($result)){
+				$row['link'] = LiteFrame::GetApplicationPath() . '?action=news&newsId=' . $row['newsId']; 
+				$news[] = $row;
+			}
+		
 			$this->results = array('imageThumbs' => $images,
-									 'videoThumbs' => $videos,
-									 'hadith' => $this->getRandomHadith());
+								   'videoThumbs' => $videos,
+								   'hadith' => $this->getRandomHadith(),
+								   'news' => $news );
 			
 		}
 		

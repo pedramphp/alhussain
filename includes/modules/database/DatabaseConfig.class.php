@@ -147,9 +147,9 @@ class DatabaseConfig {
     	    OR */
         return  array(
                      array(     "host"          => "localhost" , 
-                                "user"          => "buttonmaker" , 
-                                "pass"          => "Khazokhil1" ,
-                                "database"      => "buttonmaker"
+                                "user"          => "ah" , 
+                                "pass"          => "unwisedisarm" ,
+                                "database"      => "ah"
                      ) 
         );
 

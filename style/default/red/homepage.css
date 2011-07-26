@@ -279,6 +279,12 @@
 			height: 13px; 
 			background-position: left -245px;}
 
+		#homepage-videos .carousel li span {
+		    position: absolute; left: 0px; top: 0px;
+		    width: 169px; height: 110px;
+		    background: rgba(255,255,255,0.8) url("images/layout/icon_video.png") no-repeat center center; }
+		    
+		#homepage-videos .carousel li a{ overflow: hidden; position: relative; }    
 		
 		/*	 </ VIDEOS > 
 		*---------------------------*/	 	
@@ -288,7 +294,7 @@
 		******************************/
 		#homepage-posts .homepage-box-header figure{ background-position: -459px -141px; }
 		
-		#homepage-posts ul{ margin: 19px 5px;  }
+		#homepage-posts ul{ margin: 21px 5px;  }
 		
 		#homepage-posts li{ 
 			margin-bottom: 13px; padding-bottom:10px;
@@ -331,6 +337,12 @@
 			 height: 13px;
 			 background-position: left -233px; }
 	
+		#homepage-images .carousel li a span {
+	        position: absolute; left: 1px; top: 1px;
+	        width: 176px; height: 110px;
+	        background: rgba(255,255,255,0.8) url("images/layout/icon_image.png") no-repeat center center;}
+	        
+	    #homepage-images .carousel li a{ overflow: hidden; position: relative; }        
 		/*	 </ IMAGES > 
 		*---------------------------*/	 	
 	
@@ -411,7 +423,7 @@
 
 		#tweet-sidebar .homepage-box-header figure{ background-position: -459px -27px }
 		
-		#tweet-sidebar-box{ margin:17px 5px 10px; }
+		#tweet-sidebar-box{ margin: 35px 5px 23px }
 		
 		.ie #tweet-sidebar-box section{ height:78px; }
 		

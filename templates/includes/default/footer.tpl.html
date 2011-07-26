@@ -1,7 +1,7 @@
 	<footer role='contentinfo' id='main-footer'>
 		<div class='center-container relative'>
 			<a href='javascript:void(0)' id='gotop' class='ir gotop'>go top</a>
-			
+				
 			<section id='links-footer'  class='main-footer-section clearfix'>
 				<section id='pages-footer'>
 					<header>
@@ -11,13 +11,10 @@
 						<ul>
 							<li><a href='<!--{$applicationPath}-->homepage'><i></i>Home</a></li>
 							<li><a href='<!--{$applicationPath}-->volunteer'><i></i>Volunteers</a></li>
-							<li><a href='<!--{$applicationPath}-->news'><i></i>News</a></li>
-							<li><a href='<!--{$applicationPath}-->imageGallery'><i></i>Image gallery</a></li>
-							<li><a href='<!--{$applicationPath}-->video'><i></i>Video gallrey</a></li>
+							<li><a href='<!--{$applicationPath}-->newsHeader'><i></i>News</a></li>
 							<li><a href='<!--{$applicationPath}-->events'><i></i>Events</a></li>
 							<li><a href='<!--{$applicationPath}-->about'><i></i>About us</a></li>
-							<li><a href='<!--{$applicationPath}-->blog'><i></i>Blog</a></li>
-							<li><a href='<!--{$applicationPath}-->contact'><i></i>Contact us</a></li>
+							<li><a href='<!--{$applicationPath}-->blogs'><i></i>Blog</a></li>
 							<li><a href='<!--{$applicationPath}-->testimonial'><i></i>Comments</a></li>
 							<li><a href='<!--{$applicationPath}-->faq'><i></i>FAQ</a></li>
 						</ul>
@@ -49,7 +46,11 @@
 					</header>
 					<nav>
 						<ul>
-							<li><a href='javascript:void(0)'><i></i>Coming soon</a></li>
+							<li><a href='http://www.umaamerica.net/'><i></i>UMMA</a></li>
+							<li><a href='http://imamhussein.tv/'><i></i>Imam Hussain TV</a></li>
+							<li><a href='http://www.alanwar.tv/'><i></i>Al Anwar TV</a></li>
+							<li><a href='http://www.zahratv.com/'><i></i>Zahra TV</a></li>
+							<li><a href='http://ahlulbayt.tv/'><i></i>Ahlul Bayt TV</a></li>
 						</ul>
 					</nav>					
 				</section><!-- </favorite-footer> -->
@@ -62,10 +63,11 @@
 				<div class='carousel-big carousel clearfix'>
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous books</figure></a>
 					<nav>
-						<ul class='horizontal'>
+						<ul class='clearfix'>
 							<!--{foreach from=$SiteData.books item=book name=imagelist}-->
 							<li <!--{if $smarty.foreach.imagelist.last}-->class='last'<!--{/if}-->>
 								<a href='<!--{$book.url}-->' target='_blank' class='books-shadow'>
+								 	
 									<figure>
 										<img src='<!--{$book.image}-->' alt='<!--{$book.title}-->' />
 									</figure>
@@ -152,11 +154,11 @@
 				<div class='carousel-big carousel clearfix'>
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous sponser</figure></a>
 					<nav>
-						<ul class='horizontal clearfix'>
-							<li><h2>Imam Shirazi World Foundation</h2></li>
-							<li><h2>Imam Ali (A.S) Center Springfield VA</h2></li>
-							<li><h2>Prestige. Productionz Washington DC</h2></li>
-							<li><h2>Kabob Factory Lorton VA</h2></li>
+						<ul class='clearfix horizontal'>
+							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Imam Shirazi World Foundation</a></h2></li>
+							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Imam Ali (A.S) Center Springfield VA</a></h2></li>
+							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Prestige. Productionz Washington DC</a></h2></li>
+							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Kabob Factory Lorton VA</a></h2></li>
 						</ul>
 					</nav>	
 					<a href='javascript:void(0)' class='next links' ><figure class='ir'>next sponser</figure></a>

@@ -1,0 +1,31 @@
+<section id='blog-content' class='post-list blog-list'>
+<!--{if $SiteData.blogs|@count eq 0}-->
+	<div style="text-align:center; margin:70px 0;">
+			<img src="http://alhussaintv.tv/style/default/red/images/general/underconstruction.png">
+			<h1 style='font-size:28px'>Coming Soon</h1>
+	</div>
+<!--{else}-->
+	<!--{foreach from=$SiteData.blogs key=k item=blog}-->
+		<article>
+			<header class='clearfix'>
+				<figure>
+					<a href='<!--{$blog.link}-->'>
+						<img src='style/images/layout/blog_pic.jpg' width='255' height='170' alt='' />
+					</a>
+					<figcaption class='ir'></figcaption>
+				</figure>
+				<aside>
+					<h2><a href='<!--{$blog.link}-->'><!--{$blog.title}--></a></h2>
+					<div id='details'>
+						<span class='author'><!--{$blog.fullname}--></span>
+						<span class='date'><!--{$blog.friendlyDate}--></span>
+						<span class='time'><!--{$blog.time}--></span>
+					</div>
+					<p><!--{$blog.shortDescription}--></p>
+					<button type="submit" data-href='<!--{$blog.link}-->'>Read more</button>
+				</aside>
+			</header>
+		</article>
+	<!--{/foreach}-->
+<!--{/if}-->
+</section>

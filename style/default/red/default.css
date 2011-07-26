@@ -169,75 +169,83 @@ html>body { font-size: 12px }
 	******************************/
 	.ie6 #main-nav{margin-top: 0px;  }
 	
-	#main-nav{ 
-		margin-top: 19px; 
-		height: 43px;  }
-		
-	#main-nav li{ float:left; display:block;}
-	
-	#main-nav .splitter, #main-nav a{ display: block;  float: left; }
-	
-	#main-nav .splitter	 { 
-		width: 5px; height: 40px; 
-		background: url('images/layout/sprite_menu.png') no-repeat left -457px; }
-	
-	#main-nav a{ 
-		position: relative;
-		margin: 0 4px 0 2px; padding: 8px 17px 4px 11px;
-		height: 28px;  color: #fff; }
-	
-	#main-nav span{ 
-		display: block;   
-		height: 24px; line-height: 24px; 
-		background: url('images/layout/sprite_menu.png') no-repeat left top;
-		text-indent: 36px; }
-	
-	.ie6 #main-nav span{
-		position: absolute;
-		text-indent: 28px;
-	width: 108px;}
+    #main-nav{ 
+        margin-top: 19px; 
+        height: 43px;}
+        
+    #main-nav li{
+        float:left;
+        display:block;
+        border-right: 1px solid #000; border-left: 1px solid #292929;}
+    
+    #main-nav li.first {border-left: none}
+    #main-nav li.last {border-right: none}
+    
+    #main-nav li div { margin: 0 4px;}
+    
+    #main-nav a{ display: block;  float: left; }
+    
+    #main-nav .splitter     { 
+        width: 2px; height: 40px; 
+        background: url('images/layout/sprite_menu.png') no-repeat left -457px; }
+    
+    #main-nav a{ 
+        position: relative;
+        padding: 8px 17px 4px 11px;
+        height: 28px;  color: #fff; }
+    
+    #main-nav span{ 
+        display: block;   
+        height: 24px; line-height: 24px; 
+        background: url('images/layout/sprite_menu.png') no-repeat left top;
+        text-indent: 36px; }
+    
+    .ie6 #main-nav span{
+        position: absolute;
+        text-indent: 28px;
+    width: 108px;}
 
-	.ie6  #main-nav li{ margin-top: -5px; }
-	.ie6  #main-nav a{
-		padding: 8px 105px 4px 3px; }
+    .ie6  #main-nav li{ margin-top: -5px; }
+    .ie6  #main-nav a{
+        padding: 8px 105px 4px 3px; }
 
-	#main-nav a:hover{ color: #000; background: url('images/layout/sprite.png') no-repeat left -590px transparent }
-	
-	#main-nav a:hover i.corner{ 
-		position: absolute; top: 0; float: none; right: -3px;
-		height: 40px; width: 5px;
-		background: url("images/layout/horizontal_sprite.png") no-repeat scroll left top transparent; }
-	
-	#nav-news span{ background-position: left -28px; }
-	
-	#nav-image span{ background-position: left -57px; }
-	
-	#nav-video span{ background-position: left -86px; }
-	
-	#nav-events span{ background-position: left -115px;}
-	
-	#nav-about span{ background-position: left -143px; }
-	
-	#nav-blog span{ background-position: left -171px; }	
-	
-	#nav-contact span{ background-position: left -201px;}
-	
-	
-	#nav-home:hover span{ background-position: left -232px;}
-	
-	#nav-news:hover span{ background-position: left -261px; }
-	
-	#nav-image:hover span{ background-position: left -290px; }
-	
-	#nav-video:hover span{ background-position: left -319px; }
-	
-	#nav-events:hover span{ background-position: left -348px; }
-	
-	#nav-about:hover span{ background-position: left -376px; }
-	
-	#nav-blog:hover span{ background-position: left -404px; }	
-	
-	#nav-contact:hover span{ background-position: left -434px; }
+    #main-nav a:hover{ color: #000; background: url('images/layout/sprite.png') no-repeat left -590px transparent }
+    
+    #main-nav a:hover i.corner{ 
+        position: absolute; top: 0; float: none; right: -3px;
+        height: 40px; width: 5px;
+        background: url("images/layout/horizontal_sprite.png") no-repeat scroll left top transparent; }
+    
+    #nav-news span{ background-position: left -28px; }
+    
+    #nav-image span{ background-position: left -57px; }
+    
+    #nav-video span{ background-position: left -86px; }
+    
+    #nav-events span{ background-position: left -115px;}
+    
+    #nav-about span{ background-position: left -143px; }
+    
+    #nav-blog span{ background-position: left -171px; }    
+    
+    #nav-contact span{ background-position: left -201px;}
+    
+    
+    #nav-home div:hover span{ background-position: left -232px;}
+    
+    #nav-news div:hover span{ background-position: left -261px; }
+    
+    #nav-image div:hover span{ background-position: left -290px; }
+    
+    #nav-video div:hover span{ background-position: left -319px; }
+    
+    #nav-events div:hover span{ background-position: left -348px; }
+    
+    #nav-about div:hover span{ background-position: left -376px; }
+    
+    #nav-blog div:hover span{ background-position: left -404px; }    
+    
+    #nav-contact div:hover span{ background-position: left -434px; }
 	
 	/*		</ MAIN NAV > 
 	*---------------------------*/
