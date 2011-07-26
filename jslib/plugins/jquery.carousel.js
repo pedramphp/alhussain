@@ -66,9 +66,10 @@
 					e.preventDefault();
 					e.stopPropagation();
 					if( $ul.is(':animated') ){ return; }
+					var start;
 					if( activeIndex === 1 ){ 
 						if( !options.loop ) return;
-				
+						start = size-options.limit;
 						if( size-options.limit < options.limit){
 							start = options.limit;
 						}
