@@ -1,3 +1,22 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2011-07-28 16:10:48
+         compiled from "/var/www/vhosts/alhussaintv.tv/project/al1/templates/actions/default/homepage.tpl.html" */ ?>
+<?php /*%%SmartyHeaderCode:21284691734e318a08240022-17399827%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '8719a7d3bc7652c33947da55f7e8372f09cb4ff8' => 
+    array (
+      0 => '/var/www/vhosts/alhussaintv.tv/project/al1/templates/actions/default/homepage.tpl.html',
+      1 => 1311744593,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '21284691734e318a08240022-17399827',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
 			<header id='welcome-note'>
 			<h1>
 				<p>
@@ -13,7 +32,8 @@
 		</header>
 		<section id='homepage-left'>
 			<section id='homepage-videos' class='relative'>
-				<a href='<!--{$applicationPath}-->video' class='more'><figure>See all Videos<figcaption></figcaption></figure><i></i></a>
+				<a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+video' class='more'><figure>See all Videos<figcaption></figcaption></figure><i></i></a>
 				<header class='homepage-box-header'>
 					<figure>Latest Videos</figure>
 					<i></i>
@@ -22,16 +42,22 @@
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous video</figure></a>
 					<nav>
 						<ul class='horizontal clearfix'>
-							<!--{foreach from=$SiteData.homepage.videoThumbs item=video name='videolist'}-->
+							<?php  $_smarty_tpl->tpl_vars['video'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('SiteData')->value['homepage']['videoThumbs']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['video']->key => $_smarty_tpl->tpl_vars['video']->value){
+?>
 							<li>
-								<a href='<!--{$video.original}-->'>
+								<a href='<?php echo $_smarty_tpl->tpl_vars['video']->value['original'];?>
+'>
 									<figure>
-										<img src='<!--{$video.thumb}-->' />
+										<img src='<?php echo $_smarty_tpl->tpl_vars['video']->value['thumb'];?>
+' />
 										<figcaption class='ir'></figcaption>
 									</figure>
 								</a>
 							</li>							
-							<!--{/foreach}-->
+							<?php }} ?>
 						</ul>
 					</nav>
 					<a href='javascript:void(0)' class='next links' ><figure class='ir'>next video</figure></a>
@@ -44,32 +70,45 @@
 					<figure>Latest News</figure>
 					<i></i>
 				</header>		
-				<!--{if $SiteData.homepage.news|@count eq 0}-->
+				<?php if (count($_smarty_tpl->getVariable('SiteData')->value['homepage']['news'])==0){?>
 					<div style='height:265px;'><h1 style="margin:20px 0; height: 269px; line-height: 269px;text-align:center; font-size: 28px;text-shadow: 3px 8px 14px #333333">Coming Soon</h1>
 					</div>
-				<!--{else}-->
-				<a href='<!--{$applicationPath}-->newsList' class='more'><figure>More News<figcaption></figcaption></figure><i></i></a>
+				<?php }else{ ?>
+				<a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+newsList' class='more'><figure>More News<figcaption></figcaption></figure><i></i></a>
 				<ul>
-					<!--{foreach from=$SiteData.homepage.news key=k item=news}-->
+					<?php  $_smarty_tpl->tpl_vars['news'] = new Smarty_Variable;
+ $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('SiteData')->value['homepage']['news']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['news']->key => $_smarty_tpl->tpl_vars['news']->value){
+ $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['news']->key;
+?>
 					<li>
 						<article>
 							<header>
-								<h2><a href='<!--{$news.link}-->'><!--{$news.title}--></a></h2>
-								<figure><img src='<!--{$news.image}-->' /></figure>
+								<h2><a href='<?php echo $_smarty_tpl->tpl_vars['news']->value['link'];?>
+'><?php echo $_smarty_tpl->tpl_vars['news']->value['title'];?>
+</a></h2>
+								<figure><img src='<?php echo $_smarty_tpl->tpl_vars['news']->value['image'];?>
+' /></figure>
 							</header>
-							<p>	<!--{$news.shortDescription}-->	
-							...<a href='<!--{$news.link}-->'>more</a>
+							<p>	<?php echo $_smarty_tpl->tpl_vars['news']->value['shortDescription'];?>
+	
+							...<a href='<?php echo $_smarty_tpl->tpl_vars['news']->value['link'];?>
+'>more</a>
 							</p>
 						</article>
 					</li>			
-					<!--{/foreach}-->			
+					<?php }} ?>			
 				</ul>
-				<!--{/if}-->
+				<?php }?>
 				<footer class='homepage-box-footer'><figure></figure></footer>
 			</section> 
 			
 			<section id='homepage-images' class='relative'>
-				<a href='<!--{$applicationPath}-->imageGallery' class='more'>
+				<a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+imageGallery' class='more'>
 					<figure>See all images<figcaption></figcaption></figure><i></i>
 				</a>
 				<header class='homepage-box-header'>
@@ -80,16 +119,26 @@
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous image</figure></a>
 					<nav>
 						<ul class='horizontal clearfix'>
-							<!--{foreach from=$SiteData.homepage.imageThumbs item=image name='imagelist'}-->
-							<li <!--{if $smarty.foreach.imagelist.first}-->class=='last'<!--{/if}-->>
-								<a href='<!--{$image.original}-->' class='largeImage' rel="myImage">
+							<?php  $_smarty_tpl->tpl_vars['image'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('SiteData')->value['homepage']['imageThumbs']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['image']->index=-1;
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['image']->key => $_smarty_tpl->tpl_vars['image']->value){
+ $_smarty_tpl->tpl_vars['image']->index++;
+ $_smarty_tpl->tpl_vars['image']->first = $_smarty_tpl->tpl_vars['image']->index === 0;
+ $_smarty_tpl->tpl_vars['smarty']->value['foreach']['imagelist']['first'] = $_smarty_tpl->tpl_vars['image']->first;
+?>
+							<li <?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['imagelist']['first']){?>class=='last'<?php }?>>
+								<a href='<?php echo $_smarty_tpl->tpl_vars['image']->value['original'];?>
+' class='largeImage' rel="myImage">
 									<figure>
-										<img src='<!--{$image.thumb}-->' width='176' height='110' />
+										<img src='<?php echo $_smarty_tpl->tpl_vars['image']->value['thumb'];?>
+' width='176' height='110' />
 										<figcaption class='ir'></figcaption>
 									</figure>
 								</a>
 							</li>
-							<!--{/foreach}-->
+							<?php }} ?>
 						</ul>
 					</nav>
 					<a href='javascript:void(0)' class='next links' ><figure class='ir'>next image</figure></a>
@@ -117,7 +166,8 @@
 				<footer class='homepage-box-footer'><figure></figure></footer>
 			</section><!-- </donation-sidebar> -->
 			<header id='volunteerHeader'>
-				<a href='<!--{$applicationPath}-->volunteer' id='volunteer-sidebar'>
+				<a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+volunteer' id='volunteer-sidebar'>
 					<figure></figure>
 				</a>		
 			</header>
@@ -151,11 +201,20 @@
 				<div id='tweet-sidebar-box' class='tweetAutoFader'>
 					<section>
 						<i></i>
-					  <!--{foreach from=$SiteData.tweets key =key item=tweet}-->
-					  	<p <!--{if $key neq 0}--> style="display:none;"<!--{/if}--> itemprop="tweet"><!--{$tweet}--></p>
-					  <!--{/foreach}-->
+					  <?php  $_smarty_tpl->tpl_vars['tweet'] = new Smarty_Variable;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('SiteData')->value['tweets']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['tweet']->key => $_smarty_tpl->tpl_vars['tweet']->value){
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['tweet']->key;
+?>
+					  	<p <?php if ($_smarty_tpl->tpl_vars['key']->value!=0){?> style="display:none;"<?php }?> itemprop="tweet"><?php echo $_smarty_tpl->tpl_vars['tweet']->value;?>
+</p>
+					  <?php }} ?>
 					</section>
-					<a href='<!--{$SiteData.socialLinks.twitter.url}-->' title='<!--{$SiteData.socialLinks.twitter.title}-->' id='tweet-sidebar-icon'>Follow us on Twitter</a>
+					<a href='<?php echo $_smarty_tpl->getVariable('SiteData')->value['socialLinks']['twitter']['url'];?>
+' title='<?php echo $_smarty_tpl->getVariable('SiteData')->value['socialLinks']['twitter']['title'];?>
+' id='tweet-sidebar-icon'>Follow us on Twitter</a>
 				</div>
 				<footer class='homepage-box-footer'><figure></figure></footer>
 			</section><!-- </tweet-sidebar> -->

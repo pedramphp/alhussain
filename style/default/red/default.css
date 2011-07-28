@@ -181,7 +181,7 @@ html>body { font-size: 12px }
     #main-nav li.first {border-left: none}
     #main-nav li.last {border-right: none}
     
-    #main-nav li div { margin: 0 4px;}
+    #main-nav li div { margin: 0 3px;}
     
     #main-nav a{ display: block;  float: left; }
     

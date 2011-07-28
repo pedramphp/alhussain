@@ -83,7 +83,7 @@ class Event extends SiteObject{
 		}
 		while($row=DatabaseStatic::FetchAssoc($result)){
 			$row['date'] = date('F jS, Y',strtotime($row['entry_date']));
-			$row['preview'] = dirname(LiteFrame::GetApplicationPath()) . '?action=event&eventId=' . $row['eventId']; 
+			$row['preview'] = dirname(LiteFrame::GetApplicationPath()) . '?action=events&eventId=' . $row['eventId']; 
 			$row['edit'] = LiteFrame::GetApplicationPath() . '?action=event&eventId=' . $row['eventId'].'&type=edit'; 
 			$row['delete'] = LiteFrame::GetApplicationPath() . '?action=event&eventId=' . $row['eventId'].'&type=delete'; 
 			$this->results['records'][] = $row;

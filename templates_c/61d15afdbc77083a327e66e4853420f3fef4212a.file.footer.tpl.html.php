@@ -1,3 +1,22 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2011-07-28 16:10:48
+         compiled from "/var/www/vhosts/alhussaintv.tv/project/al1/templates/includes/default/footer.tpl.html" */ ?>
+<?php /*%%SmartyHeaderCode:12913859744e318a084a1871-32815477%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '61d15afdbc77083a327e66e4853420f3fef4212a' => 
+    array (
+      0 => '/var/www/vhosts/alhussaintv.tv/project/al1/templates/includes/default/footer.tpl.html',
+      1 => 1311744706,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '12913859744e318a084a1871-32815477',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
 	<footer role='contentinfo' id='main-footer'>
 		<div class='center-container relative'>
 			<a href='javascript:void(0)' id='gotop' class='ir gotop'>go top</a>
@@ -9,14 +28,22 @@
 					</header>
 					<nav>
 						<ul>
-							<li><a href='<!--{$applicationPath}-->homepage'><i></i>Home</a></li>
-							<li><a href='<!--{$applicationPath}-->volunteer'><i></i>Volunteers</a></li>
-							<li><a href='<!--{$applicationPath}-->newsHeader'><i></i>News</a></li>
-							<li><a href='<!--{$applicationPath}-->events'><i></i>Events</a></li>
-							<li><a href='<!--{$applicationPath}-->about'><i></i>About us</a></li>
-							<li><a href='<!--{$applicationPath}-->blogs'><i></i>Blog</a></li>
-							<li><a href='<!--{$applicationPath}-->testimonial'><i></i>Comments</a></li>
-							<li><a href='<!--{$applicationPath}-->faq'><i></i>FAQ</a></li>
+							<li><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+homepage'><i></i>Home</a></li>
+							<li><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+volunteer'><i></i>Volunteers</a></li>
+							<li><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+newsHeader'><i></i>News</a></li>
+							<li><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+events'><i></i>Events</a></li>
+							<li><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+about'><i></i>About us</a></li>
+							<li><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+blogs'><i></i>Blog</a></li>
+							<li><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+testimonial'><i></i>Comments</a></li>
+							<li><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+faq'><i></i>FAQ</a></li>
 						</ul>
 					</nav>					
 				</section><!-- </pages-footer> -->
@@ -36,7 +63,8 @@
 					</header>
 					<nav>
 						<ul>
-							<li><a href='<!--{$applicationPath}-->events'><i></i>UMAA Convention</a></li>
+							<li><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+events'><i></i>UMAA Convention</a></li>
 						</ul>
 					</nav>					
 				</section><!-- </events-footer> -->
@@ -64,22 +92,37 @@
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous books</figure></a>
 					<nav>
 						<ul class='horizontal 	clearfix'>
-							<!--{foreach from=$SiteData.books item=book name=imagelist}-->
-							<li <!--{if $smarty.foreach.imagelist.last}-->class='last'<!--{/if}-->>
-								<a href='<!--{$book.url}-->' target='_blank' class='books-shadow'>
+							<?php  $_smarty_tpl->tpl_vars['book'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('SiteData')->value['books']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['book']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['book']->iteration=0;
+if ($_smarty_tpl->tpl_vars['book']->total > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['book']->key => $_smarty_tpl->tpl_vars['book']->value){
+ $_smarty_tpl->tpl_vars['book']->iteration++;
+ $_smarty_tpl->tpl_vars['book']->last = $_smarty_tpl->tpl_vars['book']->iteration === $_smarty_tpl->tpl_vars['book']->total;
+ $_smarty_tpl->tpl_vars['smarty']->value['foreach']['imagelist']['last'] = $_smarty_tpl->tpl_vars['book']->last;
+?>
+							<li <?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['imagelist']['last']){?>class='last'<?php }?>>
+								<a href='<?php echo $_smarty_tpl->tpl_vars['book']->value['url'];?>
+' target='_blank' class='books-shadow'>
 								 	
 									<figure>
-										<img src='<!--{$book.image}-->' alt='<!--{$book.title}-->' />
+										<img src='<?php echo $_smarty_tpl->tpl_vars['book']->value['image'];?>
+' alt='<?php echo $_smarty_tpl->tpl_vars['book']->value['title'];?>
+' />
 									</figure>
 								</a>
 								<dl>
 
-									<dt class='title'><a href='<!--{$book.url}-->'><!--{$book.title}--></a></dt>
-									<dd class='author'>by <!--{$book.author}--></dd>
+									<dt class='title'><a href='<?php echo $_smarty_tpl->tpl_vars['book']->value['url'];?>
+'><?php echo $_smarty_tpl->tpl_vars['book']->value['title'];?>
+</a></dt>
+									<dd class='author'>by <?php echo $_smarty_tpl->tpl_vars['book']->value['author'];?>
+</dd>
 									<dd class='rating'></dd>
 								</dl>
 							</li>
-							<!--{/foreach}-->
+							<?php }} ?>
 						</ul>
 					</nav>
 					<a href='javascript:void(0)' class='next links' ><figure class='ir'>next books</figure></a>
@@ -108,13 +151,22 @@
 						</li>
 					</ul>
 					<section id='footer-twitter' data-borderRadius='5'>
-						<a href='<!--{$SiteData.socialLinks.twitter.url}-->' title='<!--{$SiteData.socialLinks.twitter.title}-->' id='footer-twitter-link' >Latest tweets</a>
+						<a href='<?php echo $_smarty_tpl->getVariable('SiteData')->value['socialLinks']['twitter']['url'];?>
+' title='<?php echo $_smarty_tpl->getVariable('SiteData')->value['socialLinks']['twitter']['title'];?>
+' id='footer-twitter-link' >Latest tweets</a>
 						<a href='javascript:void(0)' id='footer-twitter-icon' class='ir'>Anwar Al-Hussain Tweets</a>
 						<a href='javascript:void(0)' id='footer-twitter-next' class='ir'>Next tweet</a>
 						<a href='javascript:void(0)' id='footer-twitter-prev' class='ir'>Previous tweet</a>
-					  <!--{foreach from=$SiteData.tweets key =key item=tweet}-->
-					  	<p <!--{if $key neq 0}--> style="display:none;"<!--{/if}--> itemprop="tweet"><!--{$tweet}--></p>
-					  <!--{/foreach}-->
+					  <?php  $_smarty_tpl->tpl_vars['tweet'] = new Smarty_Variable;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('SiteData')->value['tweets']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['tweet']->key => $_smarty_tpl->tpl_vars['tweet']->value){
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['tweet']->key;
+?>
+					  	<p <?php if ($_smarty_tpl->tpl_vars['key']->value!=0){?> style="display:none;"<?php }?> itemprop="tweet"><?php echo $_smarty_tpl->tpl_vars['tweet']->value;?>
+</p>
+					  <?php }} ?>
 					</section> <!-- </footer-twitter> -->
 					<p class='clearBoth'>You can donate to Anwar Al-Hussain in order to support the Muslim community. Al-Hussian TV's mission is to make better social environment for all Muslims by it's TV Channel and website.</p>
 					<p>Donate to Anwar Al-Hussain now and support the Muslim community.</p>
@@ -155,10 +207,14 @@
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous sponser</figure></a>
 					<nav>
 						<ul class='clearfix horizontal'>
-							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Imam Shirazi World Foundation</a></h2></li>
-							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Imam Ali (A.S) Center Springfield VA</a></h2></li>
-							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Prestige. Productionz Washington DC</a></h2></li>
-							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Kabob Factory Lorton VA</a></h2></li>
+							<li><h2><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+sponsors'>Imam Shirazi World Foundation</a></h2></li>
+							<li><h2><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+sponsors'>Imam Ali (A.S) Center Springfield VA</a></h2></li>
+							<li><h2><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+sponsors'>Prestige. Productionz Washington DC</a></h2></li>
+							<li><h2><a href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+sponsors'>Kabob Factory Lorton VA</a></h2></li>
 						</ul>
 					</nav>	
 					<a href='javascript:void(0)' class='next links' ><figure class='ir'>next sponser</figure></a>
@@ -171,12 +227,17 @@
 			<li id='copyright-inner-left'>
 				<figure class='ir'>Alhussain Logo</figure>
 				<p itemscope>Copyright &copy; 2011 Anwar Al-Hussain TV All rights reserved. 
-					<a itemprop='url' href='<!--{$applicationPath}-->terms'>Terms of use</a>|
-					<a itemprop='url' href='<!--{$applicationPath}-->privacy'>Privacy policy</a>
-					<a itemprop='url' href='<!--{$applicationPath}-->about'>About Al-Hussain TV</a>|
+					<a itemprop='url' href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+terms'>Terms of use</a>|
+					<a itemprop='url' href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+privacy'>Privacy policy</a>
+					<a itemprop='url' href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+about'>About Al-Hussain TV</a>|
 					<a itemprop='url' href='javascript:void(0)'>RSS Feed</a>|
-					<a itemprop='url' href='<!--{$applicationPath}-->faq'>FAQ</a>|
-					<a itemprop='url' href='<!--{$applicationPath}-->contact'>Contact us</a> 
+					<a itemprop='url' href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+faq'>FAQ</a>|
+					<a itemprop='url' href='<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+contact'>Contact us</a> 
 				</p>
 			</li> 
 			<li id='copyright-inner-right'>
