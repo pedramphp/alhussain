@@ -1,5 +1,26 @@
 <?php 
-
+	/**
+	 * Define a custom exception class
+	 */
+	class JSONRPCException extends Exception{
+	    // Redefine the exception so message isn't optional
+	    public function __construct($message, $code = 0) {
+	        // some code
+	    
+	        // make sure everything is assigned properly
+	        parent::__construct($message, $code);
+	    }
+	
+	    // custom string representation of object
+	    public function __toString() {
+	        return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
+	    }
+	
+	    public function customFunction() {
+	        echo "A custom function for this type of exception\n";
+	    }
+	}
+	
 	class Contact{
 		
 		public function __construct(){
@@ -71,7 +92,7 @@
 			}else{
 				$error = true;
 				$success = false;
-				$message = 'please fill up the empty fields';
+				$message = 'please fill up the empty fields and enter a valid email address';
 			}
 			return array(
 				'error'=> $error,
@@ -79,6 +100,28 @@
 				'errorMsg'=> $message
 			);
 						
+		}
+		
+		
+		public function testimonial( $params ){
+			
+			$error = null;
+			$success = null;
+			$errorMsg = null;
+			try{
+				new CommentsCore($params);
+				$error = false;
+				$success = true;
+			}catch(JSONRPCException $e){
+				$errorMsg = $e->getMessage();
+				$error = true;
+				$success = false;
+			}
+			return  array(
+				'error'=> $error,
+				'success'=> $success,
+				'errorMsg'=> $errorMsg
+			);
 		}
 		
 	}

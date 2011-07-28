@@ -1,6 +1,6 @@
 <div class="content-box"><!-- Start Content Box -->	
 	<div class="content-box-header">
-		<h3>Pending Comments</h3>
+		<h3>Manage Comments</h3>
 		<ul class="content-box-tabs">
 			<li><a href="#tab1" class="default-tab">Table</a></li>
 		</ul>
@@ -10,27 +10,26 @@
 	<div class="content-box-content">
 		<div class="tab-content default-tab" id="tab1">
 		
-			<!--{if isset($SiteData.dashboard.comments.successMsg)}-->
+			<!--{if isset($SiteData.comments.successMsg)}-->
 			<div class="notification success png_bg">
 				<a class="close" href="javascript:void(0)"><img alt="close" title="Close this notification" src="<!--{$imagePath}-->icons/cross_grey_small.png"></a>
 				<div>
-					<!--{$SiteData.dashboard.comments.successMsg}-->
+					<!--{$SiteData.comments.successMsg}-->
 				</div>
 			</div>				
 			<!--{/if}-->
-			<!--{if isset($SiteData.dashboard.comments.errorMsg)}-->
+			<!--{if isset($SiteData.comments.errorMsg)}-->
 			<div class="notification error png_bg">
 				<a class="close" href="#"><img alt="close" title="Close this notification" src="<!--{$imagePath}-->icons/cross_grey_small.png"></a>
 				<div>
-					<!--{$SiteData.dashboard.comments.errorMsg}-->
+					<!--{$SiteData.comments.errorMsg}-->
 				</div>
 			</div>				
 			<!--{/if}-->
-			<!--{if $SiteData.dashboard.comments.records|@count eq 0}-->
+			<!--{if $SiteData.comments.records|@count eq 0}-->
 			<div class="notification attention png_bg">
 				<div>
-					There are no pending comments to manage, to manage your exisitng comments click
-					<a href='<!--{$applicationPath}-->?action=comments'> <b>Manage Comments</b></a>
+					There are no comments to manage, please come later
 				</div>
 			</div>
 			<!--{else}-->
@@ -45,7 +44,7 @@
 					   <th>Actions</th>
 					</tr>
 				</thead>
-			<!--{foreach from=$SiteData.dashboard.comments.records key=k item=comment}-->
+			<!--{foreach from=$SiteData.comments.records key=k item=comment}-->
 					<tr>
 						<td>
 							<div style='display:none' id='comment<!--{$comment.commentsId}-->'>
@@ -58,7 +57,9 @@
 						<td><!--{$comment.entryDate}--></td>
 						<td>
 						 	<a href="<!--{$comment.disapprove}-->" title="Disapprove"><img src="<!--{$imagePath}-->icons/cross.png" alt="Disapprove" /></a>
+						 	<!--{if $comment.status eq "pending"}-->
 						 	<a href="<!--{$comment.approve}-->" title="Approve"><img src="<!--{$imagePath}-->icons/tick_circle.png" alt="Approve" /></a>  
+							<!--{/if}-->
 						</td>
 					</tr>
 			<!--{/foreach}-->

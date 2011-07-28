@@ -15,6 +15,9 @@
 			width: 64px; height: 64px;
 			display: block;
 			background: url('images/layout/blank_pic.png') no-repeat #ececec; }
+			
+		.testimonials-pic span.female{
+			background-image: url('images/layout/blank_female_pic.png'); }	
 
 	#testimonials-content aside {
 		position: relative;
@@ -78,3 +81,13 @@
 	#testimonials-form textarea{
 		width: 300px;
 		height: 100px;}
+		
+	#testimonials-form label.radio{
+		cursor: text;
+		float:none;
+		margin-right:0;
+		margin-left: 7px;
+		
+	}
+	
+	#testimonials-form button{ float: right; }	

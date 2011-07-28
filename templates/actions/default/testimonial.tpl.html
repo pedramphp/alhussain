@@ -3,83 +3,39 @@
 		</section>
 		<section id='testimonials-content' class='clearfix'>
 			<section>
-				<div class='left-align clearfix'>
-					<figure class='testimonials-pic' class='miniRoundedCorner'><span><img src='files/' alt='' /></span></figure>
+				<!--{foreach from=$SiteData.comments key=k item=testi name=testi}-->
+				<div class='<!--{if $smarty.foreach.testi.index is even by 1}-->left<!--{else}-->right<!--{/if}-->-align clearfix'>
+					<figure class='testimonials-pic' class='miniRoundedCorner'><span <!--{if $testi.gender eq 'female'}-->class='female'<!--{/if}-->></span></figure>
 					<aside class='miniRoundedCorner'>
 						<figure class='ir'></figure>
-						<b>Fatima, CA</b>
-						<p>Mash'allah! I am very impressed with the nature of your work. You guys are doing an amazing job, it's greatly appreciated. keep up the good work!</p>
+						<b><!--{$testi.fullname}--></b>
+						<p><!--{$testi.comment}--></p>
 					</aside>
 				</div>
 				<div class='testimonials-splitter'><a href="javascript:void(0);" class='gotop'>( Top )</a></div>
-				<div class='right-align clearfix'>
-					<figure class='testimonials-pic' class='miniRoundedCorner'><span><img src='files/' alt='' /></span></figure>
-					<aside class='miniRoundedCorner'>
-						<figure class='ir'></figure>
-						<b>Zainab,  VA</b>
-						<p>I am so glad we now have an all English Shia channel based here in the US that produces shows to appeal to our youth.</p>
-					</aside>
-				</div>
-				<div class='testimonials-splitter'><a href="javascript:void(0);" class='gotop'>( Top )</a></div>
-				<div class='left-align clearfix'>
-					<figure class='testimonials-pic' class='miniRoundedCorner'><span><img src='files/' alt='' /></span></figure>
-					<aside class='miniRoundedCorner'>
-						<figure class='ir'></figure>
-						<b>Ali, NY</b>
-						<p>I like your style. Very clean and to the point!</p>
-					</aside>
-				</div>
-				<div class='testimonials-splitter'><a href="javascript:void(0);" class='gotop'>( Top )</a></div>
-				<div class='right-align clearfix'>
-					<figure class='testimonials-pic' class='miniRoundedCorner'><span><img src='files/' alt='' /></span></figure>
-					<aside class='miniRoundedCorner'>
-						<figure class='ir'></figure>
-						<b>Adam, CT</b>
-						<p>The way you guys are sending out your message is brilliant! Not only am I getting entertained by the mini clips/stories, I am learning in the process.</p>
-					</aside>
-				</div>
-				<div class='testimonials-splitter'><a href="javascript:void(0);" class='gotop'>( Top )</a></div>
-				<div class='left-align clearfix'>
-					<figure class='testimonials-pic' class='miniRoundedCorner'><span><img src='files/' alt='' /></span></figure>
-					<aside class='miniRoundedCorner'>
-						<figure class='ir'></figure>
-						<b>Zahra, NC</b>
-						<p>A channel where we can learn our duties as Muslims, and help us stay on the right? Wow!  My family and I  are so very proud of you guys and anyone who has contributed their time and money. We cannot express our gratitude. Thank you!</p>
-					</aside>
-				</div>
-				<div class='testimonials-splitter'><a href="javascript:void(0);" class='gotop'>( Top )</a></div>
-				<div class='right-align clearfix'>
-					<figure class='testimonials-pic' class='miniRoundedCorner'><span><img src='files/' alt='' /></span></figure>
-					<aside class='miniRoundedCorner'>
-						<figure class='ir'></figure>
-						<b>Nargis, VA</b>
-						<p>I am so happy we finally have a channel like this. It's exactly what I've been looking for.</p>
-					</aside>
-				</div>
-				<div class='testimonials-splitter'><a href="javascript:void(0);" class='gotop'>( Top )</a></div>
-				<div class='left-align clearfix'>
-					<figure class='testimonials-pic' class='miniRoundedCorner'><span><img src='files/' alt='' /></span></figure>
-					<aside class='miniRoundedCorner'>
-						<figure class='ir'></figure>
-						<b>Amir, CA</b>
-						<p>I can really relate to the Whispers show. Shaitan influences us in ways we would never imagine. The show is a mirror of our lives. Great idea!</p>
-					</aside>
-				</div>
-				<div class='testimonials-splitter'><a href="javascript:void(0);" class='gotop'>( Top )</a></div>
+				<!--{/foreach}-->
 			</section>
 			<section>
 				<form id="testimonials-form" class="form clearfix">
 					<table>
 						<tr id="fullName">
 							<td><label>Full name</label></td>
-							<td><input type="text" class="txt" name="volFullname"></td>
+							<td><input type="text" class="txt" name="commentFullname"></td>
 						</tr>
 						<tr id="email">
 							<td><label>Email</label></td>
-							<td><input type="text" class="txt" name="volEmail"></td>
+							<td><input type="text" class="txt" name="commentEmail"></td>
 						</tr>
+						<tr>
+							<td><label>Gender</label></td>
+							<td style='padding-bottom:10px'>
+								<label class='radio'>Male </label><input type="radio" name="commentGender" value='male' checked='checked'>
+								<label class='radio'>Female</label> <input type="radio"  name="commentGender" value='female'>
+							</td>
+						</tr>
+						<tr>
 							<td><label>Message</label></td>
-							<td><textarea></textarea></td>
+							<td><textarea name="commentMessage"></textarea></td>
 						</tr>
 						<tr>
 							<td></td>

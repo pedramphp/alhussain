@@ -35,24 +35,25 @@ class Site extends SiteHelper{
 	
 	public function __construct(){
 		$args = func_get_args();
-		if( count($args) === 1 && $args[0] == 'jsonrpc' ){
-			$this->jsonrpc();
-			return;
-		}	
+
 		try{
-			
-			$this->process( func_get_args() );
+			if( count($args) === 1 && $args[0] == 'jsonrpc' ){
+				$this->jsonrpc();
+				//return;
+			}else{
+				$this->process( func_get_args() );
+			}
 			
 		}catch ( SystemException $e ){			
 			SiteHelper::Debug($e->__toString());
 			LiteFrame::WriteLog( $e->__toString(), $e->getMessage() );
+			echo $e->getMessage();
 			exit();
 			
 		}catch( Exception $e){
 			SiteHelper::Debug($e->__toString());
 			LiteFrame::WriteLog( $e->__toString(), $e->getMessage() );
 			exit();
-			
 		}
 		
 	} /* </ __construct >  */
@@ -102,7 +103,10 @@ class Site extends SiteHelper{
 		  LiteFrame::JSONLayout();
 		  $post = LiteFrame::FetchPostVariable();
 		  $api = new $post['api']();
-		  self::$siteObjectsData[$post['api'] . "_" . $post['method']] = call_user_func_array(array($api, $post['method']), $post['config']);
+		  self::$siteObjectsData[$post['api'] . "_" . $post['method']] = @call_user_func_array(array($api, $post['method']), $post['config']);
+		  if( self::$siteObjectsData[$post['api'] . "_" . $post['method']]== null){
+		  	throw new SystemException('Invalid API');
+		  }
 		  $this->setObjectsForTemplate(); 
 	}
 	

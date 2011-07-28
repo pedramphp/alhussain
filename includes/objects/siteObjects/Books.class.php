@@ -2,6 +2,24 @@
 
 	class Books extends SiteObject {
 		
+		private static $NEWS_QUERY = "
+			SELECT A.`fullname`,
+				   N.`id` AS newsId,
+				   N.`title`,
+				   N.`short_description` AS shortDescription,
+				   N.`rate_average`,
+				   N.`entry_date`,
+				   N.`image`,
+				   ND.`article`
+			FROM news AS N
+			JOIN news_detail AS ND on ( N.`id` = ND.`news_id` )
+			JOIN authors AS A on ( A.`id` = N.`author_id` )
+			WHERE N.`status` = 'active'
+			AND N.`id` = %d	 
+			LIMIT 1
+		";
+		
+		
 		public function __construct(){
 			parent::__construct();
 		}

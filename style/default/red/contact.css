@@ -37,6 +37,9 @@
 		#contact-form textarea{
 			width: 300px; height: 100px;}
 		
+		#contact-form button{
+			float: right; }
+		
 	#contact-sidebar {
 		float: right;
 		width: 380px;
