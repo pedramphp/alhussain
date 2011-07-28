@@ -40,6 +40,7 @@
 					   <th>Fullname</th>
 					   <th>Gender</th>
 					   <th>Comment</th>
+					   <th>Email</th>
 					   <th>Status</th>
 					   <th>Entry Date</th>
 					   <th>Actions</th>
@@ -54,6 +55,7 @@
 							</div><!--{$comment.fullname|@ucfirst}--></td>
 						<td><!--{$comment.gender|@ucfirst}--></td>
 						<td><a rel='modal' href='#comment<!--{$comment.commentsId}-->' title='<!--{$comment.comment}-->'><!--{$comment.comment|truncate:100:"..."}--></a></td>
+						<td><!--{if $comment.email eq ""}-->( Empty )<!--{else}--><a href="mailto:<!--{$comment.email}-->"><!--{$comment.email}--></a><!--{/if}--></td>
 						<td><!--{$comment.status|@ucfirst}--></td>
 						<td><!--{$comment.entryDate}--></td>
 						<td>

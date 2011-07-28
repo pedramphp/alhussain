@@ -10,6 +10,7 @@ class CommentsCore{
 				C.`gender`,
 				C.`fullname`,
 				C.`comment`,
+				C.`email`,
 				C.`entry_date` AS entryDate
 				
 		FROM comments AS C
@@ -22,6 +23,7 @@ class CommentsCore{
 				C.`status`,
 				C.`gender`,
 				C.`fullname`,
+				C.`email`,
 				C.`comment`,
 				C.`entry_date` AS entryDate
 				
