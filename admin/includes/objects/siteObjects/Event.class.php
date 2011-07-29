@@ -8,13 +8,52 @@ class Event extends SiteObject{
 	
 	private static $SQL_ERROR = 'Warning: unexpected error occured on our server, please try again';
 	
+	private static $EMPTY_FIELDS_ERROR = 'Warning: Please fill all the required text fields';
+	
+	private static $REQUIRED_FIELDS = array('eventTitle',
+											'eventSubTitle',
+											'eventImage',
+											'eventMoreInfo',
+											'eventStatus',
+											'eventImageTitle',
+											'eventAddress',
+											'eventTel',
+											'eventEndDate',
+											'eventStartDate');
+	
+	private static $REQUIRED_EDIT_FIELDS = array('eventTitle',
+											'eventSubTitle',
+											'eventImage',
+											'eventMoreInfo',
+											'eventStatus',
+											'eventImageTitle',
+											'eventAddress',
+											'eventTel',
+											'eventEndDate',
+											'eventStartDate',
+											'eventId');
+	
+	private static $NON_EMPTY_FIELDS = array('eventTitle',
+											'eventStatus',
+											'eventAddress',
+											'eventEndDate',
+											'eventStartDate');
+	
+	private static $NON_EMPTY_EDIT_FIELDS = array('eventTitle',
+												'eventStatus',
+												'eventAddress',
+												'eventEndDate',
+												'eventStartDate',
+												'eventId');
 	
 	private static $MANAGE_EVENTS_SQL = "
 		SELECT E.`id` AS eventId,
 			   E.`title`,
 			   E.`status`,
 			   E.`sub_title` AS subTitle,
-			   E.`entry_date`
+			   E.`entry_date`,
+			   E.`event_start_date` AS eventStartDate,
+			   E.`event_end_date` AS eventEndDate
 		FROM events AS E
 		ORDER BY E.`entry_date` DESC
 	";
@@ -56,6 +95,15 @@ class Event extends SiteObject{
 		
 	}
 	
+	private function getEventFriendlyDate( $startDate, $endDate ){
+		if(	$startDate != $endDate && 
+			date('F',strtotime($startDate)) == date('F',strtotime($endDate))){
+			
+				return date('F j-',strtotime($startDate)) . date('jS Y',strtotime($endDate)); 
+		
+		}else{ return date('F jS, Y',strtotime($startDate)); }
+	}
+		
 	private function manageEvents(){
 		
 		$result = DatabaseStatic::Query(self::$MANAGE_EVENTS_SQL);
@@ -82,7 +130,8 @@ class Event extends SiteObject{
 			}
 		}
 		while($row=DatabaseStatic::FetchAssoc($result)){
-			$row['date'] = date('F jS, Y',strtotime($row['entry_date']));
+			$row['entryDate'] = date('F jS, Y',strtotime($row['entry_date']));
+			$row['eventFriendlyDate'] = ModuleHelper::getMonthFriendlyDate($row['eventStartDate'],$row['eventEndDate']);
 			$row['preview'] = dirname(LiteFrame::GetApplicationPath()) . '?action=events&eventId=' . $row['eventId']; 
 			$row['edit'] = LiteFrame::GetApplicationPath() . '?action=event&eventId=' . $row['eventId'].'&type=edit'; 
 			$row['delete'] = LiteFrame::GetApplicationPath() . '?action=event&eventId=' . $row['eventId'].'&type=delete'; 
@@ -91,75 +140,88 @@ class Event extends SiteObject{
 	}
 	
 	
-	private function editEvent(){
+	private function setUnEditedRecords(){
 		
 		$request = LiteFrame::FetchPostVariable();
-    	if(!isset($request['eventTitle'],
-    			 $request['eventSubTitle'],
-    			 $request['eventImage'],
-    			 $request['eventMoreInfo'],
-    			 $request['eventStatus'],
-    			 $request['eventImageTitle'],
-    			 $request['eventId']
-    	)){ //SHOW EDIT FORM
+		$this->results['record'] = array();
+		$record = &$this->results['record'];
+    	$record['eventTitle'] =  $request['eventTitle'];
+    	$record['eventAddress'] =  $request['eventAddress'];
+    	$record['eventTel'] = $request['eventTel'];
+		$record['eventSubTitle'] =  $request['eventSubTitle'];
+		$record['eventImage'] =  $request['eventImage'];
+		$record['eventMoreInfo'] =  $request['eventMoreInfo'];
+		$record['eventStatus'] = $request['eventStatus'];
+		$record['eventImageTitle'] = $request['eventImageTitle'];
+		$record['eventStartDate'] = $request['eventStartDate'];
+		$record['eventEndDate'] = $request['eventEndDate'];
+		$record['eventId'] = $request['eventId'];
+		
+	}
+	
+	
+	private function editEvent(){
+		
+		if(!Request::issetFields(self::$REQUIRED_EDIT_FIELDS,'POST')){ //SHOW EDIT FORM
     		
     		$getRequest = LiteFrame::FetchGetVariable();
 			$this->results['eventId'] = $getRequest['eventId'];
 			$this->results['authors'] = Authors::getAuthors();
-    		$newsRecord = DatabaseStatic::$ah->LoadId_events($getRequest['eventId']);
+    		$eventsRecord = DatabaseStatic::$ah->LoadId_events($getRequest['eventId']);
     		
-    		if(empty($newsRecord)){
+    		if(empty($eventsRecord)){
     			Redirect::Action("event",array("status"=>'not_found'));
 				return;
     		}else{
     			$this->results['record'] = array();
 				$record = &$this->results['record'];
-    			$record['eventTitle'] =  $newsRecord->title;
-				$record['eventSubTitle'] =  $newsRecord->sub_title;
-				$record['eventImage'] =  $newsRecord->image;
-				$record['eventMoreInfo'] =  $newsRecord->more_info;
-				$record['eventStatus'] = $newsRecord->status;
-				$record['eventImageTitle'] = $newsRecord->image_title;
-				
+    			$record['eventTitle'] =  $eventsRecord->title;
+    			$record['eventAddress'] =  $eventsRecord->address;
+    			$record['eventTel'] =  ModuleHelper::formatPhone($eventsRecord->telephone);
+				$record['eventSubTitle'] =  $eventsRecord->sub_title;
+				$record['eventImage'] =  $eventsRecord->image;
+				$record['eventMoreInfo'] =  $eventsRecord->more_info;
+				$record['eventStatus'] = $eventsRecord->status;
+				$record['eventImageTitle'] = $eventsRecord->image_title;
+				$record['eventStartDate'] = ModuleHelper::getFormatedDate( $eventsRecord->event_start_date );
+				$record['eventEndDate'] = ModuleHelper::getFormatedDate( $eventsRecord->event_end_date );
+
     		}
     	}else{ // UPDATING
-    		$request['eventTitle'] = trim($request['eventTitle']);
-    		$request['eventSubTitle'] = trim($request['eventSubTitle']);
-    		$request['eventImage'] = trim($request['eventImage']);
-    		$request['eventMoreInfo'] = trim($request['eventMoreInfo']);
-    		$request['eventImageTitle'] = trim($request['eventImageTitle']);
-    		
-			if( !empty($request['eventTitle']) && 
-				!empty($request['eventSubTitle']) &&
-				!empty($request['eventImage']) &&
-				!empty($request['eventMoreInfo']) &&
-				!empty($request['eventImageTitle']) &&
-				Request::isNumeric($request['eventId'])
-			){
-				$eventRecord = DatabaseStatic::$ah->LoadId_events($request['eventId']);
-				if(!empty($eventRecord)){
-						$eventRecord->title = $request['eventTitle'];
-						$eventRecord->sub_title = $request['eventSubTitle'];
-						$eventRecord->status = $request['eventStatus'];
-						$eventRecord->image = $request['eventImage'];
-						$eventRecord->image_title = $request['eventImageTitle'];
-						$eventRecord->more_info = $request['eventMoreInfo'];
-						$eventRecord->updated_date = date("y-m-d : H:i:s", time()); 
-						
-						if($eventRecord->Save()){
-							Redirect::Action("event",array("status"=>'edit'));
-						}else{
-							$this->results['errorMsg'] = self::$SQL_ERROR;
-						}
-				
-				}else{
-					Redirect::Action("event",array("status"=>'not_found'));
-					return;
-				}
-			}else{
-				$this->results['errorMsg'] = 'Warning: Please fill all the text fields to edit this event';
+			$request = Request::trimAllRequest('POST');
+			if(	Request::hasEmptyField(self::$NON_EMPTY_EDIT_FIELDS,'POST') || 
+				!Request::isNumeric($request['eventId'])){
+				$this->setUnEditedRecords();
+				$this->results['errorMsg'] = self::$EMPTY_FIELDS_ERROR;
 				return;
 			}
+				
+			$eventRecord = DatabaseStatic::$ah->LoadId_events($request['eventId']);
+			if(!empty($eventRecord)){
+					$eventRecord->title = $request['eventTitle'];
+					$eventRecord->sub_title = $request['eventSubTitle'];
+					$eventRecord->status = $request['eventStatus'];
+					$eventRecord->image = $request['eventImage'];
+					$eventRecord->image_title = $request['eventImageTitle'];
+					$eventRecord->more_info = $request['eventMoreInfo'];
+					$eventRecord->event_start_date =  ModuleHelper::getSqlDate( $request['eventStartDate'] );
+					$eventRecord->event_end_date = ModuleHelper::getSqlDate( $request['eventEndDate'] );
+					$eventRecord->updated_date = date("y-m-d : H:i:s", time());
+					$eventRecord->address = $request['eventAddress'];
+					$eventRecord->telephone = ModuleHelper::stripNonNumeric( $request['eventTel'] ); 
+					
+					if($eventRecord->Save()){
+						Redirect::Action("event",array("status"=>'edit'));
+					}else{
+						$this->setUnEditedRecords();
+						$this->results['errorMsg'] = self::$SQL_ERROR;
+					}
+			
+			}else{
+				Redirect::Action("event",array("status"=>'not_found'));
+				return;
+			}
+			
     	}				
 	}
 	
@@ -168,46 +230,34 @@ class Event extends SiteObject{
 	private function addEvent(){
 		
 		$this->results['authors'] = Authors::getAuthors();
-		$request = LiteFrame::FetchPostVariable();
-    	if(isset($request['eventTitle'],
-    			 $request['eventSubTitle'],
-    			 $request['eventImage'],
-    			 $request['eventMoreInfo'],
-    			 $request['eventStatus'],
-    			 $request['eventImageTitle']
-    			 
-    	)){
-    		$request['eventTitle'] = trim($request['eventTitle']);
-    		$request['eventSubTitle'] = trim($request['eventSubTitle']);
-    		$request['eventImage'] = trim($request['eventImage']);
-    		$request['eventMoreInfo'] = trim($request['eventMoreInfo']);
-    		$request['eventImageTitle'] = trim($request['eventImageTitle']);
-			if( !empty($request['eventTitle']) && 
-				!empty($request['eventSubTitle']) &&
-				!empty($request['eventImage']) &&
-				!empty($request['eventMoreInfo']) &&
-				!empty($request['eventStatus']) &&
-				!empty($request['eventImageTitle'])
-			){
-				$eventRecord = DatabaseStatic::$ah->Create_events();
-				$eventRecord->title = $request['eventTitle'];
-				$eventRecord->sub_title = $request['eventSubTitle'];
-				$eventRecord->status = $request['eventStatus'];
-				$eventRecord->image = $request['eventImage'];
-				$eventRecord->image_title = $request['eventImageTitle'];
-				$eventRecord->more_info = $request['eventMoreInfo'];
-				$eventRecord->entry_date = date("y-m-d H:i:s", time()); 
-				$eventRecord->updated_date = date("y-m-d : H:i:s", time()); 
-
-				if($eventRecord->Save()){
-					Redirect::Action("event",array("status"=>'add'));
-				}else{
-					$this->results['errorMsg'] = self::$SQL_ERROR;
-				}
-			}else{
-				$this->results['errorMsg'] = 'Warning: Please fill all the text fields';
-				return;
+			
+		if(Request::issetFields(self::$REQUIRED_FIELDS,'POST')){			
+			$request = Request::trimAllRequest('POST');
+			if(Request::hasEmptyField(self::$NON_EMPTY_FIELDS,'POST')){
+				$this->results['errorMsg'] = self::$EMPTY_FIELDS_ERROR;
+				return;				
 			}
+
+			$eventRecord = DatabaseStatic::$ah->Create_events();
+			$eventRecord->title = $request['eventTitle'];
+			$eventRecord->sub_title = $request['eventSubTitle'];
+			$eventRecord->status = $request['eventStatus'];
+			$eventRecord->image = $request['eventImage'];
+			$eventRecord->image_title = $request['eventImageTitle'];
+			$eventRecord->address = $request['eventAddress'];
+			$eventRecord->telephone = ModuleHelper::stripNonNumeric( $request['eventTel'] );
+			$eventRecord->more_info = $request['eventMoreInfo'];
+			$eventRecord->event_start_date =  ModuleHelper::getSqlDate( $request['eventStartDate'] );
+			$eventRecord->event_end_date = ModuleHelper::getSqlDate( $request['eventEndDate'] );
+			$eventRecord->entry_date = ModuleHelper::getCurrentSqlDate(); 
+			$eventRecord->updated_date = ModuleHelper::getCurrentSqlDate();  
+
+			if($eventRecord->Save()){
+				Redirect::Action("event",array("status"=>'add'));
+			}else{
+				$this->results['errorMsg'] = self::$SQL_ERROR;
+			}
+			
     	}		
     			
 	}

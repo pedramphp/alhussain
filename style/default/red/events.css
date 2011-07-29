@@ -3,7 +3,7 @@
 	width: 580px;
 	margin-right: 20px;}
 
-	#event-box div{
+	#event-box #event-container{
 		background-color: #eee;
 		border: 1px solid #ddd;
 		padding: 20px;
@@ -16,13 +16,13 @@
 		display: inline-block;
 		width: 537px}
 		
-	.ie6 #event-box div {
+	.ie6 #event-box #event-container {
 		height: 250px}
 
-	#event-box h2 {
+	#event-box .eventH2 {
 		font-size: 25px;}
 		
-	#event-box h3 {
+	#event-box .eventH3 {
 		margin-bottom: 10px}
 		
 	#event-box figure img {
@@ -41,7 +41,7 @@
 				clear: both; 
 				font-size: 14px }
 				
-				#event-box address span {
+				#event-box address .eventSpan {
 					float: right;
 					margin-top: 10px;
 					font-size: 18px}

@@ -3,12 +3,17 @@ $(window).load(function(){
 	if ( $.browser.msie && $_LITE_.action != 'homepage') {
 		$('html').css('background','url("'+$_LITE_.imagePath+'layout/bg2.png") repeat-x transparent');
 	}
+});
+
+
+$(document).ready(function(){
 	
 	$('[data-borderradius]').css('borderRadius',function(){
 		return $(this).data("borderradius");
 	});
 	
 	footerContact.init();
+	newsletter.init();
 	core.tweets()
 		.books()
 		.donation()
@@ -24,97 +29,94 @@ $(window).load(function(){
 	
 });
 
-
-var footerContact = {
-	
-	enable: true,
-	loadingMsg: $("<span class='loadingMsg'>Sending message please wait</span>"),
-	successMsg: $("<span class='successMsg'>Your message has been sent</span>"),
-	errorMsg: $("<span class='errorMsg'>Please try Again</span>"),
-	$button: null,
-	init: function(){
-		this.$button = $("#contact-footer button");
-		this.events();
-	},
-	
-	events: function(){
-		this.$button = $("#contact-footer button");
-		this.$button.live('click', $.proxy(this,"submit") );
-	},
-	
-	submit: function(event){
-		event.preventDefault();
-		if( !this.enable ){ return }
-		var buttonTd = $(event.currentTarget).parent(),
-			$form = $(event.currentTarget).parents("form");
+var newsletter = {
+		enable: true,
+		loadingMsg: $("<div class='msgBox'><span class='loadingMsg'>Sending message please wait</span></div>"),
+		successMsg: $("<div class='msgBox'><span class='successMsg'>You have been successfully subscribed to our newsletter.</span></div>"),
+		errorMsg: $("<div class='msgBox'><span class='errorMsg'>Please try Again</span></div>"),
+		$button: null,
+		$selectedButton: null,
+		init: function(){
+			this.$button = $(".form-newsletter button");
+			this.events();
+		},
 		
-		$_LITE_.jsonRPC({
-			scope: this, 
-			api: 'Contact',
-			method: 'footerContact',
-			data: { params: $.deparam.querystring($form.serialize()) },
-			success: function( data, textStatus, jqXH ){
-				if( data.SiteData.Contact_footerContact.success ){
-					this.hideLoading();
-					this.loadSucecssMsg();
-					$form.find(':text,textarea').val('');
-				}else{
-					this.error();
+		events: function(){
+			this.$button.live('click', $.proxy(this,"submit") );
+		},
+		
+		submit: function(event){
+			this.$selectedButton = $(event.currentTarget);
+			event.preventDefault();
+			if( !this.enable ){ return }
+			var $form = $(event.currentTarget).parents("form");
+			
+			$_LITE_.jsonRPC({
+				scope: this, 
+				api: 'Contact',
+				method: 'subscribe',
+				data: { params: $.deparam.querystring($form.serialize()) },
+				success: function( data, textStatus, jqXH ){
+					if( data.SiteData.Contact_subscribe.success ){
+						this.hideLoading();
+						this.loadSucecssMsg();
+						$form.find(':text').val('');
+					}else{
+						this.error(data.SiteData.Contact_subscribe.errorMsg);
+					}
+				},
+				error: this.error,
+				beforeSend: function(){
+					this.disableForm();
+					this.showLoading();
 				}
-			},
-			error: this.error,
-			beforeSend: function(){
-				this.disableForm();
-				this.showLoading()
-			}
-		});
-	},
-	
-	error: function(){
+			});
+		},
 		
-		this.hideLoading();
-		this.loadErrorMsg()		
+		error: function(errorMsg){
+			
+			this.hideLoading();
+			this.loadErrorMsg(errorMsg)		
+			
+		},
 		
-	},
-	
-	disableForm: function(){
-		this.$button.attr("disabled",true);
-		this.enable = false;
-	},
-	
-	enableForm: function(){
-		this.$button.removeAttr("disabled");
-		this.enable = true;		
-	},
-	
-	showLoading: function(){
-		this.$button.before( this.loadingMsg.clone() );
-	},
-	
-	hideLoading: function(){
-		this.$button.prev('span').remove();
-	},
-	
-	loadSucecssMsg: function(){
-		var $successMsg = this.successMsg.clone();
-		this.$button.before( $successMsg );
-		$successMsg.fadeIn(500).delay('3000').fadeOut(500,$.proxy(function(){
-			$successMsg.remove();
-			this.enableForm();
-		},this));
-	},
-	
-	loadErrorMsg: function(){
-		var $errorMsg = this.errorMsg.clone();
-		this.$button.before( $errorMsg );
-		$errorMsg.fadeIn(500).delay('3000').fadeOut(500,$.proxy(function(){
-			$errorMsg.remove();
-			this.enableForm();
-		},this));		
-	}
-	
-};/* </footerContact > */
-
+		disableForm: function(){
+			this.$selectedButton.attr("disabled",true);
+			this.enable = false;
+		},
+		
+		enableForm: function(){
+			this.$selectedButton.removeAttr("disabled");
+			this.enable = true;		
+		},
+		
+		showLoading: function(){
+			this.$selectedButton.after( this.loadingMsg.clone() );
+		},
+		
+		hideLoading: function(){
+			this.$selectedButton.next('div').remove();
+		},
+		
+		loadSucecssMsg: function(){
+			var $successMsg = this.successMsg.clone();
+			this.$selectedButton.after( $successMsg );
+			$successMsg.fadeIn(500).delay('3000').fadeOut(500,$.proxy(function(){
+				$successMsg.remove();
+				this.enableForm();
+			},this));
+		},
+		
+		loadErrorMsg: function(errorMsg){
+			var $errorMsg = this.errorMsg.clone();
+			$errorMsg.find("span").text(errorMsg);
+			this.$selectedButton.after( $errorMsg );
+			$errorMsg.fadeIn(500).delay('3000').fadeOut(500,$.proxy(function(){
+				$errorMsg.remove();
+				this.enableForm();
+			},this));		
+		}		
+};
 
 var core = {
 		books: function(){
@@ -318,3 +320,96 @@ var core = {
 			
 		}
 };
+
+
+
+
+var footerContact = {
+	
+	enable: true,
+	loadingMsg: $("<span class='loadingMsg'>Sending message please wait</span>"),
+	successMsg: $("<span class='successMsg'>Your message has been sent</span>"),
+	errorMsg: $("<span class='errorMsg'>Please try Again</span>"),
+	$button: null,
+	init: function(){
+		this.$button = $("#contact-footer button");
+		this.events();
+	},
+	
+	events: function(){
+		this.$button = $("#contact-footer button");
+		this.$button.live('click', $.proxy(this,"submit") );
+	},
+	
+	submit: function(event){
+		event.preventDefault();
+		if( !this.enable ){ return }
+		var buttonTd = $(event.currentTarget).parent(),
+			$form = $(event.currentTarget).parents("form");
+		
+		$_LITE_.jsonRPC({
+			scope: this, 
+			api: 'Contact',
+			method: 'footerContact',
+			data: { params: $.deparam.querystring($form.serialize()) },
+			success: function( data, textStatus, jqXH ){
+				if( data.SiteData.Contact_footerContact.success ){
+					this.hideLoading();
+					this.loadSucecssMsg();
+					$form.find(':text,textarea').val('');
+				}else{
+					this.error();
+				}
+			},
+			error: this.error,
+			beforeSend: function(){
+				this.disableForm();
+				this.showLoading()
+			}
+		});
+	},
+	
+	error: function(){
+		
+		this.hideLoading();
+		this.loadErrorMsg()		
+		
+	},
+	
+	disableForm: function(){
+		this.$button.attr("disabled",true);
+		this.enable = false;
+	},
+	
+	enableForm: function(){
+		this.$button.removeAttr("disabled");
+		this.enable = true;		
+	},
+	
+	showLoading: function(){
+		this.$button.before( this.loadingMsg.clone() );
+	},
+	
+	hideLoading: function(){
+		this.$button.prev('span').remove();
+	},
+	
+	loadSucecssMsg: function(){
+		var $successMsg = this.successMsg.clone();
+		this.$button.before( $successMsg );
+		$successMsg.fadeIn(500).delay('3000').fadeOut(500,$.proxy(function(){
+			$successMsg.remove();
+			this.enableForm();
+		},this));
+	},
+	
+	loadErrorMsg: function(){
+		var $errorMsg = this.errorMsg.clone();
+		this.$button.before( $errorMsg );
+		$errorMsg.fadeIn(500).delay('3000').fadeOut(500,$.proxy(function(){
+			$errorMsg.remove();
+			this.enableForm();
+		},this));		
+	}
+	
+};/* </footerContact > */

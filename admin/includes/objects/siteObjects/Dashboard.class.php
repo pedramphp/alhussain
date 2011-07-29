@@ -9,6 +9,8 @@ class Dashboard extends SiteObject{
 	}
 	
 	public function process(){
+		
+		
 		$request = LiteFrame::FetchGetVariable();
 		if(isset($request['type'])){
 			$types= array('approve','disapprove');
@@ -35,6 +37,7 @@ class Dashboard extends SiteObject{
 					
 			}	
 		}
+		
 		$this->results['comments'] = $this->getPendingComments();
 		
 		if(isset($request['activeAction'])&& !empty($request['activeAction']) && in_array($request['activeAction'],array('comments'))  ){
@@ -60,6 +63,7 @@ class Dashboard extends SiteObject{
 			}
 		}
 		
+		$this->results['subscribers'] = SubscribersCore::getSubscribers(20);
 	}
 	
 	

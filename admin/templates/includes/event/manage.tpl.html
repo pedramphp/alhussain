@@ -39,7 +39,9 @@
 					<tr>
 					   <th>Event</th>
 					   <th>Status</th>
-					   <th>Date</th>
+					   <th>Status</th>
+					   <th>Event Date</th>
+					   <th>Entry Date</th>
 					   <th>Actions</th>
 					</tr>
 				</thead>
@@ -49,7 +51,8 @@
 						<td><a href='<!--{$event.edit}-->' title='<!--{$event.title}-->'><!--{$event.title|truncate:50:"..."}--></a></td>
 						<td><!--{$event.subTitle|truncate:50:"..."}--></td>
 						<td><!--{$event.status|@ucfirst}--></td>
-						<td><!--{$event.date}--></td>
+						<td><!--{$event.eventFriendlyDate}--></td>
+						<td><!--{$event.entryDate}--></td>
 						<td>
 						 <a href="<!--{$event.edit}-->" title="Edit"><img src="<!--{$imagePath}-->icons/pencil.png" alt="Edit" /></a>
 						 <a href="<!--{$event.delete}-->" title="Delete"><img src="<!--{$imagePath}-->icons/cross.png" alt="Delete" /></a> 

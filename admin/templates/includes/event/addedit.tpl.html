@@ -24,12 +24,29 @@
 				<!--{/if}-->
 				<fieldset>
 					<p>
-						<label>Title</label>
+						<label>*Title</label>
 						<input type="text" name="eventTitle" class="text-input small-input" value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.event.record.eventTitle}--><!--{/if}-->">
 					</p>
 					<p>
+						<label>*Event Start Date</label>
+						<input type='text' name='eventStartDate' class="text-input small-input datePicker"  value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.event.record.eventStartDate}--><!--{/if}-->" >
+					</p>
+					<p>
+						<label>*Event End Date</label>
+						<input type='text' name='eventEndDate' class="text-input small-input datePicker"  value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.event.record.eventEndDate}--><!--{/if}-->" >
+					</p>	
+					<p>
 						<label>Sub Title</label>
 						<input type='text' name='eventSubTitle' class="text-input large-input"  value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.event.record.eventSubTitle}--><!--{/if}-->" >
+					</p>
+				
+					<p>
+						<label>*Address</label>
+						<input type='text' name='eventAddress' class="text-input large-input"  value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.event.record.eventAddress}--><!--{/if}-->" >
+					</p>
+					<p>
+						<label>Telephone</label>
+						<input type='text' name='eventTel' class="text-input small-input"  value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.event.record.eventTel}--><!--{/if}-->" >
 					</p>
 					<p>
 						<label>Upload an Image</label>
@@ -39,10 +56,9 @@
 					<p>
 						<label>Image Title</label>
 						<input type='text' name='eventImageTitle' class="text-input small-input" value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.event.record.eventImageTitle}--><!--{/if}-->"><br />
-						<small>*Please first upload the image to the server</small>
 					</p>
 					<p>
-						<label>Status</label>
+						<label>*Status</label>
 						<select class="small-input" name="eventStatus">
 							<option value='pending' <!--{if $_LITE_.GET.type eq 'edit'}--><!--{if $SiteData.event.record.eventStatus eq "pending"}-->selected="selected"<!--{/if}--><!--{/if}-->>Pending</option>
 							<option value='active' <!--{if $_LITE_.GET.type eq 'edit'}--><!--{if $SiteData.event.record.eventStatus eq "active"}-->selected="selected"<!--{/if}--><!--{/if}-->>Active</option>

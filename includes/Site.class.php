@@ -103,7 +103,7 @@ class Site extends SiteHelper{
 		  LiteFrame::JSONLayout();
 		  $post = LiteFrame::FetchPostVariable();
 		  $api = new $post['api']();
-		  self::$siteObjectsData[$post['api'] . "_" . $post['method']] = @call_user_func_array(array($api, $post['method']), $post['config']);
+		  self::$siteObjectsData[$post['api'] . "_" . $post['method']] = call_user_func_array(array($api, $post['method']), $post['config']);
 		  if( self::$siteObjectsData[$post['api'] . "_" . $post['method']]== null){
 		  	throw new SystemException('Invalid API');
 		  }

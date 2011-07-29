@@ -98,6 +98,8 @@ html>body { font-size: 12px }
 		
 	.errorMsg{
 		background-position: left -854px; }
+	
+	.msgBox{ clear: both; padding-top:10px; }	
 
  /*			< HEADER > 
  *****************************

@@ -124,6 +124,28 @@
 			);
 		}
 		
+		
+		public function subscribe( $params ){
+				
+			$error = null;
+			$success = null;
+			$errorMsg = null;
+			try{
+				new SubscriberCore($params);
+				$error = false;
+				$success = true;
+			}catch(JSONRPCException $e){
+				$errorMsg = $e->getMessage();
+				$error = true;
+				$success = false;
+			}
+			return  array(
+				'error'=> $error,
+				'success'=> $success,
+				'errorMsg'=> $errorMsg
+			);
+		}
+		
 	}
 
 
