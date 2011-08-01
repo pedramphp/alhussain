@@ -11,8 +11,10 @@
 				   I.`image_url`,
 				   I.`title`
 			FROM `images` AS I
+			JOIN images_category AS IC ON ( I.`image_category_id` = IC.`id` AND IC.`status` = 'active')
 			WHERE	I.`status` = 'active'
-			ORDER BY I.`entry_date` ASC
+			GROUP BY I.`id`
+			ORDER BY I.`entry_date` DESC	
 			LIMIT 30
 		";
 		
@@ -22,7 +24,7 @@
 				   V.`image_thumb_url`
 			FROM `videos` AS V
 			WHERE	V.`status` = 'active'
-			ORDER BY V.`entry_date` ASC
+			ORDER BY V.`entry_date` DESC
 			LIMIT 30
 		";
 		

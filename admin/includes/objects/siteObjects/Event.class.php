@@ -165,7 +165,6 @@ class Event extends SiteObject{
 		if(!Request::issetFields(self::$REQUIRED_EDIT_FIELDS,'POST')){ //SHOW EDIT FORM
     		
     		$getRequest = LiteFrame::FetchGetVariable();
-			$this->results['eventId'] = $getRequest['eventId'];
 			$this->results['authors'] = Authors::getAuthors();
     		$eventsRecord = DatabaseStatic::$ah->LoadId_events($getRequest['eventId']);
     		
@@ -176,6 +175,7 @@ class Event extends SiteObject{
     			$this->results['record'] = array();
 				$record = &$this->results['record'];
     			$record['eventTitle'] =  $eventsRecord->title;
+    			$record['eventId'] =  $eventsRecord->id;
     			$record['eventAddress'] =  $eventsRecord->address;
     			$record['eventTel'] =  ModuleHelper::formatPhone($eventsRecord->telephone);
 				$record['eventSubTitle'] =  $eventsRecord->sub_title;

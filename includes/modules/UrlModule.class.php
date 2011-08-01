@@ -31,15 +31,23 @@ class UrlModule {
 	public static $IMAGE_GALLERY_ORIGINAL_PATH;
 	public static $VIDEO_GALLERY_THUMB_PATH;
 	public static $EVENT_IMAGE_PATH;
+	public static $IMAGE_GALLERY_TEMP_PATH;
+	public static $IMAGE_GALLERY_TEMP_FILE_PATH;
+	public static $IMAGE_GALLERY_ORIGINAL_FILE_PATH;
+	public static $IMAGE_GALLERY_THUMB_FILE_PATH;
 	
 	public function __construct(){
 		
-		self::$IMAGE_GALLERY_THUMB_PATH = LiteFrame::getImagePath()."gallery/private/thumb/";
-		self::$IMAGE_GALLERY_ORIGINAL_PATH = LiteFrame::getImagePath()."gallery/private/original/";
-		self::$VIDEO_GALLERY_THUMB_PATH = LiteFrame::getImagePath()."videoGallery/";
-		self::$EVENT_IMAGE_PATH = LiteFrame::getImagePath()."events/";
+		self::$IMAGE_GALLERY_THUMB_PATH = self::getImagePath()."gallery/private/thumb/";
+		self::$IMAGE_GALLERY_ORIGINAL_PATH = self::getImagePath()."gallery/private/original/";
+		self::$IMAGE_GALLERY_TEMP_FILE_PATH = self::getImageFilePath()."temp/";
+		self::$IMAGE_GALLERY_ORIGINAL_FILE_PATH = self::getImageFilePath()."gallery/private/original/";
+		self::$IMAGE_GALLERY_THUMB_FILE_PATH = self::getImageFilePath()."gallery/private/thumb/";
+		
+		self::$VIDEO_GALLERY_THUMB_PATH = self::getImagePath()."videoGallery/";
+		self::$EVENT_IMAGE_PATH = self::getImagePath()."events/";
 	}
-	
+		
 	
 	public static function buildVimeoURL($vId){
 		
@@ -47,6 +55,15 @@ class UrlModule {
 	
 	}
 	
+	
+	private static function getImagePath(){
+		return LiteFrame::getApplicationPath()."/images/";
+	}
+	
+	private static function getImageFilePath(){
+		
+		return LiteFrame::getFileSystemPath()."/images/";
+	}	
 }
 new UrlModule();
 

@@ -8,7 +8,9 @@
 					IC.`title`,
 					IC.`entry_date` 
 			FROM `images_category` AS IC
+			JOIN images AS I ON ( I.`image_category_id` = IC.`id` AND I.`status` = 'active')
 			WHERE  IC.`status` = 'active'
+			GROUP BY IC.`id`
 			ORDER BY IC.`entry_date` DESC
 		";
 		

@@ -1,0 +1,105 @@
+<ul class="shortcut-buttons-set">
+	<li><a href="<!--{$SiteData.imageGallery.addImage}-->" class="shortcut-button">
+			<span>
+			<img alt="icon" src="<!--{$imagePath}-->icons/image_add_48.png"><br>
+			Add A New Image
+			</span>
+		</a>
+	</li>			
+</ul>
+<div style='clear:both'></div>
+<div class="content-box">
+	<div class="content-box-header">
+		<h3>Manage Images > 
+			<span style='font-style:italic; color:#666;'><!--{$SiteData.imageGallery.imageCategoryTitle}-->
+			</span>
+		</h3>
+		<ul class="content-box-tabs">
+			<li><a href="#tab1" class="default-tab">Table</a></li> <!-- href must be unique and match the id of target div -->
+		</ul>
+		<div class="clear"></div>
+	</div> <!-- End .content-box-header -->
+	
+	<div class="content-box-content">
+		<div class="tab-content default-tab" id="tab1">
+			<!--{if isset($SiteData.imageGallery.successMsg)}-->
+			<div class="notification success png_bg">
+				<a class="close" href="javascript:void(0)"><img alt="close" title="Close this notification" src="<!--{$imagePath}-->icons/cross_grey_small.png"></a>
+				<div>
+					<!--{$SiteData.imageGallery.successMsg}-->
+				</div>
+			</div>				
+			<!--{/if}-->
+			<!--{if isset($SiteData.imageGallery.errorMsg)}-->
+			<div class="notification error png_bg">
+				<a class="close" href="#"><img alt="close" title="Close this notification" src="<!--{$imagePath}-->icons/cross_grey_small.png"></a>
+				<div>
+					<!--{$SiteData.imageGallery.errorMsg}-->
+				</div>
+			</div>				
+			<!--{/if}-->
+			<!--{if $SiteData.imageGallery.records|@count eq 0}-->
+			<div class="notification attention png_bg">
+				<div>
+					There are no Images to manage, to get started 
+					<a href='<!--{$applicationPath}-->?action=imageGallery&type=add'> <b>Add your first image</b></a>
+				</div>
+			</div>
+			<!--{else}-->
+			<table>
+				<thead>
+					<tr>
+					   <th>Image</th>
+					   <th>Title</th>
+					   <th>Description</th>
+					   <th>Status</th>
+					   <th>Entry Date</th>
+					   <th>Actions</th>
+					</tr>
+				</thead>
+			 
+			<!--{foreach from=$SiteData.imageGallery.records key=k item=imageGallery}-->
+					<tr>
+						<td width="10%">
+							<div style='display:none' id='imageGalleryImage<!--{$imageGallery.imageGalleryId}-->'>
+							
+							<img src='<!--{$imageGallery.imageUrl}-->' />
+							</div>
+							<a rel='modal' href='#imageGalleryImage<!--{$imageGallery.imageGalleryId}-->' title='see large view' >
+								<img src='<!--{$imageGallery.imageThumbUrl}-->' class='imageThumb'/>
+							</a>
+						</td>
+						<td width='15%'>
+							<div style='display:none' id='imageGallery<!--{$imageGallery.imageGalleryId}-->'>
+								<p><h3>Description:</h3></p>
+								<p><!--{$imageGallery.description}--></p>
+							</div>
+							<a href='<!--{$imageGallery.edit}-->' title="<!--{$imageGallery.title}-->">
+								<!--{$imageGallery.title|truncate:50:"..."}-->
+							</a>
+						</td>
+						<td width='30%'>
+							<!--{if $imageGallery.description eq ""}-->( Empty )
+							<!--{else}-->
+							<a rel='modal' href='#imageGallery<!--{$imageGallery.imageGalleryId}-->' title='Click here to see the full version'>
+								<!--{$imageGallery.description|truncate:70:"..."}-->
+							</a>
+							<!--{/if}-->
+						</td>
+						<td><!--{$imageGallery.status|@ucfirst}--></td>
+						<td><!--{$imageGallery.entryDate}--></td>
+						<td>
+						 <a href="<!--{$imageGallery.edit}-->" title="Edit"><img src="<!--{$imagePath}-->icons/pencil.png" alt="Edit" /></a>
+						 <a href="<!--{$imageGallery.delete}-->" title="Delete"><img src="<!--{$imagePath}-->icons/cross.png" alt="Delete" /></a> 
+						 <!--{if $imageGallery.status eq 'active'}-->
+						 <a href="<!--{$imageGallery.preview}-->" target='_blank' title="Live Preview"><img src="<!--{$imagePath}-->icons/preview_icon.gif" alt="Preview" /></a> 
+						  <!--{/if}-->
+						</td>
+					</tr>
+			<!--{/foreach}-->
+			<!--{/if}-->
+				</tbody>
+			</table>
+		</div> <!-- End #tab1 -->		
+	</div> <!-- End .content-box-content -->
+</div> <!-- End .content-box -->

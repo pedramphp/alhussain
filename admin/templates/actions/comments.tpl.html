@@ -53,7 +53,7 @@
 								<p><!--{$comment.comment}--></p>
 							</div><!--{$comment.fullname|@ucfirst}--></td>
 						<td><!--{$comment.gender|@ucfirst}--></td>
-						<td><a rel='modal' href='#comment<!--{$comment.commentsId}-->' title='<!--{$comment.comment}-->'><!--{$comment.comment|truncate:100:"..."}--></a></td>
+						<td><a rel='modal' href='#comment<!--{$comment.commentsId}-->' title='Click here to see the full version'><!--{$comment.comment|truncate:70:"..."}--></a></td>
 						<td><!--{if $comment.email eq ""}-->( Empty )<!--{else}--><a href="mailto:<!--{$comment.email}-->"><!--{$comment.email}--></a><!--{/if}--></td>
 						<td><!--{$comment.status|@ucfirst}--></td>
 						<td><!--{$comment.entryDate}--></td>

@@ -51,6 +51,7 @@ class SiteSettings {
 	
 	public function setCoreJavascript(){
 		
+		
 		LiteFrame::IncludeLibraryJavascript(array('plugins/rotate.js',
 												'plugins/gotop.js',
 												'plugins/jquery.ba-bbq.min.js',

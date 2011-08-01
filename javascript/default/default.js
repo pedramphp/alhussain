@@ -12,6 +12,22 @@ $(document).ready(function(){
 		return $(this).data("borderradius");
 	});
 	
+	
+
+	$('#nav-about').hover(function(){
+		$(this).find("ul").slideDown();
+	},function(e){
+		if(!$(this).find("ul").is($(e.relatedTarget).closest("ul"))){
+			 if($_LITE_.action == 'homepage'){
+				 setTimeout($.proxy(function(){
+					 $(this).find("ul").slideUp()
+				 },this),500);
+			 }else{
+				 $(this).find("ul").slideUp()
+			 }
+		}
+	});
+	
 	footerContact.init();
 	newsletter.init();
 	core.tweets()
@@ -187,7 +203,7 @@ var core = {
 		
 		sponsers: function(){
 			//sponser header
-			var sponsers = "Imam Shirazi World Foundation, Imam Ali (A.S) Center Springfield VA,Prestige. Productionz Washington DC,Kabob Factory Lorton VA".split(",");
+			var sponsers = "Imam Shirazi World Foundation, Imam Ali (A.S) Center Springfield VA,Prestige Productionz Washington DC,Kabob Factory Lorton VA".split(",");
 			var activeIndex = 1;
 			setInterval(function(){
 				$('#header-sponser span').fadeOut(500,function(){

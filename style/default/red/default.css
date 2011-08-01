@@ -248,6 +248,14 @@ html>body { font-size: 12px }
     #nav-blog div:hover span{ background-position: left -404px; }    
     
     #nav-contact div:hover span{ background-position: left -434px; }
+    
+    #navAboutDetail{
+    	position: absolute; display: none; top: 40px; z-index:10;
+    	background: #000; width: 129px; }
+     
+     #navAboutDetail a{ width: 100px; float:none; }
+     #navAboutDetail li { float: none; width: 100px; position: static }
+     #navAboutDetail a:hover{ background: #eee; color: #000; }
 	
 	/*		</ MAIN NAV > 
 	*---------------------------*/

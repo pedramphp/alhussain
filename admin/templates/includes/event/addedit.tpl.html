@@ -18,9 +18,9 @@
 				</div>
 			</div>				
 			<!--{/if}-->
-			<form action="<!--{$applicationPath}-->?action=event&type=<!--{if $_LITE_.GET.type eq 'add'}-->add<!--{else}-->edit&eventId=<!--{$SiteData.event.eventId}--><!--{/if}-->" method='post'>
+			<form action="<!--{$applicationPath}-->?action=event&type=<!--{if $_LITE_.GET.type eq 'add'}-->add<!--{else}-->edit&eventId=<!--{$SiteData.event.record.eventId}--><!--{/if}-->" method='post'>
 				<!--{if $_LITE_.GET.type eq 'edit'}-->
-					<input type='hidden' value='<!--{$SiteData.event.eventId}-->' name='eventId' />
+					<input type='hidden' value='<!--{$SiteData.event.record.eventId}-->' name='eventId' />
 				<!--{/if}-->
 				<fieldset>
 					<p>

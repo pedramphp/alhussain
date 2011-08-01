@@ -8,15 +8,11 @@ $(document).ready(function() {
 		$('#logo figure:eq(0)').css('top','-125px').removeClass('invisible').animate({top:12},1000,function(){
 			$(this).animate({top:-12},300,function(){
 				$(this).animate({top:0},300,function(){
-					setTimeout(function(){
-						
 						$('#logo figure:eq(1)').animate({top:12},10,function(){
 							$(this).animate({top:-12},300,function(){
 								$(this).animate({top:0},300);
 							});
 						});
-					
-					},1000);
 				});
 			});
 		});

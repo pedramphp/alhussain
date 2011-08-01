@@ -1,0 +1,54 @@
+<div class="content-box"><!-- Start Content Box -->
+	
+	<div class="content-box-header">
+		<h3><!--{if $_LITE_.GET.type eq 'add'}-->Add<!--{else}-->Edit<!--{/if}--> A New Image Category</h3>
+		<ul class="content-box-tabs">
+			<li><a href="#tab1" class="default-tab">Table</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div> <!-- End .content-box-header -->
+	
+	<div class="content-box-content">
+		<div class="tab-content default-tab" id="tab1">
+			<!--{if isset($SiteData.imageCategory.errorMsg)}-->
+			<div class="notification error png_bg">
+				<a class="close" href="#"><img alt="close" title="Close this notification" src="<!--{$imagePath}-->icons/cross_grey_small.png"></a>
+				<div>
+					<!--{$SiteData.imageCategory.errorMsg}-->
+				</div>
+			</div>				
+			<!--{/if}-->
+			<form action="<!--{$applicationPath}-->?action=imagecategory&type=<!--{if $_LITE_.GET.type eq 'add'}-->add<!--{else}-->edit&imageCategoryId=<!--{$SiteData.imageCategory.record.imageCategoryId}--><!--{/if}-->" method='post'>
+				<!--{if $_LITE_.GET.type eq 'edit'}-->
+					<input type='hidden' value='<!--{$SiteData.imageCategory.record.imageCategoryId}-->' name='imageCategoryId' />
+				<!--{/if}-->
+				<fieldset>
+					<p>
+						<label>*Title</label>
+						<input type="text" name="imageCategoryTitle" class="text-input small-input" value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.imageCategory.record.imageCategoryTitle}--><!--{/if}-->">
+					</p>
+					<p>
+						<label>Description</label>
+						<input type='text' name='imageCategoryDescription' class="text-input large-input"  value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.imageCategory.record.imageCategoryDescription}--><!--{/if}-->" >
+					</p>
+
+					<p>
+						<label>*Status</label>
+						<select class="small-input" name="imageCategoryStatus">
+							<option value='pending' <!--{if $_LITE_.GET.type eq 'edit'}--><!--{if $SiteData.imageCategory.record.imageCategoryStatus eq "pending"}-->selected="selected"<!--{/if}--><!--{/if}-->>Pending</option>
+							<option value='active' <!--{if $_LITE_.GET.type eq 'edit'}--><!--{if $SiteData.imageCategory.record.imageCategoryStatus eq "active"}-->selected="selected"<!--{/if}--><!--{/if}-->>Active</option>
+							<!--{if $_LITE_.GET.type eq 'edit'}-->
+							<option value='delete' <!--{if $_LITE_.GET.type eq 'edit'}--><!--{if $SiteData.imageCategory.record.imageCategoryStatus eq "delete"}-->selected="selected"<!--{/if}--><!--{/if}-->>Delete</option>
+							<!--{/if}-->
+						</select>
+					</p>
+					<p>
+						<input type="submit" value="<!--{if $_LITE_.GET.type eq 'add'}-->Create A New<!--{else}-->Edit This<!--{/if}--> Image Category" class="button">
+					</p>
+					
+				</fieldset>
+				<div class='clear'></div>
+			</form>		
+		</div> <!-- End #tab1 -->		
+	</div> <!-- End .content-box-content -->
+</div> <!-- End .content-box -->
