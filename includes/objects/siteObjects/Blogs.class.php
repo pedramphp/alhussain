@@ -26,6 +26,7 @@
 			while($row=DatabaseStatic::FetchAssoc($query)){
 				$row['friendlyDate'] = date('F jS, Y',strtotime($row['entry_date']));
 				$row['time'] = date('H:i',strtotime($row['entry_date']));
+				$row['thumb'] = UrlModule::$BLOG_THUMB_PATH . $row['thumbnail'];
 				$row['link'] = LiteFrame::GetApplicationPath() . '?action=blog&blogId=' . $row['blogId']; 
 				$this->results[] = $row;
 			}

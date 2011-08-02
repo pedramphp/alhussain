@@ -237,7 +237,7 @@ class Blog extends SiteObject{
 		
 	}
 	
-	
+
 
 	private function addBlog(){
 		$this->results['authors'] = Authors::getAuthors();
@@ -253,7 +253,7 @@ class Blog extends SiteObject{
 					$uploadImage = new ImageUpload(UrlModule::$IMAGE_GALLERY_TEMP_FILE_PATH, $_FILES['blogImageUrl'] );
 					$uploadImage->setSize($request['maxSize']);
 					$uploadImage->setOverwrite(true);
-					$uploadImage->setImageName("blog".$request['blogOd']."_".$_FILES['blogImageUrl']['name']);
+					$uploadImage->setImageName("blog".ModuleHelper::betterRand(100000,10000000)."_".$_FILES['blogImageUrl']['name']);
 					if($uploadImage->upload()){
 		     			$resizeObj = new ImageResize($uploadImage->getImagePath());
 		  	 			$size = getimagesize($uploadImage->getImagePath());

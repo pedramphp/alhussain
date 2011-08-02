@@ -158,7 +158,7 @@ class ImageGallery extends SiteObject{
 				$uploadImage = new ImageUpload(UrlModule::$IMAGE_GALLERY_TEMP_FILE_PATH, $_FILES['imageGalleryUrl'] );
 				$uploadImage->setSize($request['maxSize']);
 				$uploadImage->setOverwrite(true);
-				$uploadImage->setImageName("cat".$request['imageCategoryId']."_".$request['imageGalleryId']."_".$_FILES['imageGalleryUrl']['name']);
+				$uploadImage->setImageName("cat".ModuleHelper::betterRand(100000,10000000)."_".$_FILES['imageGalleryUrl']['name']);
 				if($uploadImage->upload()){
 					$resizeObj = new ImageResize($uploadImage->getImagePath());
 	  	 			$size = getimagesize($uploadImage->getImagePath());

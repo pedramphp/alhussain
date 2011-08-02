@@ -81,6 +81,15 @@ class ModuleHelper{
 	        return $out;
 	}
 	
+	
+	public static function betterRand($min,$max){
+		
+		list($usec, $sec) = explode(' ', microtime());
+		$seed = (float) $sec + ((float) $usec * 100000);
+		mt_srand($seed);
+		return mt_rand($min,$max);
+			
+	}
 };
 
 ?>
