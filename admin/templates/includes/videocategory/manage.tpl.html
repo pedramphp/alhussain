@@ -36,6 +36,7 @@
 			<table>
 				<thead>
 					<tr>
+					   <th>Album Cover</th>
 					   <th>Title</th>
 					   <th>Description</th>
 					   <th>Size</th>
@@ -48,6 +49,11 @@
 			<!--{foreach from=$SiteData.videoCategory.records key=k item=videoCategory}-->
 					<tr>
 						<td>
+							<a class='album' href='<!--{$videoCategory.videos}-->'>
+								<img class='imageAlbumThumb' src="<!--{if $videoCategory.albumCover eq ''}--><!--{$imagePath|cat:"no_photo_icon.gif"}--><!--{else}--><!--{$videoCategory.albumCover}--><!--{/if}-->" />
+							</a>
+						</td>
+						<td>
 							<div style='display:none' id='videoCategory<!--{$videoCategory.videoCategoryId}-->'>
 								<p><h3>Description:</h3></p>
 								<p><!--{$videoCategory.description}--></p>
@@ -58,7 +64,8 @@
 						</td>
 						<td>
 							<a rel='modal' href='#videoCategory<!--{$videoCategory.videoCategoryId}-->' title='Click here to see the full version'>
-								<!--{$videoCategory.description|truncate:70:"..."}--></td>
+								<!--{$videoCategory.description|truncate:70:"..."}-->
+						</td>
 						<td><!--{if $videoCategory.size eq 0}-->No Videoss<!--{else}--><!--{$videoCategory.size}--> Videos<!--{/if}--></td>
 						<td><!--{$videoCategory.status|@ucfirst}--></td>
 						<td><!--{$videoCategory.entryDate}--></td>

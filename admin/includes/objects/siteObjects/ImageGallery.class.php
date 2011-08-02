@@ -43,7 +43,7 @@ class ImageGallery extends SiteObject{
 			   IC.`title` AS imageCategoryTitle
 			      
 		FROM images AS I
-		JOIN images_category AS IC ON(I.`image_category_id` = IC.`id` AND IC.`status` = 'active')
+		JOIN images_category AS IC ON(I.`image_category_id` = IC.`id` AND IC.`status` <> 'delete')
 		WHERE	I.`status` <> 'delete'
 		AND IC.`id` = %d
 		GROUP BY imageGalleryId

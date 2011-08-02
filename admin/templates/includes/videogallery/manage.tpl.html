@@ -43,7 +43,7 @@
 			<div class="notification attention png_bg">
 				<div>
 					There are no Videos to manage, to get started 
-					<a href='<!--{$applicationPath}-->?action=videoGallery&type=add'> <b>Add your first video</b></a>
+					<a href='<!--{$SiteData.videoGallery.addVideo}-->'> <b>Add your first video</b></a>
 				</div>
 			</div>
 			<!--{else}-->
@@ -67,9 +67,10 @@
 								<iframe src="<!--{$videoGallery.videoUrl}-->" width="847" height="396" frameborder="0"></iframe>
 							</div>
 							<a rel='modal' href='#videoGalleryVideo<!--{$videoGallery.videoGalleryId}-->' title='see large view' >
-								Watch video 
+								<img src='<!--{$videoGallery.videoThumbUrl}-->' class='imageThumb' title='watch video'/>
 							</a>
 						</td>
+						
 						<td width='15%'>
 							<div style='display:none' id='videoGallery<!--{$videoGallery.videoGalleryId}-->'>
 								<p><h3>Description:</h3></p>

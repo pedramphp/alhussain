@@ -29,18 +29,19 @@ class VideoCategory extends SiteObject{
 
 	
 	private static $MANAGE_VIDEO_CATEGORIES_SQL = "
-		SELECT IC.`id` AS videoCategoryId,
-			   IC.`title`,
-			   IC.`status`,
-			   IC.`description`,
-			   IC.`entry_date` AS entryDate,
-			   IF(I.`id` IS NULL,0,COUNT(*)) AS size
+		SELECT VC.`id` AS videoCategoryId,
+			   VC.`title`,
+			   VC.`status`,
+			   VC.`description`,
+			   VC.`entry_date` AS entryDate,
+			   IF(V.`id` IS NULL,0,COUNT(*)) AS size,
+			   V.`image_thumb_url` AS albumCover
 			   
-		FROM videos_category AS IC
-		LEFT JOIN videos AS I ON ( I.`video_category_id` = IC.`id` AND I.`status` = 'active')
-		WHERE	IC.`status` <> 'delete'
-		GROUP BY IC.`id`
-		ORDER BY IC.`entry_date` DESC
+		FROM videos_category AS VC
+		LEFT JOIN videos AS V ON ( V.`video_category_id` = VC.`id` AND V.`status` = 'active')
+		WHERE	VC.`status` <> 'delete'
+		GROUP BY VC.`id`
+		ORDER BY VC.`entry_date` DESC
 	";
 	
 	public function process(){
@@ -114,6 +115,7 @@ class VideoCategory extends SiteObject{
 			$row['edit'] = LiteFrame::GetApplicationPath() . '?action=videocategory&videoCategoryId=' . $row['videoCategoryId'].'&type=edit'; 
 			$row['delete'] = LiteFrame::GetApplicationPath() . '?action=videocategory&videoCategoryId=' . $row['videoCategoryId'].'&type=delete'; 
 			$row['preview'] = dirname(LiteFrame::GetApplicationPath()) . '?action=videoGallery'; 
+			$row['albumCover'] = ($row['albumCover'] !='')? $row['albumCover']:'';
 			$this->results['records'][] = $row;
 		}
 	}

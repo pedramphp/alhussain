@@ -52,7 +52,7 @@
 			while($row=DatabaseStatic::FetchAssoc($result)){
 				$videos[] = array(
 					"original" => UrlModule::buildVimeoURL($row['video_url']),
-					"thumb"	=>	UrlModule::$VIDEO_GALLERY_THUMB_PATH . $row['image_thumb_url'],
+					"thumb"	=>	$row['image_thumb_url'],
 					"title" => $row['title']
 				);
 			}

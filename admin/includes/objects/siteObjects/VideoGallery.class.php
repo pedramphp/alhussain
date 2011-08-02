@@ -45,7 +45,7 @@ class VideoGallery extends SiteObject{
 			   VC.`title` AS videoCategoryTitle
 			      
 		FROM videos AS V
-		JOIN videos_category AS VC ON(V.`video_category_id` = VC.`id` AND VC.`status` = 'active')
+		JOIN videos_category AS VC ON(V.`video_category_id` = VC.`id` AND VC.`status` <> 'delete')
 		WHERE	V.`status` <> 'delete'
 		AND 	VC.`id` = %d
 		GROUP BY videoGalleryId
@@ -123,7 +123,6 @@ class VideoGallery extends SiteObject{
 		}
 		while($row=DatabaseStatic::FetchAssoc($result)){
 			
-			
 			$row['entryDate'] = ModuleHelper::getFriendlyDate($row['entryDate']);
 			$row['videoId'] = $row['videoId'];
 			$row['videoUrl'] = UrlModule::buildVimeoURL( $row['videoId'] );
@@ -161,6 +160,8 @@ class VideoGallery extends SiteObject{
 			$videoGalleryRecord->entry_date = ModuleHelper::getCurrentSqlDate(); 
 			$videoGalleryRecord->updated_date = ModuleHelper::getCurrentSqlDate();  
 			$videoGalleryRecord->video_url = $request['videoGalleryVideoId'];
+			$videoGalleryRecord->image_thumb_url = VimeoModule::getMediumThumbnailUrl($request['videoGalleryVideoId']);
+
 			if($videoGalleryRecord->Save()){
 				Redirect::Action("videogallery",array("status"=>'add','videoCategoryId'=>$request['videoCategoryId']));
 			}else{
@@ -224,6 +225,7 @@ class VideoGallery extends SiteObject{
 				$record['videoGalleryLink'] = LiteFrame::GetApplicationPath() . '?action=videogallery&videoCategoryId=' . $videoCategoryRecord->id;
 				$record['formUrl'] = LiteFrame::GetApplicationPath() . '?action=videogallery&videoGalleryId='.$videoGalleryRecord->id.'&type=edit&videoCategoryId='.$videoCategoryRecord->id; 
 				$record['videoGalleryVideoId']  =  $videoGalleryRecord->video_url;
+				$record['videoGalleryImageThumbUrl'] = $videoGalleryRecord->image_thumb_url;
 				
     		}
     		return;
@@ -256,6 +258,7 @@ class VideoGallery extends SiteObject{
 		$videoGalleryRecord->description = $request['videoGalleryDescription'];
 		$videoGalleryRecord->video_url = $request['videoGalleryVideoId'];
 		$videoGalleryRecord->status = $request['videoGalleryStatus'];
+		$videoGalleryRecord->image_thumb_url = VimeoModule::getMediumThumbnailUrl($request['videoGalleryVideoId']);
 		$videoGalleryRecord->updated_date = ModuleHelper::getCurrentSqlDate();
 		if($videoGalleryRecord->Save()){
 			Redirect::Action("videogallery",array("status"=>'edit',"videoCategoryId"=>$request['videoCategoryId']));
