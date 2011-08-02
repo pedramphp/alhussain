@@ -110,6 +110,7 @@ class VideoCategory extends SiteObject{
 		}
 		while($row=DatabaseStatic::FetchAssoc($result)){
 			$row['entryDate'] = ModuleHelper::getFriendlyDate($row['entryDate']);
+			$row['videos'] = LiteFrame::GetApplicationPath() . '?action=videogallery&videoCategoryId=' . $row['videoCategoryId']; 
 			$row['edit'] = LiteFrame::GetApplicationPath() . '?action=videocategory&videoCategoryId=' . $row['videoCategoryId'].'&type=edit'; 
 			$row['delete'] = LiteFrame::GetApplicationPath() . '?action=videocategory&videoCategoryId=' . $row['videoCategoryId'].'&type=delete'; 
 			$row['preview'] = dirname(LiteFrame::GetApplicationPath()) . '?action=videoGallery'; 

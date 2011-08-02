@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.6, created on 2011-07-30 21:23:05
+<?php /* Smarty version Smarty-3.0.6, created on 2011-08-02 00:26:00
          compiled from "/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/blog/addedit.tpl.html" */ ?>
-<?php /*%%SmartyHeaderCode:6540069474e3476399e6140-88285321%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:12339213544e377c58060a54-33890690%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '957650c1d9202f784e36a00abff37ab19de189d1' => 
     array (
       0 => '/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/blog/addedit.tpl.html',
-      1 => 1311716224,
+      1 => 1312256914,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6540069474e3476399e6140-88285321',
+  'nocache_hash' => '12339213544e377c58060a54-33890690',
   'function' => 
   array (
   ),
@@ -39,7 +39,7 @@ icons/cross_grey_small.png"></a>
 				</div>
 			</div>				
 			<?php }?>
-			<form action="<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
+			<form enctype="multipart/form-data" action="<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
 ?action=blog&type=<?php if ($_smarty_tpl->getVariable('_LITE_')->value['GET']['type']=='add'){?>add<?php }else{ ?>edit&blogId=<?php echo $_smarty_tpl->getVariable('SiteData')->value['blog']['blogId'];?>
 <?php }?>" method='post'>
 				<?php if ($_smarty_tpl->getVariable('_LITE_')->value['GET']['type']=='edit'){?>
@@ -48,23 +48,23 @@ icons/cross_grey_small.png"></a>
 				<?php }?>
 				<fieldset>
 					<p>
-						<label>Title</label>
+						<label>*Title</label>
 						<input type="text" name="blogTitle" class="text-input small-input" value="<?php if ($_smarty_tpl->getVariable('_LITE_')->value['GET']['type']=='edit'){?><?php echo $_smarty_tpl->getVariable('SiteData')->value['blog']['record']['blogTitle'];?>
 <?php }?>">
 					</p>
 					<p>
-						<label>Short Description</label>
+						<label>*Short Description</label>
 						<input type='text' name='blogShortDescription' class="text-input large-input"  value="<?php if ($_smarty_tpl->getVariable('_LITE_')->value['GET']['type']=='edit'){?><?php echo $_smarty_tpl->getVariable('SiteData')->value['blog']['record']['blogShortDescription'];?>
 <?php }?>" >
 					</p>
 					<p>
-						<label>Image Url</label>
-						<input type='text' name='blogImageUrl' class="text-input small-input" value="<?php if ($_smarty_tpl->getVariable('_LITE_')->value['GET']['type']=='edit'){?><?php echo $_smarty_tpl->getVariable('SiteData')->value['blog']['record']['blogImageUrl'];?>
-<?php }?>"><br />
-						<small>*Please first upload the image to the server</small>
+						<label>*Image Url</label>
+						<input type='file' name='blogImageUrl' class="text-input small-input" ><br />
+						<input type="hidden" name="maxSize" value="2" />
+						<small>*Please upload an image less than 2MB</small>
 					</p>
 					<p>
-						<label>Author</label>
+						<label>*Author</label>
 						<select class="small-input" name="blogAuthor">
 						<?php  $_smarty_tpl->tpl_vars['author'] = new Smarty_Variable;
  $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
@@ -80,15 +80,15 @@ if ($_smarty_tpl->_count($_from) > 0){
 						</select>
 					</p>
 					<p>
-						<label>Status</label>
+						<label>*Status</label>
 						<select class="small-input" name="blogStatus">
 							<option value='pending' <?php if ($_smarty_tpl->getVariable('_LITE_')->value['GET']['type']=='edit'){?><?php if ($_smarty_tpl->getVariable('SiteData')->value['blog']['record']['blogStatus']=="pending"){?>selected="selected"<?php }?><?php }?>>Pending</option>
 							<option value='active' <?php if ($_smarty_tpl->getVariable('_LITE_')->value['GET']['type']=='edit'){?><?php if ($_smarty_tpl->getVariable('SiteData')->value['blog']['record']['blogStatus']=="active"){?>selected="selected"<?php }?><?php }?>>Active</option>
 						</select>
 					</p>					
 					<p>
-						<label>Article</label>
-						<textarea class="text-input textarea wysiwyg"  name="blogArticle" cols="79" rows="15">
+						<label>*Article</label>
+						<textarea class="text-input textarea"  name="blogArticle" cols="79" rows="15">
 						<?php if ($_smarty_tpl->getVariable('_LITE_')->value['GET']['type']=='edit'){?><?php echo $_smarty_tpl->getVariable('SiteData')->value['blog']['record']['blogArticle'];?>
 <?php }?>
 						</textarea>

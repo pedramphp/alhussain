@@ -34,8 +34,8 @@ class ImageCategory extends SiteObject{
 			   IC.`status`,
 			   IC.`description`,
 			   IC.`entry_date` AS entryDate,
-			   IF(I.`id` IS NULL,0,COUNT(*)) AS size
-			   
+			   IF(I.`id` IS NULL,0,COUNT(*)) AS size,
+			   I.`image_thumb_url` AS albumCover
 		FROM images_category AS IC
 		LEFT JOIN images AS I ON ( I.`image_category_id` = IC.`id` AND I.`status` = 'active')
 		WHERE	IC.`status` <> 'delete'
@@ -114,6 +114,7 @@ class ImageCategory extends SiteObject{
 			$row['images'] = LiteFrame::GetApplicationPath() . '?action=imagegallery&imageCategoryId=' . $row['imageCategoryId']; 
 			$row['delete'] = LiteFrame::GetApplicationPath() . '?action=imagecategory&imageCategoryId=' . $row['imageCategoryId'].'&type=delete'; 
 			$row['preview'] = dirname(LiteFrame::GetApplicationPath()) . '?action=imageGallery'; 
+			$row['albumCover'] = ($row['albumCover'] !='')? UrlModule::$IMAGE_GALLERY_THUMB_PATH . $row['albumCover']:'';
 			$this->results['records'][] = $row;
 		}
 	}

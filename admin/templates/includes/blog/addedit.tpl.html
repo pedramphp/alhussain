@@ -18,26 +18,27 @@
 				</div>
 			</div>				
 			<!--{/if}-->
-			<form action="<!--{$applicationPath}-->?action=blog&type=<!--{if $_LITE_.GET.type eq 'add'}-->add<!--{else}-->edit&blogId=<!--{$SiteData.blog.blogId}--><!--{/if}-->" method='post'>
+			<form enctype="multipart/form-data" action="<!--{$applicationPath}-->?action=blog&type=<!--{if $_LITE_.GET.type eq 'add'}-->add<!--{else}-->edit&blogId=<!--{$SiteData.blog.blogId}--><!--{/if}-->" method='post'>
 				<!--{if $_LITE_.GET.type eq 'edit'}-->
 					<input type='hidden' value='<!--{$SiteData.blog.blogId}-->' name='blogId' />
 				<!--{/if}-->
 				<fieldset>
 					<p>
-						<label>Title</label>
+						<label>*Title</label>
 						<input type="text" name="blogTitle" class="text-input small-input" value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.blog.record.blogTitle}--><!--{/if}-->">
 					</p>
 					<p>
-						<label>Short Description</label>
+						<label>*Short Description</label>
 						<input type='text' name='blogShortDescription' class="text-input large-input"  value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.blog.record.blogShortDescription}--><!--{/if}-->" >
 					</p>
 					<p>
-						<label>Image Url</label>
-						<input type='text' name='blogImageUrl' class="text-input small-input" value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.blog.record.blogImageUrl}--><!--{/if}-->"><br />
-						<small>*Please first upload the image to the server</small>
+						<label>*Image Url</label>
+						<input type='file' name='blogImageUrl' class="text-input small-input" ><br />
+						<input type="hidden" name="maxSize" value="2" />
+						<small>*Please upload an image less than 2MB</small>
 					</p>
 					<p>
-						<label>Author</label>
+						<label>*Author</label>
 						<select class="small-input" name="blogAuthor">
 						<!--{foreach from=$SiteData.blog.authors key=k item=author}-->
 							<option value='<!--{$author.authorId}-->' <!--{if $_LITE_.GET.type eq 'edit'}--><!--{if $SiteData.blog.record.blogAuthor eq $author.authorId}-->selected="selected"<!--{/if}--><!--{/if}-->><!--{$author.fullname}--></option>
@@ -45,15 +46,15 @@
 						</select>
 					</p>
 					<p>
-						<label>Status</label>
+						<label>*Status</label>
 						<select class="small-input" name="blogStatus">
 							<option value='pending' <!--{if $_LITE_.GET.type eq 'edit'}--><!--{if $SiteData.blog.record.blogStatus eq "pending"}-->selected="selected"<!--{/if}--><!--{/if}-->>Pending</option>
 							<option value='active' <!--{if $_LITE_.GET.type eq 'edit'}--><!--{if $SiteData.blog.record.blogStatus eq "active"}-->selected="selected"<!--{/if}--><!--{/if}-->>Active</option>
 						</select>
 					</p>					
 					<p>
-						<label>Article</label>
-						<textarea class="text-input textarea wysiwyg"  name="blogArticle" cols="79" rows="15">
+						<label>*Article</label>
+						<textarea class="text-input textarea"  name="blogArticle" cols="79" rows="15">
 						<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.blog.record.blogArticle}--><!--{/if}-->
 						</textarea>
 					</p>

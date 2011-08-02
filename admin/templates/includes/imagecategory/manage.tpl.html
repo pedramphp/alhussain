@@ -36,6 +36,7 @@
 			<table>
 				<thead>
 					<tr>
+					   <th>Album Cover</th>
 					   <th>Title</th>
 					   <th>Description</th>
 					   <th>Size</th>
@@ -48,6 +49,11 @@
 			<!--{foreach from=$SiteData.imageCategory.records key=k item=imageCategory}-->
 					<tr>
 						<td>
+							<a class='album' href='<!--{$imageCategory.images}-->'>
+								<img class='imageAlbumThumb' src="<!--{if $imageCategory.albumCover eq ''}--><!--{$imagePath|cat:"no_photo_icon.gif"}--><!--{else}--><!--{$imageCategory.albumCover}--><!--{/if}-->" />
+							</a>
+						</td>
+						<td>
 							<div style='display:none' id='imageCategory<!--{$imageCategory.imageCategoryId}-->'>
 								<p><h3>Description:</h3></p>
 								<p><!--{$imageCategory.description}--></p>
@@ -59,7 +65,7 @@
 						<td>
 							<a rel='modal' href='#imageCategory<!--{$imageCategory.imageCategoryId}-->' title='Click here to see the full version'>
 								<!--{$imageCategory.description|truncate:70:"..."}--></td>
-						<td><!--{if $imageCategory.size eq 0}-->No Imagess<!--{else}--><!--{$imageCategory.size}--> Images<!--{/if}--></td>
+						<td><!--{if $imageCategory.size eq 0}-->No Images<!--{else}--><!--{$imageCategory.size}--> Images<!--{/if}--></td>
 						<td><!--{$imageCategory.status|@ucfirst}--></td>
 						<td><!--{$imageCategory.entryDate}--></td>
 						<td>

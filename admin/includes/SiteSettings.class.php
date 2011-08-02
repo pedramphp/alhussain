@@ -47,8 +47,9 @@ class SiteSettings {
 	
 	public function setCoreJavascript(){
 		//if( SiteHelper::GetAction() !== 'login' ){
-			LiteFrame::IncludeLibraryJavascript('facebox.js','jquery.wysiwyg.js','simpla.jquery.configuration.js');
+			LiteFrame::IncludeLibraryJavascript('facebox.js'/*,'jquery.wysiwyg.js'*/,'simpla.jquery.configuration.js');
 			LiteFrame::IncludeStyle('default.css','invalid.css','red.css');
+			LiteFrame::ExternalJavascript('http://js.nicedit.com/nicEdit-latest.js');
 		//}
 		/*LiteFrame::IncludeLibraryJavascript('plugins/jquery.gotop.js');
 		LiteFrame::IncludeJavascript('default.js');

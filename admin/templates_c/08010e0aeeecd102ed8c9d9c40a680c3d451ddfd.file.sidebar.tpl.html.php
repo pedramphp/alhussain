@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.6, created on 2011-07-31 21:49:35
+<?php /* Smarty version Smarty-3.0.6, created on 2011-08-01 23:24:23
          compiled from "/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/sidebar.tpl.html" */ ?>
-<?php /*%%SmartyHeaderCode:1405147274e36062fed88f2-47141451%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:6692651884e376de71bb535-24918337%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '08010e0aeeecd102ed8c9d9c40a680c3d451ddfd' => 
     array (
       0 => '/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/sidebar.tpl.html',
-      1 => 1312163373,
+      1 => 1312255450,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1405147274e36062fed88f2-47141451',
+  'nocache_hash' => '6692651884e376de71bb535-24918337',
   'function' => 
   array (
   ),
@@ -28,8 +28,7 @@ logo.png" alt="Alhussaintv.tv logo" /></a>
 		  
 			<!-- Sidebar Profile links -->
 			<div id="profile-links">
-				Hello, <a href="#" title="Edit your profile"><?php echo $_smarty_tpl->getVariable('SiteData')->value['user']->getFullname();?>
-</a><br />
+				Hello, <a href="#" title="Edit your profile">Admin</a><br />
 				<br />
 				<a href="<?php echo $_smarty_tpl->getVariable('SiteData')->value['urls']['siteUrl'];?>
 " title="View the Site">View the Site</a> | <a href="<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
@@ -101,8 +100,6 @@ logo.png" alt="Alhussaintv.tv logo" /></a>
 					<ul>
 						<li><a href="<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
 ?action=videocategory&type=add">Add a new video category</a></li>
-						<li><a href="<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
-?action=videogallery&type=add">Add a new video</a></li>
 						<li><a href="<?php echo $_smarty_tpl->getVariable('applicationPath')->value;?>
 ?action=videocategory">Manage video categories</a></li>
 					</ul>

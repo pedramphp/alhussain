@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.6, created on 2011-07-30 21:23:08
+<?php /* Smarty version Smarty-3.0.6, created on 2011-08-02 00:43:19
          compiled from "/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/blog/manage.tpl.html" */ ?>
-<?php /*%%SmartyHeaderCode:20476127954e34763cd178e2-11855310%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:16025486604e378067162ec7-00114388%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c6a06bac5eede76b45cdba41b2c45aefa811d839' => 
     array (
       0 => '/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/blog/manage.tpl.html',
-      1 => 1311887385,
+      1 => 1312260157,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '20476127954e34763cd178e2-11855310',
+  'nocache_hash' => '16025486604e378067162ec7-00114388',
   'function' => 
   array (
   ),
@@ -78,6 +78,11 @@ if ($_smarty_tpl->_count($_from) > 0){
  $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['blog']->key;
 ?>
 					<tr>
+						<td width="10%">
+							<img src='<?php if ($_smarty_tpl->tpl_vars['blog']->value['imageThumbUrl']==''){?><?php echo ($_smarty_tpl->getVariable('imagePath')->value).("no_photo_icon.gif");?>
+<?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['blog']->value['imageThumbUrl'];?>
+<?php }?>' class='imageThumb'/>
+						</td>
 						<td><a href='<?php echo $_smarty_tpl->tpl_vars['blog']->value['edit'];?>
 ' title='<?php echo $_smarty_tpl->tpl_vars['blog']->value['title'];?>
 '><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['blog']->value['title'],50,"...");?>

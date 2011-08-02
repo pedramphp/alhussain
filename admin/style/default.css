@@ -801,7 +801,23 @@ div.wysiwyg iframe { border: 0; margin: 5px 0 0 0; clear: left; width: 97.5% !im
     width:169px; height:110px; cursor: pointer }
 
 
-
+.album{
+	border: 1px solid rgb(204, 204, 204); 
+	display: block; 
+	position: relative; 
+	height: 121px; background: none repeat scroll 0% 0% rgb(255, 255, 255); width: 179px;}
+	
+.imageAlbumThumb{
+  background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDDDDD;
+    cursor: pointer;
+    height: 110px;
+    left: 5px;
+    margin-right: 10px;
+    padding: 5px;
+    position: absolute;
+    top: 5px;
+    width: 169px;}	
 
 
 

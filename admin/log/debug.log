@@ -50,3 +50,29 @@ Stack trace:
 
  /************************( Field imageurl does not exist in images Ends )****************************/ 
 
+
+
+ /************************( Field videourl does not exist in videos Starts )****************************/ 
+
+Tuesday 2nd of August 2011 02:55:53 AM
+
+
+exception 'InvalidArgumentException' with message 'Field videourl does not exist in videos' in /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/includes/modules/database/DatabaseRecord.class.php:914
+Stack trace:
+#0 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/includes/modules/database/DatabaseRecordClassBuilder.php(106) : eval()'d code(117): DatabaseRecord->GetCorrectFieldNameCase('videoUrl')
+#1 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/includes/objects/siteObjects/VideoGallery.class.php(158): ah__videos_DatabaseRecord->__set('videoUrl', '123123')
+#2 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/includes/objects/siteObjects/VideoGallery.class.php(78): VideoGallery->addVideoGallery()
+#3 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/includes/objects/siteObjects/SiteObject.class.php(20): VideoGallery->process()
+#4 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/includes/objects/siteObjects/VideoGallery.class.php(32): SiteObject->__construct()
+#5 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/includes/Site.class.php(92): VideoGallery->__construct()
+#6 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/includes/Site.class.php(83): Site->generateObject('VideoGallery', 'videoGallery')
+#7 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/includes/Site.class.php(70): Site->loadObjects(Array)
+#8 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/includes/Site.class.php(44): Site->process(Array)
+#9 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/actions/videogallery.php(8): Site->__construct('VideoGallery')
+#10 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/LiteFrame/index.php(331): LiteFrameAction->__construct()
+#11 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/LiteFrame/index.php(297): LiteFrame->Action()
+#12 /var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/index.php(30): LiteFrame->RunApplication()
+#13 {main}
+
+ /************************( Field videourl does not exist in videos Ends )****************************/ 
+

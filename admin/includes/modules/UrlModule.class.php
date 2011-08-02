@@ -36,6 +36,9 @@ class UrlModule {
 	public static $IMAGE_GALLERY_ORIGINAL_FILE_PATH;
 	public static $IMAGE_GALLERY_THUMB_FILE_PATH;
 	
+	public static $BLOG_THUMB_FILE_PATH;
+	public static $BLOG_THUMB_PATH;
+	
 	public function __construct(){
 		
 		self::$IMAGE_GALLERY_THUMB_PATH = self::getImagePath()."gallery/private/thumb/";
@@ -46,6 +49,10 @@ class UrlModule {
 		
 		self::$VIDEO_GALLERY_THUMB_PATH = self::getImagePath()."videoGallery/";
 		self::$EVENT_IMAGE_PATH = self::getImagePath()."events/";
+		
+		self::$BLOG_THUMB_FILE_PATH = self::getImageFilePath()."blog/thumb/";
+		self::$BLOG_THUMB_PATH = self::getImagePath()."blog/thumb/";
+		
 	}
 		
 	

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.6, created on 2011-07-30 21:38:04
+<?php /* Smarty version Smarty-3.0.6, created on 2011-08-01 21:52:20
          compiled from "/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/videocategory/manage.tpl.html" */ ?>
-<?php /*%%SmartyHeaderCode:20088101164e34b1fc6cfed4-81718738%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1734860624e3758548eb6e0-83567902%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c5cbfd7c3b6bf072edbc2feb34793902d9acf614' => 
     array (
       0 => '/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/videocategory/manage.tpl.html',
-      1 => 1312076282,
+      1 => 1312249853,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '20088101164e34b1fc6cfed4-81718738',
+  'nocache_hash' => '1734860624e3758548eb6e0-83567902',
   'function' => 
   array (
   ),
@@ -85,7 +85,7 @@ if ($_smarty_tpl->_count($_from) > 0){
 								<p><?php echo $_smarty_tpl->tpl_vars['videoCategory']->value['description'];?>
 </p>
 							</div>
-							<a href='<?php echo $_smarty_tpl->tpl_vars['videoCategory']->value['edit'];?>
+							<a href='<?php echo $_smarty_tpl->tpl_vars['videoCategory']->value['videos'];?>
 ' title="<?php echo $_smarty_tpl->tpl_vars['videoCategory']->value['title'];?>
 ">
 								<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['videoCategory']->value['title'],50,"...");?>

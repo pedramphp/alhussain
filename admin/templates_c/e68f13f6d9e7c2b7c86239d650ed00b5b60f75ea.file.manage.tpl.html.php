@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.6, created on 2011-07-31 22:02:35
+<?php /* Smarty version Smarty-3.0.6, created on 2011-08-01 21:41:36
          compiled from "/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/imagegallery/manage.tpl.html" */ ?>
-<?php /*%%SmartyHeaderCode:10000114374e36093bb14966-77922437%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:5449580374e3755d0ac7a46-39237825%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e68f13f6d9e7c2b7c86239d650ed00b5b60f75ea' => 
     array (
       0 => '/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/imagegallery/manage.tpl.html',
-      1 => 1312164138,
+      1 => 1312249291,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10000114374e36093bb14966-77922437',
+  'nocache_hash' => '5449580374e3755d0ac7a46-39237825',
   'function' => 
   array (
   ),
@@ -33,9 +33,11 @@ icons/image_add_48.png"><br>
 <div class="content-box">
 	<div class="content-box-header">
 		<h3>Manage Images > 
-			<span style='font-style:italic; color:#666;'><?php echo $_smarty_tpl->getVariable('SiteData')->value['imageGallery']['imageCategoryTitle'];?>
-
-			</span>
+			<a href='<?php echo $_smarty_tpl->getVariable('SiteData')->value['imageGallery']['imageCategoryLink'];?>
+' >
+				<span style='font-style:italic; color:#666;'><?php echo $_smarty_tpl->getVariable('SiteData')->value['imageGallery']['imageCategoryTitle'];?>
+</span>
+			</a>
 		</h3>
 		<ul class="content-box-tabs">
 			<li><a href="#tab1" class="default-tab">Table</a></li> <!-- href must be unique and match the id of target div -->

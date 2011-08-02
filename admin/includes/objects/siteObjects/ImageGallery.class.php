@@ -123,7 +123,8 @@ class ImageGallery extends SiteObject{
 			}
 		}
 		while($row=DatabaseStatic::FetchAssoc($result)){
-			$this->results['imageCategoryTitle'] = $row['imageCategoryTitle'];
+			
+			
 			$row['entryDate'] = ModuleHelper::getFriendlyDate($row['entryDate']);
 			$row['imageThumbUrl'] = UrlModule::$IMAGE_GALLERY_THUMB_PATH . $row['imageThumbUrl'];
 			$row['imageUrl'] = UrlModule::$IMAGE_GALLERY_ORIGINAL_PATH . $row['imageUrl'];
@@ -133,6 +134,10 @@ class ImageGallery extends SiteObject{
 			$row['preview'] = dirname(LiteFrame::GetApplicationPath()) . '?action=image&catId='.$request['imageCategoryId']; 
 			$this->results['records'][] = $row;
 		}
+		$imageCategoryRecord = DatabaseStatic::$ah->LoadId_images_category($request['imageCategoryId']);
+		$this->results['imageCategoryTitle'] = $imageCategoryRecord->title;
+		$this->results['imageCategoryLink'] = LiteFrame::GetApplicationPath() . '?action=imagecategory';
+		
 		$this->results['addImage']= LiteFrame::GetApplicationPath() . '?action=imagegallery&type=add&imageCategoryId='.$request['imageCategoryId']; 
 			
 	}
@@ -145,6 +150,7 @@ class ImageGallery extends SiteObject{
 			$request = Request::trimAllRequest('POST');
 			if(Request::hasEmptyField(self::$NON_EMPTY_FIELDS,'POST') || !Request::isNumeric($request['imageCategoryId']) || empty($_FILES['imageGalleryUrl']['name']) ){
 				$this->results['errorMsg'] = self::$EMPTY_FIELDS_ERROR;
+				$this->setNeccessaryFields();
 				return;				
 			}
 			
@@ -189,6 +195,12 @@ class ImageGallery extends SiteObject{
 			}
 			
     	}else{
+			$this->setNeccessaryFields();
+    	}    				
+	}
+	
+	private function setNeccessaryFields(){
+		
     		$getRequest = LiteFrame::FetchGetVariable();
     		$imageCategoryRecord = DatabaseStatic::$ah->LoadId_images_category($getRequest['imageCategoryId']);
     		$this->results['record'] = array();
@@ -196,9 +208,9 @@ class ImageGallery extends SiteObject{
     		$record['imageCategoryId'] =  $imageCategoryRecord->id;
     		$record['imageCategoryTitle'] = $imageCategoryRecord->title;
     		$record['formUrl'] = LiteFrame::GetApplicationPath() . '?action=imagegallery&type=add&imageCategoryId='.$imageCategoryRecord->id; 
-    		$record['imageGalleryLink'] = LiteFrame::GetApplicationPath() . '?action=imagegallery&imageCategoryId=' . $imageCategoryRecord->id;
-    	}    				
+    		$record['imageGalleryLink'] = LiteFrame::GetApplicationPath() . '?action=imagegallery&imageCategoryId=' . $imageCategoryRecord->id;		
 	}
+	
 	
 	private function setUnEditedRecords(){
 		
@@ -210,8 +222,11 @@ class ImageGallery extends SiteObject{
     	$record['imageGalleryStatus'] = $request['imageGalleryStatus'];
 		$record['imageGalleryId'] = $request['imageGalleryId'];
     	$record['imageCategoryId'] = $request['imageCategoryId'];
-    	$record['imageGalleryUrl'] = $_FILES['imageGalleryUr']['name'];
-		
+    	$record['imageGalleryUrl'] = $_FILES['imageGalleryUrl']['name'];
+    	$imageCategoryRecord = DatabaseStatic::$ah->LoadId_images_category($request['imageCategoryId']);
+    	$record['imageCategoryTitle'] =  $imageCategoryRecord->title;
+    	$record['formUrl'] = LiteFrame::GetApplicationPath() . '?action=imagegallery&imageGalleryId='.$record['imageGalleryId'].'&type=edit&imageCategoryId='.$record['imageCategoryId'];
+		$record['imageGalleryLink'] = LiteFrame::GetApplicationPath() . '?action=imagegallery&imageCategoryId=' . $record['imageCategoryId'];
 	}
 	
 	private function editImageGallery(){

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.6, created on 2011-07-31 17:57:06
+<?php /* Smarty version Smarty-3.0.6, created on 2011-08-01 23:06:31
          compiled from "/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/imagecategory/manage.tpl.html" */ ?>
-<?php /*%%SmartyHeaderCode:13391661554e35cfb26d5183-46274663%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:5429970054e3769b7a0d756-96450078%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'cfac89b2b2f2035e34209398504532541b42db9d' => 
     array (
       0 => '/var/www/vhosts/jquerytoolkit.com/subdomains/dev/project/al/admin/templates/includes/imagecategory/manage.tpl.html',
-      1 => 1312149380,
+      1 => 1312254390,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13391661554e35cfb26d5183-46274663',
+  'nocache_hash' => '5429970054e3769b7a0d756-96450078',
   'function' => 
   array (
   ),
@@ -61,6 +61,7 @@ icons/cross_grey_small.png"></a>
 			<table>
 				<thead>
 					<tr>
+					   <th>Album Cover</th>
 					   <th>Title</th>
 					   <th>Description</th>
 					   <th>Size</th>
@@ -78,6 +79,14 @@ if ($_smarty_tpl->_count($_from) > 0){
  $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['imageCategory']->key;
 ?>
 					<tr>
+						<td>
+							<a class='album' href='<?php echo $_smarty_tpl->tpl_vars['imageCategory']->value['images'];?>
+'>
+								<img class='imageAlbumThumb' src="<?php if ($_smarty_tpl->tpl_vars['imageCategory']->value['albumCover']==''){?><?php echo ($_smarty_tpl->getVariable('imagePath')->value).("no_photo_icon.gif");?>
+<?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['imageCategory']->value['albumCover'];?>
+<?php }?>" />
+							</a>
+						</td>
 						<td>
 							<div style='display:none' id='imageCategory<?php echo $_smarty_tpl->tpl_vars['imageCategory']->value['imageCategoryId'];?>
 '>
@@ -97,7 +106,7 @@ if ($_smarty_tpl->_count($_from) > 0){
 ' title='Click here to see the full version'>
 								<?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['imageCategory']->value['description'],70,"...");?>
 </td>
-						<td><?php if ($_smarty_tpl->tpl_vars['imageCategory']->value['size']==0){?>No Imagess<?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['imageCategory']->value['size'];?>
+						<td><?php if ($_smarty_tpl->tpl_vars['imageCategory']->value['size']==0){?>No Images<?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['imageCategory']->value['size'];?>
  Images<?php }?></td>
 						<td><?php echo ucfirst($_smarty_tpl->tpl_vars['imageCategory']->value['status']);?>
 </td>
