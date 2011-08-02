@@ -60,8 +60,7 @@ class TwitterApp {
         }
         // verify authentication, clearing cookies if it fails
         elseif($this->state == 2 && !$this->auth()) {
-        	print_r("end_session");
-            $this->endSession();
+        	$this->endSession();
         }
     }
 

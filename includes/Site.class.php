@@ -41,7 +41,9 @@ class Site extends SiteHelper{
 				$this->jsonrpc();
 				//return;
 			}else{
+				
 				$this->process( func_get_args() );
+				
 			}
 			
 		}catch ( SystemException $e ){			
@@ -73,6 +75,7 @@ class Site extends SiteHelper{
 			}		
 			
 			$this->setObjectsForTemplate(); 
+			
 			//echo("<pre>".print_r(LiteFrame::$yAction['SiteData']	,true)."</pre>");
 		
 	}/* </ process > */
@@ -92,7 +95,6 @@ class Site extends SiteHelper{
   private function generateObject($className, $field) {
 
 		$this->siteObjects[$field] = new $className();
-		
 		self::$siteObjectsData[$field] = $this->siteObjects[$field]->getResults();
 		
 	}/* </ generateObject >  */	
