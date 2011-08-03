@@ -284,7 +284,10 @@
 		    width: 169px; height: 110px;
 		    background: rgba(255,255,255,0.8) url("images/layout/icon_video.png") no-repeat center center; }
 		    
-		#homepage-videos .carousel li a{ overflow: hidden; position: relative; }    
+		#homepage-videos .carousel li a{  overflow:hidden; position: relative; }   
+		
+		#homepage-videos .carousel li a img{ overflow:hidden; height:110px; width:169px; }
+		#homepage-videos .carousel li a figure{ height: 124px;}
 		
 		/*	 </ VIDEOS > 
 		*---------------------------*/	 	
