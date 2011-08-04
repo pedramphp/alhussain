@@ -66,7 +66,9 @@ class SiteHelper {
 		$siteSettings->setTemplate();
 		$siteSettings->setTemplateColor();
 		$siteSettings->setCoreJavascript();
-		
+		if(preg_match("/fb_comment_id/", $_SERVER['REQUEST_URI'])){
+			Redirect::facebookComment();
+		}
 	}	/*  </ SiteSettings >  */
 	
 	public function setObjectsForTemplate(){
