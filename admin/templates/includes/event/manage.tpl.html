@@ -37,8 +37,9 @@
 			<table>
 				<thead>
 					<tr>
+					   <th>Event Image</th>
 					   <th>Event</th>
-					   <th>Status</th>
+					   <th>Sub Title</th>
 					   <th>Status</th>
 					   <th>Event Date</th>
 					   <th>Entry Date</th>
@@ -48,6 +49,9 @@
 			 
 			<!--{foreach from=$SiteData.event.records key=k item=event}-->
 					<tr>
+						<td width="10%">
+							<a title='<!--{$event.imageTitle}-->' href='<!--{$event.edit}-->'><img src='<!--{if $event.eventImage eq ''}--><!--{$imagePath|cat:"no_photo_icon.gif"}--><!--{else}--><!--{$event.eventImage}--><!--{/if}-->' class='imageThumb'/></a>
+						</td>
 						<td><a href='<!--{$event.edit}-->' title='<!--{$event.title}-->'><!--{$event.title|truncate:50:"..."}--></a></td>
 						<td><!--{$event.subTitle|truncate:50:"..."}--></td>
 						<td><!--{$event.status|@ucfirst}--></td>

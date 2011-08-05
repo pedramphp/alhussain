@@ -73,7 +73,7 @@ class ModuleHelper{
 	        else if (strlen($phone) > 10)
 	                sscanf($phone, "%3s%3s%4s%s", $area, $prefix, $exchange, $extension);
 	        else
-	                return "unknown phone format: $phone";
+	                return intval($phone);
 	        $out = "";
 	        $out .= isset($area) ? '(' . $area . ') ' : "";
 	        $out .= $prefix . '-' . $exchange;

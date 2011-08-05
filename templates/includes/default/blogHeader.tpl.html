@@ -1,12 +1,12 @@
 		<section id='blog-banner' class='inner-banner'>
 			<figure class='ir' id='blog-banner-figure'></figure>
 			<hgroup>
-				<h2>Blog</h2>
-				<p>&nbsp;</p>
+				<h2><!--{$SiteData.bannerTitles.title}--></h2>
+				<p><!--{$SiteData.bannerTitles.subTitle}-->&nbsp;</p>
 			</hgroup>
 		</section>
 		<nav id='breadcrumb'>
 			<a href='<!--{$applicationPath}-->'>Home</a><i></i>
-			<a href='<!--{$applicationPath}-->blogs'>Blog</a><i></i>
+			<a href='<!--{$applicationPath}-->blogs'><!--{$SiteData.bannerTitles.title}--></a><i></i>
 			<span><!--{$SiteData.blog.record.title|truncate:50:"..."}--></span>
 		</nav>

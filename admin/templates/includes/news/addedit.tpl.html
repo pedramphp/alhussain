@@ -18,13 +18,13 @@
 				</div>
 			</div>				
 			<!--{/if}-->
-			<form action="<!--{$applicationPath}-->?action=news&type=<!--{if $_LITE_.GET.type eq 'add'}-->add<!--{else}-->edit&newsId=<!--{$SiteData.news.newsId}--><!--{/if}-->" method='post'>
+			<form enctype="multipart/form-data" action="<!--{$applicationPath}-->?action=news&type=<!--{if $_LITE_.GET.type eq 'add'}-->add<!--{else}-->edit&newsId=<!--{$SiteData.news.newsId}--><!--{/if}-->" method='post'>
 				<!--{if $_LITE_.GET.type eq 'edit'}-->
 					<input type='hidden' value='<!--{$SiteData.news.newsId}-->' name='newsId' />
 				<!--{/if}-->
 				<fieldset>
 					<p>
-						<label>Title</label>
+						<label>*Title</label>
 						<input type="text" name="newsTitle" class="text-input small-input" value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.news.record.newsTitle}--><!--{/if}-->">
 					</p>
 					<p>
@@ -33,11 +33,12 @@
 					</p>
 					<p>
 						<label>Image Url</label>
-						<input type='text' name='newsImageUrl' class="text-input small-input" value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.news.record.newsImageUrl}--><!--{/if}-->"><br />
-						<small>*Please first upload the image to the server</small>
+						<input type='file' name='newsImageUrl' class="text-input small-input" ><br />
+						<input type="hidden" name="maxSize" value="2" />
+						<small>*Please upload an image less than 2MB</small>
 					</p>
 					<p>
-						<label>Author</label>
+						<label>*Author</label>
 						<select class="small-input" name="newsAuthor">
 						<!--{foreach from=$SiteData.news.authors key=k item=author}-->
 							<option value='<!--{$author.authorId}-->' <!--{if $_LITE_.GET.type eq 'edit'}--><!--{if $SiteData.news.record.newsAuthor eq $author.authorId}-->selected="selected"<!--{/if}--><!--{/if}-->><!--{$author.fullname}--></option>
@@ -45,7 +46,7 @@
 						</select>
 					</p>
 					<p>
-						<label>Status</label>
+						<label>*Status</label>
 						<select class="small-input" name="newsStatus">
 							<option value='pending' <!--{if $_LITE_.GET.type eq 'edit'}--><!--{if $SiteData.news.record.newsStatus eq "pending"}-->selected="selected"<!--{/if}--><!--{/if}-->>Pending</option>
 							<option value='active' <!--{if $_LITE_.GET.type eq 'edit'}--><!--{if $SiteData.news.record.newsStatus eq "active"}-->selected="selected"<!--{/if}--><!--{/if}-->>Active</option>

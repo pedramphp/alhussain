@@ -49,7 +49,7 @@
 			<!--{foreach from=$SiteData.blog.records key=k item=blog}-->
 					<tr>
 						<td width="10%">
-							<img src='<!--{if $blog.imageThumbUrl eq ''}--><!--{$imagePath|cat:"no_photo_icon.gif"}--><!--{else}--><!--{$blog.imageThumbUrl}--><!--{/if}-->' class='imageThumb'/>
+							<a href='<!--{$blog.edit}-->'><img src='<!--{if $blog.imageThumbUrl eq ''}--><!--{$imagePath|cat:"no_photo_icon.gif"}--><!--{else}--><!--{$blog.imageThumbUrl}--><!--{/if}-->' class='imageThumb'/></a>
 						</td>
 						<td><a href='<!--{$blog.edit}-->' title='<!--{$blog.title}-->'><!--{$blog.title|truncate:50:"..."}--></a></td>
 						<td><!--{$blog.author}--></td>

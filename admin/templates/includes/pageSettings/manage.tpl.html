@@ -1,0 +1,55 @@
+<!--{assign var='pageHeader' value=$SiteData.pageSettings.pageHeader}-->
+<div class="content-box">	
+	<div class="content-box-header">
+		<h3>Manage Pages</h3>
+		<ul class="content-box-tabs">
+			<li><a href="#tab1" class="default-tab">Table</a></li> <!-- href must be unique and match the id of target div -->
+		</ul>
+		<div class="clear"></div>
+	</div> <!-- End .content-box-header -->
+	
+	<div class="content-box-content">
+		<div class="tab-content default-tab" id="tab1">
+			<!--{if isset($SiteData.pageSettings.successMsg)}-->
+			<div class="notification success png_bg">
+				<a class="close" href="javascript:void(0)"><img alt="close" title="Close this notification" src="<!--{$imagePath}-->icons/cross_grey_small.png"></a>
+				<div>
+					<!--{$SiteData.pageSettings.successMsg}-->
+				</div>
+			</div>				
+			<!--{/if}-->
+			<!--{if isset($SiteData.pageSettings.errorMsg)}-->
+			<div class="notification error png_bg">
+				<a class="close" href="#"><img alt="close" title="Close this notification" src="<!--{$imagePath}-->icons/cross_grey_small.png"></a>
+				<div>
+					<!--{$SiteData.pageSettings.errorMsg}-->
+				</div>
+			</div>				
+			<!--{/if}-->
+			
+			<table>
+				<thead>
+					<tr>
+					   <th>Page</th>
+					   <th>Title</th>
+					   <th>Sub Title</th>
+					   <th>Actions</th>
+					</tr>
+				</thead>
+			 
+			<!--{foreach from=$pageHeader.records key=k item=header}-->
+					<tr>
+						<td><a href='<!--{$header.edit}-->' title='click to edit'><!--{$header.actionTitle|@ucfirst}--></a></td>
+						<td><!--{$header.title|@ucfirst}--></td>
+						<td><!--{$header.subTitle|@ucfirst}--></td>
+						<td>
+						 <a href="<!--{$header.edit}-->" title="Edit"><img src="<!--{$imagePath}-->icons/pencil.png" alt="Edit" /></a>
+						 <a href="<!--{$header.preview}-->" target='_blank' title="Live Preview"><img src="<!--{$imagePath}-->icons/preview_icon.gif" alt="Preview" /></a> 
+						</td>
+					</tr>
+			<!--{/foreach}-->
+				</tbody>
+			</table>
+		</div> <!-- End #tab1 -->		
+	</div> <!-- End .content-box-content -->
+</div> <!-- End .content-box -->

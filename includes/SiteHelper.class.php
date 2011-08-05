@@ -35,6 +35,7 @@ require_once(LiteFrame::GetFileSystemPath()."includes/GeneralModuleLoader.class.
 /**
  * Configuration values
  */
+
 require_once(LiteFrame::GetFileSystemPath()."configs/Configurations.php");
 
 require_once(LiteFrame::GetFileSystemPath()."includes/SiteSettings.class.php");
@@ -46,7 +47,7 @@ require_once(LiteFrame::GetFileSystemPath()."includes/modules/database/DatabaseS
 
 class SiteHelper {
 	
-	static  $staticObjects = array("Title","Books","SocialLinks","Tweets");
+	static  $staticObjects = array("Title","Books","SocialLinks","Tweets","BannerTitles");
 	static  $tools;
 	public  static $siteObjectsData = null;
 	private $ajaxRequest = false;	

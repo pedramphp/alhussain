@@ -43,6 +43,10 @@ class UrlModule {
 	public static $BLOG_THUMB_FILE_PATH;
 	public static $BLOG_THUMB_PATH;
 	
+	public static $NEWS_THUMB_FILE_PATH;
+	public static $NEWS_THUMB_PATH;
+	
+	
 	public function __construct(){
 		
 		self::$IMAGE_GALLERY_THUMB_PATH = self::getImagePath()."gallery/private/thumb/";
@@ -56,9 +60,11 @@ class UrlModule {
 		
 		self::$BLOG_THUMB_FILE_PATH = self::getImageFilePath()."blog/thumb/";
 		self::$BLOG_THUMB_PATH = self::getImagePath()."blog/thumb/";
-	
-	}
+
+		self::$NEWS_THUMB_FILE_PATH = self::getImageFilePath()."news/thumb/";
+		self::$NEWS_THUMB_PATH = self::getImagePath()."news/thumb/";
 		
+	}
 	
 	public static function buildVimeoURL($vId){
 		
@@ -68,12 +74,12 @@ class UrlModule {
 	
 	
 	private static function getImagePath(){
-		return LiteFrame::getApplicationPath()."/images/";
+		return LiteFrame::getApplicationPath()."images/";
 	}
 	
 	private static function getImageFilePath(){
 		
-		return LiteFrame::getFileSystemPath()."/images/";
+		return LiteFrame::getFileSystemPath()."images/";
 	}	
 }
 new UrlModule();

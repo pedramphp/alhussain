@@ -71,6 +71,7 @@
 			$result = DatabaseStatic::Query(self::$NEWS_LIST_SQL);
 			while($row=DatabaseStatic::FetchAssoc($result)){
 				$row['link'] = LiteFrame::GetApplicationPath() . '?action=news&newsId=' . $row['newsId']; 
+				$row['thumb'] = UrlModule::$NEWS_THUMB_PATH . $row['image'];
 				$news[] = $row;
 			}
 		

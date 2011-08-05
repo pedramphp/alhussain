@@ -1,11 +1,10 @@
 <?php
-
   error_reporting(E_ALL);
   ini_set('display_errors', '1');
   $realpath = realpath('.')."/";
   require_once($realpath."LiteFrame/index.php");    
   $LiteFrame =  new LiteFrame();
-  
+ 
   // if set to false, you will be unable to set folder paths to get specific templates.
  	$LiteFrame->SetTemplateEngine(true);
 
@@ -17,20 +16,16 @@
 
   // Adding JS / CSS files with the same Action name to the DOM if they exist
   $LiteFrame->AddingRelatedFilesToDOM();
-    
-    
+
   $LiteFrame->SetJavascriptLibraryFolder("jslib");
   $LiteFrame->SetStyleLibraryFolder("jslib");
   
   // if you want all your javascript on the bottom of the page 
  // $LiteFrame->JavascriptBottomPage();
-  
+    
   // Grab all $yAction and make it to a json obj
   $LiteFrame->JavaScriptActionInfo();  
   
   $LiteFrame->RunApplication();
-    
-  
-
-
+ 
 ?>

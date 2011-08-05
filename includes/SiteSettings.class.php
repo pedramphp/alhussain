@@ -76,6 +76,12 @@ class SiteSettings {
 		
 	} /* </ SetCoreJavascript > */
 	
+	public function printSqls(){
+		
+			DatabaseManager::SetDebug(DATABASE_DEBUG_PRINT);
+	
+	}
+	
 } /* </ SiteSettings > */
 	
 ?>

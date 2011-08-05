@@ -19,7 +19,6 @@
  * @since       Sep 10th 2009
  *   
  */
-
 class  LiteFrame {
 	
 	/**

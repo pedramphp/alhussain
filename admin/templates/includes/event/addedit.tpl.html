@@ -18,7 +18,7 @@
 				</div>
 			</div>				
 			<!--{/if}-->
-			<form action="<!--{$applicationPath}-->?action=event&type=<!--{if $_LITE_.GET.type eq 'add'}-->add<!--{else}-->edit&eventId=<!--{$SiteData.event.record.eventId}--><!--{/if}-->" method='post'>
+			<form enctype="multipart/form-data" action="<!--{$applicationPath}-->?action=event&type=<!--{if $_LITE_.GET.type eq 'add'}-->add<!--{else}-->edit&eventId=<!--{$SiteData.event.record.eventId}--><!--{/if}-->" method='post'>
 				<!--{if $_LITE_.GET.type eq 'edit'}-->
 					<input type='hidden' value='<!--{$SiteData.event.record.eventId}-->' name='eventId' />
 				<!--{/if}-->
@@ -51,8 +51,9 @@
 					</p>
 					<p>
 						<label>Upload an Image</label>
-						<input type='text' name='eventImage' class="text-input small-input" value="<!--{if $_LITE_.GET.type eq 'edit'}--><!--{$SiteData.event.record.eventImage}--><!--{/if}-->"><br />
-						<small>*Please first upload the image to the server</small>
+						<input type='file' name='eventImage' class="text-input small-input" ><br />
+						<input type="hidden" name="maxSize" value="2" />
+						<small>*Please upload an image less than 2MB</small>
 					</p>
 					<p>
 						<label>Image Title</label>

@@ -309,6 +309,8 @@
 		#homepage-posts ul figure{
 			height: 100px; width:100px;
 			border: 2px solid #363636; }	
+			
+		#homepage-posts ul figure img{	width: 100px; height: 100px }
 		
 		#homepage-posts header,#homepage-posts article{ position: relative; }
 		#homepage-posts h2{

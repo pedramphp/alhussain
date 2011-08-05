@@ -171,8 +171,7 @@ class Blog extends SiteObject{
 		if(	Request::hasEmptyField(self::$NON_EMPTY_EDIT_FIELDS,'POST') || 
 			!Request::isNumeric($request['blogId']) ||
 			!isset($_FILES['blogImageUrl']) ||
-			!Request::isNumeric($request['blogAuthor']) ||
-			!Request::isNumeric($request['blogId'])
+			!Request::isNumeric($request['blogAuthor'])
 		){
 			$this->setUnEditedRecords();
 			$this->results['errorMsg'] = self::$EMPTY_FIELDS_ERROR;
@@ -230,7 +229,6 @@ class Blog extends SiteObject{
 				$this->results['errorMsg'] = self::$SQL_ERROR;
 			}
 		}else{
-			$blogRecord->Delete();
 			$this->setUnEditedRecords();
 			$this->results['errorMsg'] = self::$SQL_ERROR;
 		}

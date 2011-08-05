@@ -245,7 +245,7 @@ var core = {
 		
 		href: function(){
 			
-			$('[data-href]').live('click',function(){
+			$('[data-href]').css('cursor','pointer').live('click',function(){
 				window.location.href = $(this).data('href');
 			});
 			
