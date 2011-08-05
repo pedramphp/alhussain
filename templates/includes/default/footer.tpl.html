@@ -24,7 +24,9 @@
 					</header>
 					<nav>
 						<ul>
-							<li><a href='javascript:void(0)'><i></i>Coming soon</a></li>
+							<!--{foreach from=$SiteData.footer.blogs item=blog}-->
+							<li><a title='<!--{$blog.title}-->' href='<!--{$blog.link}-->'><i></i><!--{$blog.title|truncate:30:"..."}--></a></li>
+							<!--{/foreach}-->
 						</ul>
 					</nav>					
 				</section><!-- </latest-posts-footer> -->
@@ -34,7 +36,9 @@
 					</header>
 					<nav>
 						<ul>
-							<li><a href='<!--{$applicationPath}-->events'><i></i>UMAA Convention</a></li>
+							<!--{foreach from=$SiteData.footer.events item=event}-->
+							<li><a title='<!--{$event.title}-->' href='<!--{$event.link}-->'><i></i><!--{$event.title|truncate:30:"..."}--></a></li>
+							<!--{/foreach}-->
 						</ul>
 					</nav>					
 				</section><!-- </events-footer> -->
@@ -61,16 +65,14 @@
 					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous books</figure></a>
 					<nav>
 						<ul class='horizontal 	clearfix'>
-							<!--{foreach from=$SiteData.books item=book name=imagelist}-->
+							<!--{foreach from=$SiteData.footer.books item=book name=imagelist}-->
 							<li <!--{if $smarty.foreach.imagelist.last}-->class='last'<!--{/if}-->>
 								<a href='<!--{$book.url}-->' target='_blank' class='books-shadow'>
-								 	
 									<figure>
 										<img src='<!--{$book.image}-->' alt='<!--{$book.title}-->' />
 									</figure>
 								</a>
 								<dl>
-
 									<dt class='title'><a href='<!--{$book.url}-->'><!--{$book.title}--></a></dt>
 									<dd class='author'>by <!--{$book.author}--></dd>
 									<dd class='rating'></dd>
@@ -90,16 +92,17 @@
 					</header>			
 					<ul id='footer-fb-rss'>
 						<li id='footer-fb-icon' class='clearfix'>
-							<figure></figure>
+							<figure data-href="http://www.facebook.com/pages/Anwar-Al-Hussain-Guidance-for-Revival/160722923969793"></figure>
 							<span>Join us in facebook</span>
 							<span>Share us with your friends</span>						
 						</li>
 						<li id='footer-rss-icon' class='clearfix'>
 							<figure data-href='<!--{$applicationPath}-->feed'></figure>
 							<span>RSS Feed</span>
-							<span>Subscribe now to recieve newsletters</span>
+							<span>Subscribe now to read our blog</span>
 						</li>
 						<li id='footer-newsletter' class='clearfix'>
+							<span>Join our newsletter</span>
 							<form class='form-newsletter'>
 								<input type='text' class='txt floatLeft blockBox' autocomplete='on' name='subscribeEmail' />
 								<button class='floatRight blockBox'>Submit</button>
@@ -151,16 +154,16 @@
 					<figure>Our Sponsors	</figure>
 				</header>
 				<div class='carousel-big carousel clearfix'>
-					<a href='javascript:void(0)' class='prev links' ><figure class='ir'>previous sponser</figure></a>
+					<a href='javascript:void(0)' class='prev links' style='display:none' ><figure class='ir'>previous sponser</figure></a>
 					<nav>
 						<ul class='clearfix horizontal'>
 							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Imam Shirazi World Foundation</a></h2></li>
 							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Imam Ali (A.S) Center Springfield VA</a></h2></li>
-							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Prestige Productionz Washington DC</a></h2></li>
+							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Prestige.Productionz Washington DC</a></h2></li>
 							<li><h2><a href='<!--{$applicationPath}-->sponsors'>Kabob Factory Lorton VA</a></h2></li>
 						</ul>
 					</nav>	
-					<a href='javascript:void(0)' class='next links' ><figure class='ir'>next sponser</figure></a>
+					<a href='javascript:void(0)' class='next links' style='display:none' ><figure class='ir'>next sponser</figure></a>
 				</div>
 			</section> <!-- </sponsers> -->
 		</div> <!-- </main-footer div> -->
@@ -173,9 +176,11 @@
 					<a itemprop='url' href='<!--{$applicationPath}-->terms'>Terms of use</a>|
 					<a itemprop='url' href='<!--{$applicationPath}-->privacy'>Privacy policy</a>
 					<a itemprop='url' href='<!--{$applicationPath}-->about'>About Al-Hussain TV</a>|
+					<a itemprop='url' href='<!--{$applicationPath}-->testimonial'>Comments</a>|
 					<a itemprop='url' href='<!--{$applicationPath}-->feed'>RSS Feed</a>|
 					<a itemprop='url' href='<!--{$applicationPath}-->faq'>FAQ</a>|
-					<a itemprop='url' href='<!--{$applicationPath}-->contact'>Contact us</a> 
+					<a itemprop='url' href='<!--{$applicationPath}-->contact'>Contact us</a>| 
+					<a itemprop='url' href='<!--{$applicationPath}-->volunteer'>Become a volunteer</a> 
 				</p>
 			</li> 
 			<li id='copyright-inner-right'>

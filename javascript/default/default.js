@@ -3,6 +3,10 @@ $(window).load(function(){
 	if ( $.browser.msie && $_LITE_.action != 'homepage') {
 		$('html').css('background','url("'+$_LITE_.imagePath+'layout/bg2.png") repeat-x transparent');
 	}
+	
+	$('.tweetAutoFader').delay(2000).fader({
+		innerTag: 'p'
+	});
 });
 
 
@@ -39,7 +43,6 @@ $(document).ready(function(){
 		.alignCarouselArrows()
 		.sponsers()
 		.rotateLogo()
-		.twitterFader()
 		.visitors()
 		.href();
 	
@@ -203,7 +206,7 @@ var core = {
 		
 		sponsers: function(){
 			//sponser header
-			var sponsers = "Imam Shirazi World Foundation, Imam Ali (A.S) Center Springfield VA,Prestige Productionz Washington DC,Kabob Factory Lorton VA".split(",");
+			var sponsers = "Imam Shirazi World Foundation, Imam Ali (A.S) Center Springfield VA,Prestige.Productionz Washington DC,Kabob Factory Lorton VA".split(",");
 			var activeIndex = 1;
 			setInterval(function(){
 				$('#header-sponser span').fadeOut(500,function(){
@@ -213,24 +216,6 @@ var core = {
 				});
 			},5000);
 			return this;
-		},
-		
-		twitterFader: function(){
-			
-			$('.tweetAutoFader').each(function(){
-					var $tweets = $(this).find('p'),
-					$next = null,
-					ticker = function(){
-						$tweets.filter(':visible').delay(5000).fadeOut(500,function(){
-							$next = ( $(this).next().length ) ? $(this).next() : $tweets.first();
-							$next.fadeIn(500,ticker);	
-						});
-						
-					};
-					ticker();
-			});
-			return this;
-			
 		},
 		
 		rotateLogo: function(){

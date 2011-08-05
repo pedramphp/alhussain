@@ -47,7 +47,7 @@ require_once(LiteFrame::GetFileSystemPath()."includes/modules/database/DatabaseS
 
 class SiteHelper {
 	
-	static  $staticObjects = array("Title","Books","SocialLinks","Tweets","BannerTitles");
+	static  $staticObjects = array("Title","SocialLinks","Tweets","BannerTitles","Footer");
 	static  $tools;
 	public  static $siteObjectsData = null;
 	private $ajaxRequest = false;	

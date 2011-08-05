@@ -56,7 +56,8 @@ class SiteSettings {
 												'plugins/gotop.js',
 												'plugins/jquery.ba-bbq.min.js',
 												'plugins/plugins.js',
-												'plugins/jquery.carousel.js'));
+												'plugins/jquery.carousel.js',
+												'plugins/jquery.fader.js'));
 		
 		if( LiteFrame::GetAction() == "image" || LiteFrame::GetAction() == "homepage"){
 				

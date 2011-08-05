@@ -7,6 +7,8 @@
 
 #news-content p {margin-bottom: 10px;}
 
+#news-content{ margin-bottom: 50px; font-size: 13px; line-height: 28px;}
+
 #news-content header { margin-bottom: 20px;}
 
 	#news-content header figure{
