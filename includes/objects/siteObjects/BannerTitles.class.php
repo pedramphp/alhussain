@@ -17,6 +17,9 @@
 				case "news": 	
 					$action = "newsList";
 					break;
+				case "blog": 	
+					$action = "blogs";
+					break;	
 					
 			}
 			$query['conditions'] = array('action'=>$action);
