@@ -61,29 +61,45 @@ $(document).ready(function() {
 	$('#homepage-videos li a:has(:not(span))').live('mouseenter',function(e){
 		var $span = $("<span style='left:169px;'/>");
 		$span.insertAfter( $(this).find('figure') );
-		$span.stop().delay(100).animate({left:0, opacity: 1},{queue:false,duration:600,specialEasing: {right: 'easeOutQuint'}},function(){
+		$span.stop().delay(100).animate({left:0, opacity: 1},{queue:false,duration:600,specialEasing: {right: 'easeOutQuint'},complete:function(){
 			$(this).closest('li').css('border-color','#660000');
-		});
+		}});
 	});
 	
 	$('#homepage-videos li a:has(span)').live('mouseleave',function(e){
-		$(this).find('span').stop().delay(100).animate({left:-169, opacity: 0}, {queue:false,duration:600,specialEasing:{right: 'easeOutQuint'}},function(){
+		$(this).find('span').stop().delay(100).animate({left:-169, opacity: 0}, {queue:false,duration:600,specialEasing:{right: 'easeOutQuint'},complete:function(){
 			$(this).closest('li').css('border-color','#363636').end().remove();
-		});
+		}});
 	});
 	
 	$('#homepage-images li a:has(:not(span))').live('mouseenter',function(e){
 		var $span = $("<span style='left:176px;'/>");
 		$span.insertAfter( $(this).find('figure') );
-		$span.stop().delay(100).animate({left:0, opacity: 1},{queue:false,duration:600,specialEasing: {right: 'easeOutQuint'}},function(){
-			$(this).closest('li').css('border-color','#660000');
-		});
+		$span.stop().delay(100).animate(
+			{left:0, opacity: 1},
+			{
+				queue:false,
+				duration:600,
+				specialEasing: {right: 'easeOutQuint'},
+				complete: function(){
+					$(this).closest('li').css('border-color','#660000');
+				}
+			}
+		);
 	});
 	
 	$('#homepage-images li a:has(span)').live('mouseleave',function(e){
-		$(this).find('span').stop().delay(100).animate({left:-176, opacity: 0}, {queue:false,duration:600,specialEasing:{right: 'easeOutQuint'}},function(){
-			$(this).closest('li').css('border-color','#363636').end().remove();
-		});
+
+		 $(this).find('span').stop().delay(100).animate(
+			{left:-176, opacity: 0},{
+				queue:false,
+				duration:600,
+				specialEasing:{right: 'easeOutQuint'},
+				complete: function(){
+					$(this).closest('li').css('border-color','#363636').end().remove();
+				}
+			}
+		);
 	});
 	
 	
