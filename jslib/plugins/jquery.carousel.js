@@ -72,6 +72,8 @@
 						start = size-options.limit;
 						if( size-options.limit < options.limit){
 							start = options.limit;
+						}else if(size % options.limit != 0){
+							start = size - (size % options.limit);
 						}
 						activeIndex = start+1;
 						$ul.animate({ left: start * elementWidth * -1  }, options.time);
