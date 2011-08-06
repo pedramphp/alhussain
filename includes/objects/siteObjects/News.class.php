@@ -37,6 +37,7 @@
 				$row['time'] = date('H:i',strtotime($row['entry_date']));
 				$row['link'] = LiteFrame::GetApplicationPath() . '?action=news&newsId=' . $row['newsId']; 
 				$row['article'] = html_entity_decode($row['article']);
+				$row['thumb'] = UrlModule::$NEWS_THUMB_PATH . $row['image'];
 				$this->results['record'] = $row;
 			}
 		

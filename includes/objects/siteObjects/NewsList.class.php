@@ -28,6 +28,7 @@
 				$row['friendlyDate'] = date('F jS, Y',strtotime($row['entry_date']));
 				$row['time'] = date('H:i',strtotime($row['entry_date']));
 				$row['link'] = LiteFrame::GetApplicationPath() . '?action=news&newsId=' . $row['newsId']; 
+				$row['thumb'] = UrlModule::$NEWS_THUMB_PATH . $row['image'];
 				$this->results[] = $row;
 			}
 		}
