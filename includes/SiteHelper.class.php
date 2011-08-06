@@ -110,6 +110,14 @@ class SiteHelper {
 	
 	}/* </ GetAction >  */
 	
+	public static function getActionUrl( $action = 'homepage', $querystring = array() ){
+		
+		$url = LiteFrame::BuildActionUrl( $action );
+		if(sizeof($querystring) > 0 ){ $url .= '&'.http_build_query($querystring, '&'); }
+		return $url;
+		
+	}/* </ Action > */	
+	
 } /* </ SiteHelper >  */	
 
 SiteHelper::setDebugger();

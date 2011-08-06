@@ -97,7 +97,7 @@
 			height: 312px; width: 862px; } 
 		
 		.carousel-slideshow #slider-shadow{
-			position: absolute; left: -4px; top: -4px; z-index: 400;
+			position: absolute; left: -4px; top: -4px; z-index: 4;
 			height: 312px; width: 862px;
 		background: url("images/layout/shadow_slider_behind.png") no-repeat transparent; }
 			
@@ -344,7 +344,7 @@
 	
 		#homepage-images .carousel li a span {
 	        position: absolute; left: 1px; top: 1px;
-	        width: 176px; height: 110px;
+	        width: 176px; height: 109px;
 	        background: rgba(255,255,255,0.8) url("images/layout/icon_image.png") no-repeat center center;}
 	        
 	    #homepage-images .carousel li a{ overflow: hidden; position: relative; }        

@@ -19,16 +19,10 @@ $(document).ready(function(){
 	
 
 	$('#nav-about').hover(function(){
-		$(this).find("ul").slideDown();
+		$(this).find("ul").stop().slideDown();
 	},function(e){
 		if(!$(this).find("ul").is($(e.relatedTarget).closest("ul"))){
-			 if($_LITE_.action == 'homepage'){
-				 setTimeout($.proxy(function(){
-					 $(this).find("ul").slideUp()
-				 },this),500);
-			 }else{
-				 $(this).find("ul").slideUp()
-			 }
+				 $(this).find("ul").stop().slideUp()
 		}
 	});
 	

@@ -1,0 +1,52 @@
+<!--{assign var='vCats' value=$SiteData.videoGallery.categories}-->
+<!--{assign var='activeCat' value=$SiteData.videoGallery.activeCategory}-->
+<aside id='video-categories'>
+	<header class="innerPageTitle no-icon">
+		<figure>Video categories</figure>
+	</header>
+	<nav>
+		<!--{foreach from=$vCats key=k item=vCat}-->
+			<a href='javascript:void(0)' title='<!--{$vCat.catTitle}-->' class='cat-title<!--{if isset($vCat.active)}--> clicked<!--{/if}-->'><!--{$vCat.catTitle}--></a>
+			<!--{foreach from=$vCat.videos key=k item=catVideo name=videoCategory}-->	
+			<!--{if $smarty.foreach.videoCategory.first}-->
+			<ul>
+			<!--{/if}-->
+			<li>
+				<a href='<!--{$catVideo.vUrl}-->' title='<!--{$catVideo.vTitle}-->'>
+					<!--{$catVideo.vTitle|truncate:34:"..."}-->
+				</a>
+			</li>
+			<!--{if $smarty.foreach.videoCategory.last}-->
+			<li><a style='color:#fa0000; text-decoration:underline; font-size:12px' href='<!--{$vCat.catUrl}-->'>More videos</a>
+			</ul>
+			<!--{/if}-->
+			<!--{/foreach}-->
+		<!--{/foreach}-->
+	</nav>
+</aside>
+<section id='video-list'>
+	<section>
+		<header class="innerPageTitle no-icon">
+			<figure><!--{$activeCat.catTitle}--> Video Gallery</figure>
+		</header>
+		<ul class='video-has-thumb'>
+		<!--{foreach from=$activeCat.videos item=activeCatVideo}-->
+		<li>
+			<a href='<!--{$activeCatVideo.vUrl}-->'>
+				<figure>
+					<img src='<!--{$activeCatVideo.vThumbUrl}-->' alt='<!--{$activeCatVideo.vTitle}-->'>
+					<figcaption title='<!--{$activeCatVideo.vTitle}-->'>
+						<!--{$activeCatVideo.vTitle|truncate:34:"..."}-->
+					</figcaption>
+				</figure>
+			</a>
+			<div id='details'>
+				<span>(<!--{$activeCatVideo.duration}-->)</span>
+				<span class='video-plays'><!--{$activeCatVideo.plays}--> views</span>
+			</div>
+			<small class='video-date'><!--{$activeCatVideo.vDate}--></small>
+		</li>
+		<!--{/foreach}-->
+		</ul>
+	</section>
+</section>

@@ -35,6 +35,24 @@
 		
 		}
 		
+		
+		public static function getNumberOfPlays($videoId){
+			
+			$url = sprintf(self::$VIMEO_VIDEO_URL,$videoId);
+			$data = self::getVimeoGenealInfo($url);
+			return $data['stats_number_of_plays'];
+			
+		}
+		
+		public static function getDurationByMinute($videoId){
+			
+			$url = sprintf(self::$VIMEO_VIDEO_URL,$videoId);
+			$data = self::getVimeoGenealInfo($url);
+			return $data['stats_number_of_plays'];
+			
+		}
+		
+		
 	}
 
 ?>

@@ -250,7 +250,7 @@ html>body { font-size: 12px }
     #nav-contact div:hover span{ background-position: left -434px; }
     
     #navAboutDetail{
-    	position: absolute; display: none; top: 40px; z-index:10;
+    	position: absolute; display: none; top: 40px; z-index: 5;
     	background: #000; width: 129px; }
      
      #navAboutDetail a{ width: 100px; float:none; }
