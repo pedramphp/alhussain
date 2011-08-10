@@ -74,11 +74,15 @@
 				$row['thumb'] = UrlModule::$NEWS_THUMB_PATH . $row['image'];
 				$news[] = $row;
 			}
-		
+			
+			$get = LiteFrame::FetchGETVariable();
+			$directUrl = (isset($get['action']) && $get['action'] === 'homepage') ? false : true;
+
 			$this->results = array('imageThumbs' => $images,
 								   'videoThumbs' => $videos,
 								   'hadith' => $this->getRandomHadith(),
-								   'news' => $news );
+								   'news' => $news,
+								   'directUrl' => $directUrl );
 			
 		}
 		

@@ -201,9 +201,11 @@ class News extends SiteObject{
 				}
 			}catch(ImageUploadException $e){
 				$this->results['errorMsg'] = $e->getMessage();
+				$this->setUnEditedRecords();
 				return;
 			}catch(Exception $e){
 				$this->resutls['errorMsg'] = "unknown error: can't upload an image";
+				$this->setUnEditedRecords();
 				return;
 			}
 		}
@@ -270,9 +272,11 @@ class News extends SiteObject{
 					}
 				}catch(ImageUploadException $e){
 					$this->results['errorMsg'] = $e->getMessage();
+					$this->setUnEditedRecords();
 					return;
 				}catch(Exception $e){
 					$this->resutls['errorMsg'] = "unknown error: can't upload an image";
+					$this->setUnEditedRecords();
 					return;
 				}
 			}else{

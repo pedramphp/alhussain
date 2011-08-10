@@ -94,7 +94,7 @@
 			font-size: 12px;}
 
 		#contact-map figure{
-			padding: 10px; }
+			padding: 10px; clear: both; }
 			
 		#contact-map figcaption {
 			margin: 0 auto;

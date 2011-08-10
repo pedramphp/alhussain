@@ -14,10 +14,10 @@
 		.testimonials-pic span {
 			width: 64px; height: 64px;
 			display: block;
-			background: url('images/layout/blank_pic.png') no-repeat #ececec; }
+			background: url('images/layout/blank_pic_m.png') no-repeat #ececec; }
 			
 		.testimonials-pic span.female{
-			background-image: url('images/layout/blank_female_pic.png'); }	
+			background-image: url('images/layout/blank_pic_f.png'); }	
 
 	#testimonials-content aside {
 		position: relative;

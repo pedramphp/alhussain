@@ -182,9 +182,11 @@ class ImageGallery extends SiteObject{
 				}
 			}catch(ImageUploadException $e){
 				$this->results['errorMsg'] = $e->getMessage();
+				$this->setNeccessaryFields();
 				return;
 			}catch(Exception $e){
 				$this->resutls['errorMsg'] = "unknown error: can't upload an image";
+				$this->setNeccessaryFields();
 				return;
 			}
 			
@@ -301,9 +303,11 @@ class ImageGallery extends SiteObject{
 				}
 			}catch(ImageUploadException $e){
 				$this->results['errorMsg'] = $e->getMessage();
+				$this->setNeccessaryFields();
 				return;
 			}catch(Exception $e){
 				$this->resutls['errorMsg'] = "unknown error: can't upload an image";
+				$this->setNeccessaryFields();
 				return;
 			}
 		}

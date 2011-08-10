@@ -308,9 +308,10 @@
 		
 		#homepage-posts ul figure{
 			height: 100px; width:100px;
-			border: 2px solid #363636; }	
+			border: 2px solid #363636;
+			overflow: hidden;}
 			
-		#homepage-posts ul figure img{	width: 100px; height: 100px }
+		#homepage-posts ul figure img{	width: 100px; height: 100px display: block;}
 		
 		#homepage-posts header,#homepage-posts article{ position: relative; }
 		#homepage-posts h2{

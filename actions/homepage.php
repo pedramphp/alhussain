@@ -6,6 +6,7 @@
 		
 		public function __construct(){
 			$site = new Site("Homepage");
+			LiteFrame::IncludeJson();
 		}
 		
 		

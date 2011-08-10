@@ -2,25 +2,28 @@ $(document).ready(function() {
 	
 	$('html').removeClass('hide');
 	
-	QueryLoader.selectorPreload = "body";
-	QueryLoader.init(function(){
-		//we need to make sure that the image is loaded	
-		$('#logo figure:eq(0)').css('top','-125px').removeClass('invisible').animate({top:12},1000,function(){
-			$(this).animate({top:-12},300,function(){
-				$(this).animate({top:0},300,function(){
-						$('#logo figure:eq(1)').animate({top:12},10,function(){
-							$(this).animate({top:-12},300,function(){
-								$(this).animate({top:0},300);
+	
+	var actionVars = $_LITE_.GetActionVariables();
+	if(actionVars.SiteData.homepage.directUrl){
+		QueryLoader.selectorPreload = "body";
+		QueryLoader.init(function(){
+			//we need to make sure that the image is loaded	
+			$('#logo figure:eq(0)').css('top','-125px').removeClass('invisible').animate({top:12},1000,function(){
+				$(this).animate({top:-12},300,function(){
+					$(this).animate({top:0},300,function(){
+							$('#logo figure:eq(1)').animate({top:12},10,function(){
+								$(this).animate({top:-12},300,function(){
+									$(this).animate({top:0},300);
+								});
 							});
-						});
+					});
 				});
 			});
+			$('#logo figure:eq(1)').css('top','-125px').removeClass('invisible');
 		});
-		
-		$('#logo figure:eq(1)').css('top','-125px').removeClass('invisible');
-		
-		
-	});
+	}else{
+		$('#logo figure').removeClass('invisible');
+	}
 	
 	$('#slider-shadow').css('cursor','pointer').click(function(){
 		window.location.href = $('.homepage-slideshow a:visible').attr("href");
