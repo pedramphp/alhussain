@@ -318,23 +318,6 @@ a:link { -webkit-tap-highlight-color: #A80C6A; }
 		-webkit-box-shadow: 0 0 5px #ccc;
 		box-shadow: 0 0 5px #ccc;}
 		
-	ie9 a.button,ie9 button,ie9 select{
-		
-		/* SVG as background image (IE9/Chrome/Safari/Opera) */ 
-		background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc4MyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0Y1RjVGNSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iI0RERERERCIgb2Zmc2V0PSIxIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZzgzKSIgLz4KPC9zdmc+);
-		
-		
-	}
-	
-	ie9 a.button:hover, ie9 button:hover, ie9 select:hover{
-	
-	
-		/* SVG as background image (IE9/Chrome/Safari/Opera) */ 
-		background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc4OTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNCNTE2MjUiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM3MDBDMTYiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c4OTIpIiAvPgo8L3N2Zz4=);
-		
-		
-	}
-		
 	a.button, button, select {
         display: inline-block;
         padding: 2px 12px; 
@@ -343,7 +326,10 @@ a:link { -webkit-tap-highlight-color: #A80C6A; }
         background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f5f5f5), to(#dddddd));
         background: -moz-linear-gradient(#f5f5f5, #dddddd);
         background: linear-gradient(#f5f5f5, #dddddd);
-	
+		
+		/* SVG as background image (IE9/Chrome/Safari/Opera) */ 
+		background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc4MyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0Y1RjVGNSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iI0RERERERCIgb2Zmc2V0PSIxIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZzgzKSIgLz4KPC9zdmc+);
+		
         font-size: 13px;  line-height: 21px;
         text-decoration: none;
         text-shadow: 1px 1px 0 #FFF;
@@ -354,6 +340,9 @@ a:link { -webkit-tap-highlight-color: #A80C6A; }
         background: -moz-linear-gradient(#b51625, #700c16);
         background: linear-gradient(#b51625, #700c16);
 		
+		/* SVG as background image (IE9/Chrome/Safari/Opera) */ 
+		background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc4OTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNCNTE2MjUiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM3MDBDMTYiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c4OTIpIiAvPgo8L3N2Zz4=);
+		
         border-color: #5e0007;
         text-shadow: 1px 1px 0 #690a13;
         color: #fff;}
@@ -361,7 +350,10 @@ a:link { -webkit-tap-highlight-color: #A80C6A; }
     a.button:active, button:active, select:active {
         background: -webkit-gradient(linear, 0 0, 0 bottom, from(#b51625), to(#700c16));
         background: -moz-linear-gradient(#b51625, #700c16);
-        background: linear-gradient(#b51625, #700c16);} 
+        background: linear-gradient(#b51625, #700c16);
+		
+		/* SVG as background image (IE9/Chrome/Safari/Opera) */ 
+		background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc4OTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNCNTE2MjUiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM3MDBDMTYiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c4OTIpIiAvPgo8L3N2Zz4=);} 
 
 	   
 	  /*	< CAROUSEL > 

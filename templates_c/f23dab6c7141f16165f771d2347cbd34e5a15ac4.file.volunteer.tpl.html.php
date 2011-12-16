@@ -1,3 +1,22 @@
+<?php /* Smarty version Smarty-3.0.6, created on 2011-09-11 13:20:33
+         compiled from "/var/www/vhosts/alhussaintv.tv/project/al8/templates/actions/default/volunteer.tpl.html" */ ?>
+<?php /*%%SmartyHeaderCode:1086170554e6cede1d292a9-68502531%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'f23dab6c7141f16165f771d2347cbd34e5a15ac4' => 
+    array (
+      0 => '/var/www/vhosts/alhussaintv.tv/project/al8/templates/actions/default/volunteer.tpl.html',
+      1 => 1315761605,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1086170554e6cede1d292a9-68502531',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
 		<section id='volunteer-intro'>
 			<h1>Currently we are working with a very limited staff. We have some volunteers who step in and help when needed. We look forward to having more volunteers and eventually becoming fully staffed in the near future.
 			</h1>
@@ -17,7 +36,8 @@
 					<li>Other( Please get detail in message )</li>
 				</ul>
 				<a href="javascript:void(0))"  style="display:block; margin-top:100px;">
-					<img src='<!--{$imagePath}-->volunteer/volunteer_pic.png' />
+					<img src='<?php echo $_smarty_tpl->getVariable('imagePath')->value;?>
+volunteer/volunteer_pic.png' />
 				</a>
 			</section>
 			<aside id='volunteer-sidebar'>
