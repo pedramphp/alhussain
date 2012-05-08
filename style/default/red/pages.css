@@ -147,6 +147,10 @@
 		background-repeat: no-repeat;
 		background-color: transparent;}
 	
+	.innerPageTitle figure.no-icon {
+		background-image: none;
+		padding-left: 0;}
+	
 	#volunteer-icon {
 		background-position: left -545px }
 	

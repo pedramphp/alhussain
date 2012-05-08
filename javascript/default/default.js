@@ -200,7 +200,7 @@ var core = {
 		
 		sponsers: function(){
 			//sponser header
-			var sponsers = "Imam Shirazi World Foundation, Imam Ali (A.S) Center Springfield VA,Prestige.Productionz Washington DC,Kabob Factory Lorton VA".split(",");
+			var sponsers = "Prestige.Productionz Washington DC,Kabob Factory Lorton VA".split(",");
 			var activeIndex = 1;
 			setInterval(function(){
 				$('#header-sponser span').fadeOut(500,function(){
