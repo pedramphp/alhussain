@@ -103,6 +103,32 @@
 		}
 		
 		
+		public function campaign( $params ){
+		
+			$message = '';
+			$vol = new Campaign($params);
+			if( $vol->isValid()){
+				if( $vol->submit()){
+					$error = false;
+					$success = true;						
+				}else{
+					$message = 'please try again';
+					$error = true;
+					$success = false;							
+				}
+			}else{
+				$error = true;
+				$success = false;
+				$message = 'please fill up the empty fields and enter a valid email address';
+			}
+			return array(
+				'error'=> $error,
+				'success'=> $success,
+				'errorMsg'=> $message
+			);
+						
+		}
+		
 		public function testimonial( $params ){
 			
 			$error = null;
